@@ -628,3 +628,4 @@ const TelaMeio = () => {
 };
 
 export default TelaMeio;
+export { calcularPeriodo };
