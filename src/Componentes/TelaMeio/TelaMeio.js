@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './TelaMeio.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt, FaLinux, FaLaptopCode, FaHeadset, FaCogs, FaCode, FaChartPie, FaJira } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux, SiZendesk, SiMysql, SiOpenai, SiTeamviewer, SiAnydesk, SiJest } from 'react-icons/si';
+import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux, SiZendesk, SiMysql, SiOpenai, SiTeamviewer, SiAnydesk, SiJest, SiVuedotjs } from 'react-icons/si';
 import { AiFillWindows } from 'react-icons/ai';
 import { VscVscode } from 'react-icons/vsc';
 import { DiMsqlServer } from 'react-icons/di';
@@ -335,6 +335,7 @@ const TelaMeio = () => {
         { nome: "JavaScript", icone: <FaJs /> },
         { nome: "TypeScript", icone: <SiTypescript /> },
         { nome: "React.js", icone: <FaReact /> },
+        { nome: "Vue.js", icone: <SiVuedotjs /> },
         { nome: "Angular", icone: <SiAngular /> },
         { nome: "Tailwind", icone: <SiTailwindcss /> },
         { nome: "Styled Components", icone: <SiStyledcomponents /> },
