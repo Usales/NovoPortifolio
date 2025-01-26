@@ -75,7 +75,7 @@ const experienciasDetalhadas = [
   {
     titulo: "Analista de Suporte N3 Trainee - SE7E SISTEMAS Unipessoal Limitada",
     logo: logoSe7e,
-    periodo: calcularPeriodo('2025-09-01'),
+    periodo: calcularPeriodo('2025-08-01'),
     local: "Av. do Comércio, 25 - Sala 907 - Vila Maria Jose, Goiânia - GO, 74815-390",
     resumo: "Atendimento de chamados técnicos relacionados ao sistema Data7, realizando identificação, análise e resolução de incidentes. Correção de erros em bases de dados e manutenção preventiva de equipamentos.",
     detalhes: [
@@ -101,7 +101,7 @@ const experienciasDetalhadas = [
   {
     titulo: "Analista de Suporte Técnico N3 - OMNICHANEL - TI SOLUTIONS TECH INOVATIONS LTDA",
     logo: logoTiSolutions,
-    periodo: calcularPeriodo('2025-08-01'),
+    periodo: calcularPeriodo('2025-07-01'),
     local: "Travessa Kalil Karan, 110 - Alto da Rua Xv, Curitiba - PR, 80.045-285",
     resumo: "Prestação de suporte técnico especializado no sistema omnichannel, assegurando o funcionamento contínuo e a satisfação dos clientes corporativos. Atuação no módulo Agents AI com treinamentos personalizados.",
     detalhes: [
@@ -381,10 +381,10 @@ const TelaMeio = () => {
     {
       categoria: "Experiências",
       items: [
-        { nome: "FullStack", icone: <FaLaptopCode />, experiencia: "1 ano 9 meses" },
-        { nome: "Suporte de TI", icone: <FaHeadset />, experiencia: "4 anos" },
-        { nome: "Analista de Sistemas", icone: <FaCogs />, experiencia: "4 meses" },
-        { nome: "ChatBots & AI", icone: <FaCode />, experiencia: "4 meses" },
+        { nome: "FullStack", icone: <FaLaptopCode />, experiencia: "3 anos 2 meses" },
+        { nome: "Suporte de TI", icone: <FaHeadset />, experiencia: "5 anos" },
+        { nome: "Analista de Sistemas", icone: <FaCogs />, experiencia: "7 meses" },
+        { nome: "ChatBots & AI", icone: <FaCode />, experiencia: "7 meses" },
       ]
     }
   ];
