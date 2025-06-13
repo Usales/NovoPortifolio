@@ -13,7 +13,7 @@ const TelaMeio = () => {
       nome: "Ecommerce MyDrugs",
       descricao: "Site inspirado em uma série da Netflix",
       imagem: projeto1,
-      link: "https://link-do-projeto-1.com"
+      link: "https://ecommercemydrugs.netlify.app/"
     },
     {
       nome: "Sistema de Denuncia Ambiental",
