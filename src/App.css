@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #000;
+    overflow-x: hidden;
+  }
+  
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+  }
+  
+  .app-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #1C1C1C;
+    overflow: hidden;
+  }
+  
+  .particles-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: transparent;
+  }
+  
+  .content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100vh;
+    background: transparent;
+  }
+  
+  .section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .section:first-child {
+    height: 100vh;
+  }
+  
+  .section:last-child {
+    min-height: 100vh;
+    height: auto;
+  }
+  
+  /* Estilos para os botões de navegação */
+  .botao {
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 120px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Bahnschrift', sans-serif;
+    font-size: 16px;
+  }
+  
+  .botao:hover {
+    background-color: rgba(68, 68, 68, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .botoes {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin: 2rem 0;
+  }
+  
+  .App {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  .App > div {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* Ajuste para garantir que as telas sejam exibidas em sequência */
+  .tela-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tela-meio {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    width: 100%;
+    margin-top: 10vh;
+    background: transparent;
+    padding-top: 2rem;
+  }
+  
+  /* Ajuste para as partículas */
+  .particles-container {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  /* Removendo estilos conflitantes */
+  .App > * {
+    position: relative;
+    z-index: 2;
+  } 

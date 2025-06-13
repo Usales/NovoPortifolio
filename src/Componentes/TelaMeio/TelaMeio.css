@@ -1,0 +1,425 @@
+.tela-meio {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    position: relative;
+    width: 100%;
+}
+
+.conteudo-principal {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(26, 26, 26, 0.8);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Seção de Habilidades */
+.skills-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.skills-section {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    margin-bottom: 1rem;
+}
+
+.skills-section h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.tools-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    min-width: 120px;
+    position: relative;
+    z-index: 2;
+}
+
+.tools-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tools-item svg {
+    margin-bottom: 10px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.tools-item:hover svg {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+.tools-item p {
+    color: #fff;
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Cards */
+.cards-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    width: 350px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+    z-index: 2;
+}
+
+.card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover::before {
+    transform: translateY(-100%);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.card:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-overlay {
+    transform: translateY(0);
+}
+
+.card-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-description {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.titulo-habilidades {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    position: relative;
+}
+
+.titulo-habilidades::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
+}
+
+.container-habilidades {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+}
+
+.categoria {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.categoria:hover {
+    transform: translateY(-5px);
+}
+
+.titulo-categoria {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #64ffda;
+    text-align: center;
+}
+
+.grid-habilidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.habilidade-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.habilidade-item:hover {
+    transform: scale(1.1);
+}
+
+.icone {
+    font-size: 3rem;
+    color: #64ffda;
+    transition: color 0.3s ease;
+}
+
+.habilidade-item:hover .icone {
+    color: #ffffff;
+}
+
+.nome-habilidade {
+    font-size: 1rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .tela-meio {
+        padding: 2rem 1rem;
+    }
+
+    .titulo-habilidades {
+        font-size: 2rem;
+    }
+
+    .grid-habilidades {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .icone {
+        font-size: 2.5rem;
+    }
+}
+
+.titulo-projetos {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 4rem 0 2rem;
+    color: #ffffff;
+    position: relative;
+}
+
+.titulo-projetos::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #64ffda, transparent);
+}
+
+.container-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-projeto {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+
+.card-projeto::before {
+    content: '';
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.card-projeto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.card-projeto:hover::before {
+    bottom: 100%;
+}
+
+.imagem-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.imagem-projeto {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-projeto:hover .imagem-projeto {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-projeto:hover .overlay {
+    opacity: 1;
+}
+
+.nome-projeto {
+    color: #64ffda;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.descricao-projeto {
+    color: #ffffff;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .container-projetos {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .imagem-projeto {
+        height: 200px;
+    }
+} 
