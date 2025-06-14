@@ -6,6 +6,8 @@ import projeto1 from '../Imagens/projeto1.png';
 import projeto2 from '../Imagens/projeto2.png';
 import projeto3 from '../Imagens/projeto3.png';
 import projeto4 from '../Imagens/projeto4.png';
+import projeto5 from '../Imagens/projeto5.png';
+
 
 
 
@@ -34,6 +36,12 @@ const TelaMeio = () => {
       descricao: "Sistema da Faculdade para Administração Escolar, participação como front-end",
       imagem: projeto4,
       link: "https://eaduck-frontend.netlify.app/login/"
+    },
+    {
+      nome: "SpaceApp",
+      descricao: "Site para ver astrofotografias, site feito com a ideia de praticar Vite + React",
+      imagem: projeto5,
+      link: "https://spaceappp.netlify.app/"
     }];
 
   const habilidades = [
