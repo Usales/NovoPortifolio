@@ -5,6 +5,8 @@ import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGith
 import projeto1 from '../Imagens/projeto1.png';
 import projeto2 from '../Imagens/projeto2.png';
 import projeto3 from '../Imagens/projeto3.png';
+import projeto4 from '../Imagens/projeto4.png';
+
 
 
 const TelaMeio = () => {
@@ -17,7 +19,7 @@ const TelaMeio = () => {
     },
     {
       nome: "Sistema de Denuncia Ambiental",
-      descricao: "Sistema feito como trabalho de faculdade",
+      descricao: "Sistema feito como trabalho de faculdade, participação como front-end",
       imagem: projeto2,
       link: "https://github.com/RubensCarvalhoRocha/sistema-denuncia-ambiental-front"
     },
@@ -25,7 +27,13 @@ const TelaMeio = () => {
       nome: "Netflix Clone",
       descricao: "Desafio de clone da interface da Netflix em menor tempo",
       imagem: projeto3,
-      link: "https://netflixbysales.netlify.app"
+      link: "https://netflisbysales.netlify.app/"
+    },
+    {
+      nome: "EaDuck",
+      descricao: "Sistema da Faculdade para Administração Escolar, participação como front-end",
+      imagem: projeto4,
+      link: "https://eaduck-frontend.netlify.app/login/"
     }];
 
   const habilidades = [
