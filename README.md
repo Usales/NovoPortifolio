@@ -55,6 +55,8 @@ Os projetos exibidos na seção "Projetos" possuem:
    npm start
    ```
 4. Acesse em `http://localhost:3000`
+   
+5. Acesse caso não queira fazer todo o processo`https://salesportifolio.netlify.app/`
 
 ## 🌐 Deploy
 Você pode publicar este portfólio facilmente no Vercel, Netlify ou GitHub Pages.
