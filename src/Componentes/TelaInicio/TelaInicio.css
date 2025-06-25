@@ -64,13 +64,16 @@
   margin: 2rem 0;
 }
 
-.rede-social {
+.social-link {
   color: #ffffff;
-  font-size: 1.8rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 3rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.rede-social:hover {
+.social-link:hover {
   transform: translateY(-3px);
   color: #64ffda;
 }
@@ -187,6 +190,15 @@
     margin: 1rem;
     min-width: 300px;
   }
+  
+  .redes-sociais {
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .social-link {
+    font-size: 2.5rem;
+  }
 }
 
 .botao-curriculo {
@@ -249,6 +261,6 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 } 

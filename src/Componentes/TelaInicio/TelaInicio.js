@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './TelaInicio.css';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import curriculo from '../Arquivos/Curriculo_Gabriel.pdf';
 
+//Digita o titulo
 const TypeWriter = ({ text, delay = 100, className }) => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,6 +20,9 @@ const TypeWriter = ({ text, delay = 100, className }) => {
   }, [currentIndex, delay, text]);
 
   return <span className={className}>{currentText}</span>;
+
+  //Link download curriculo
+
 };
 
 const TelaInicio = () => {
@@ -40,6 +45,22 @@ const TelaInicio = () => {
         <h2 className="cargo">
           <TypeWriter text="Desenvolvedor Front-end" className="typing-text" delay={50} />
         </h2>
+        <div className="redes-sociais">
+          <a 
+            href="https://github.com/Usales" 
+            rel="noopener noreferrer" 
+            className="social-link"
+          >
+            <FaGithub />
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/gabriel-henriques-sales-43953b218/" 
+            rel="noopener noreferrer" 
+            className="social-link"
+          >
+            <FaLinkedin />
+          </a>
+        </div>
       </div>
       <button className="botao-curriculo" onClick={handleDownload}>Currículo</button>
       <div className="scroll-indicator">

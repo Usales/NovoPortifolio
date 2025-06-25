@@ -422,4 +422,147 @@ h2 {
     .imagem-projeto {
         height: 200px;
     }
+}
+
+/* Estilos para os cards de tecnologias */
+.tecnologias-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    transition: transform 0.3s ease;
+    min-width: 60px;
+    background: transparent;
+    border: none;
+}
+
+.tech-card:hover {
+    transform: translateY(-2px);
+}
+
+.tech-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover .tech-icon {
+    color: #64ffda;
+    transform: scale(1.1);
+}
+
+.tech-name {
+    font-size: 0.7rem;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .tecnologias-container {
+        gap: 0.4rem;
+    }
+    
+    .tech-card {
+        padding: 0.4rem 0.6rem;
+        min-width: 50px;
+    }
+    
+    .tech-icon {
+        font-size: 1rem;
+    }
+    
+    .tech-name {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 1024px) {
+  .container-projetos {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+    .tela-meio {
+        padding: 2rem 1rem;
+    }
+
+    .titulo-habilidades, .titulo-projetos {
+        font-size: 2rem;
+    }
+
+    .grid-habilidades {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+.tecnologias-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out 0.3s;
+}
+
+.card-projeto:hover .tecnologias-container {
+    opacity: 1;
+}
+
+.tech-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-2px);
+}
+
+.tech-icon {
+    font-size: 1.2rem;
+    color: #64ffda;
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover .tech-icon {
+    color: #64ffda;
+    transform: scale(1.1);
+}
+
+.tech-name {
+    color: #e0e0e0;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .tecnologias-container {
+        flex-wrap: wrap;
+    }
+
+    .tech-card {
+        padding: 0.3rem 0.6rem;
+    }
+
+    .tech-icon {
+        font-size: 1rem;
+    }
+
+    .tech-name {
+        font-size: 0.75rem;
+    }
 } 

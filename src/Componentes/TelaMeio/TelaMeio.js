@@ -1,11 +1,8 @@
 import React from 'react';
 import './TelaMeio.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub } from 'react-icons/si';
+import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite } from 'react-icons/si';
 import projeto1 from '../Imagens/projeto1.png';
-import projeto2 from '../Imagens/projeto2.png';
-import projeto3 from '../Imagens/projeto3.png';
-import projeto4 from '../Imagens/projeto4.png';
 import projeto5 from '../Imagens/projeto5.png';
 
 
@@ -15,33 +12,29 @@ const TelaMeio = () => {
   const projetos = [
     {
       nome: "Ecommerce MyDrugs",
-      descricao: "Site inspirado em uma série da Netflix",
+      descricao: "Site tipo: Ecommerce, inspirado em uma série da Netflix",
       imagem: projeto1,
-      link: "https://ecommercemydrugs.netlify.app/"
-    },
-    {
-      nome: "Sistema de Denuncia Ambiental",
-      descricao: "Sistema feito como trabalho de faculdade, participação como front-end",
-      imagem: projeto2,
-      link: "https://github.com/RubensCarvalhoRocha/sistema-denuncia-ambiental-front"
-    },
-    {
-      nome: "Netflix Clone",
-      descricao: "Desafio de clone da interface da Netflix em menor tempo",
-      imagem: projeto3,
-      link: "https://netflisbysales.netlify.app/"
-    },
-    {
-      nome: "EaDuck",
-      descricao: "Sistema da Faculdade para Administração Escolar, participação como front-end",
-      imagem: projeto4,
-      link: "https://eaduck-frontend.netlify.app/login/"
+      link: "https://ecommercemydrugs.netlify.app/",
+      tecnologias: [
+        { nome: "HTML5", icone: <FaHtml5 /> },
+        { nome: "TailwindCSS", icone: <SiTailwindcss /> },
+        { nome: "JavaScript", icone: <FaJs /> },
+        { nome: "React", icone: <FaReact /> },
+        { nome: "Vite", icone: <SiVite /> }
+      ]
     },
     {
       nome: "SpaceApp",
-      descricao: "Site para ver astrofotografias, site feito com a ideia de praticar Vite + React",
+      descricao: "Site tipo: Albun de Astrofotografias inspirado em um projeto do Figma",
       imagem: projeto5,
-      link: "https://spaceappp.netlify.app/"
+      link: "https://spaceappp.netlify.app/",
+      tecnologias: [
+        { nome: "HTML5", icone: <FaHtml5 /> },
+        { nome: "CSS3", icone: <FaCss3Alt /> },
+        { nome: "JavaScript", icone: <FaJs /> },
+        { nome: "React", icone: <FaReact /> },
+        { nome: "Vite", icone: <SiVite /> }
+      ]
     }];
 
   const habilidades = [
@@ -65,7 +58,7 @@ const TelaMeio = () => {
       categoria: "Front-end",
       items: [
         { nome: "HTML5", icone: <FaHtml5 /> },
-        { nome: "CSS", icone: <FaCss3Alt /> },
+        { nome: "CSS3", icone: <FaCss3Alt /> },
         { nome: "JavaScript", icone: <FaJs /> },
         { nome: "TypeScript", icone: <SiTypescript /> },
         { nome: "React.js", icone: <FaReact /> },
@@ -78,6 +71,7 @@ const TelaMeio = () => {
       items: [
         { nome: "Git", icone: <FaGitAlt /> },
         { nome: "GitHub", icone: <SiGithub /> },
+        { nome: "Vite", icone: <SiVite /> },
       ]
     }
   ];
@@ -116,6 +110,14 @@ const TelaMeio = () => {
               <div className="overlay">
                 <h3 className="nome-projeto">{projeto.nome}</h3>
                 <p className="descricao-projeto">{projeto.descricao}</p>
+                <div className="tecnologias-container">
+                  {projeto.tecnologias.map((tech, techIndex) => (
+                    <div key={techIndex} className="tech-card">
+                      <div className="tech-icon">{tech.icone}</div>
+                      <span className="tech-name">{tech.nome}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </a>
