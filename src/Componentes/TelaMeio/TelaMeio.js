@@ -3,7 +3,8 @@ import './TelaMeio.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt } from 'react-icons/fa';
 import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite } from 'react-icons/si';
 import projeto1 from '../Imagens/projeto1.png';
-import projeto5 from '../Imagens/projeto5.png';
+import projeto2 from '../Imagens/projeto2.png';
+import projeto3 from '../Imagens/projeto3.png';
 
 
 
@@ -26,7 +27,7 @@ const TelaMeio = () => {
     {
       nome: "SpaceApp",
       descricao: "Site tipo: Albun de Astrofotografias inspirado em um projeto do Figma",
-      imagem: projeto5,
+      imagem: projeto2,
       link: "https://spaceappp.netlify.app/",
       tecnologias: [
         { nome: "HTML5", icone: <FaHtml5 /> },
@@ -34,6 +35,18 @@ const TelaMeio = () => {
         { nome: "JavaScript", icone: <FaJs /> },
         { nome: "React", icone: <FaReact /> },
         { nome: "Vite", icone: <SiVite /> }
+      ]
+    },
+    {
+      nome: "Uai-Jordan",
+      descricao: "Site tipo: Loja Feito como pedido para um cliente",
+      imagem: projeto3,
+      link: "https://uai-jordan.netlify.app/",
+      tecnologias: [
+        { nome: "HTML5", icone: <FaHtml5 /> },
+        { nome: "CSS3", icone: <FaCss3Alt /> },
+        { nome: "JavaScript", icone: <FaJs /> },
+        { nome: "React", icone: <FaReact /> }
       ]
     }];
 
