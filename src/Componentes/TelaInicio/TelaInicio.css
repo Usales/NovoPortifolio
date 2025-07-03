@@ -79,10 +79,8 @@
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,6 +211,9 @@
   .redes-sociais {
     gap: 0.7rem;
   }
+  .scroll-indicator {
+    margin-top: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -236,7 +237,7 @@
     gap: 0.4rem;
   }
   .scroll-indicator {
-    bottom: 10px;
+    margin-top: 1rem;
   }
 }
 
