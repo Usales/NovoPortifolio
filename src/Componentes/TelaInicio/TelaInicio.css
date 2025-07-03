@@ -172,32 +172,99 @@
   }
 }
 
-@media (max-width: 768px) {
-  .nome {
-    font-size: 2.5rem;
+@media (max-width: 1200px) {
+  .conteudo {
+    min-width: 350px;
+    padding: 2.5rem;
   }
-  
+  .nome {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .conteudo {
+    min-width: 300px;
+    padding: 2rem;
+  }
+  .nome {
+    font-size: 2.2rem;
+  }
   .cargo {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .conteudo {
+    min-width: 220px;
+    padding: 1.2rem;
+  }
+  .nome {
     font-size: 1.5rem;
   }
-  
-  .emoji {
-    font-size: 2.5rem;
+  .cargo {
+    font-size: 1rem;
   }
-  
-  .conteudo {
-    padding: 2rem;
-    margin: 1rem;
-    min-width: 300px;
+  .botao-curriculo {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
   }
-  
   .redes-sociais {
-    gap: 1rem;
-    margin: 1.5rem 0;
+    gap: 0.7rem;
   }
-  
-  .social-link {
-    font-size: 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .conteudo {
+    min-width: unset;
+    width: 95vw;
+    padding: 0.5rem;
+    margin: 0.2rem;
+  }
+  .nome {
+    font-size: 1.1rem;
+  }
+  .cargo {
+    font-size: 0.9rem;
+  }
+  .botao-curriculo {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .redes-sociais {
+    gap: 0.4rem;
+  }
+  .scroll-indicator {
+    bottom: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .conteudo {
+    min-width: unset;
+    width: 98vw;
+    padding: 0.2rem;
+    margin: 0.1rem;
+  }
+  .nome, .cargo {
+    font-size: 0.95rem;
+    word-break: break-word;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.1;
+    width: 100%;
+    display: block;
+  }
+  .emoji {
+    font-size: 1.1rem;
+  }
+  .botao-curriculo {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.5rem;
+  }
+  .redes-sociais {
+    gap: 0.2rem;
   }
 }
 
