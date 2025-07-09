@@ -12,10 +12,10 @@ import projeto3 from '../Imagens/projeto3.png';
 const TelaMeio = () => {
   const projetos = [
     {
-      nome: "Ecommerce MyDrugs",
-      descricao: "Site tipo: Ecommerce, inspirado em uma série da Netflix",
+      nome: "Ecommerce MyMonster",
+      descricao: "Site tipo: Ecommerce | loja de bebidas",
       imagem: projeto1,
-      link: "https://ecommercemydrugs.netlify.app/",
+      link: "https://mymonsterr.netlify.app/",
       tecnologias: [
         { nome: "HTML5", icone: <FaHtml5 /> },
         { nome: "TailwindCSS", icone: <SiTailwindcss /> },
@@ -26,7 +26,7 @@ const TelaMeio = () => {
     },
     {
       nome: "SpaceApp",
-      descricao: "Site tipo: Albun de Astrofotografias inspirado em um projeto do Figma",
+      descricao: "Site tipo: Album de fotos | Site de astrofotografias",
       imagem: projeto2,
       link: "https://spaceappp.netlify.app/",
       tecnologias: [
@@ -39,7 +39,7 @@ const TelaMeio = () => {
     },
     {
       nome: "Uai-Jordan",
-      descricao: "Site tipo: Loja Feito como pedido para um cliente",
+      descricao: "Site tipo: Loja Feito de calçados",
       imagem: projeto3,
       link: "https://uai-jordan.netlify.app/",
       tecnologias: [
@@ -86,7 +86,6 @@ const TelaMeio = () => {
         { nome: "Git", icone: <FaGitAlt /> },
         { nome: "GitHub", icone: <SiGithub /> },
         { nome: "Vite", icone: <SiVite /> },
-        { nome: "Styled Components", icone: <SiStyledcomponents /> },
       ]
     }
   ];

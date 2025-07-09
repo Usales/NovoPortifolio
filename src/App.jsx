@@ -10,16 +10,16 @@ const App = () => {
       <div className="particles-container">
         <Particles
           particleCount={25000}
-          particleSpread={10}
+          particleSpread={60}
           speed={0.1}
           particleColors={['#ff4500', '#ff8c00', '#ffd700']}
-          moveParticlesOnHover={true}
+          moveParticlesOnHover={false}
           particleHoverFactor={1}
           alphaParticles={false}
           particleBaseSize={100}
           sizeRandomness={1}
-          cameraDistance={20}
-          disableRotation={false}
+          cameraDistance={80}
+          disableRotation={true}
         />
       </div>
       <TelaInicio />

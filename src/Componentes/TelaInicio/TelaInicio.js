@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './TelaInicio.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import curriculo from '../Arquivos/Curriculo_Gabriel.pdf';
+import europass from '../Arquivos/Europass.pdf';
+
 
 //Digita o titulo
 const TypeWriter = ({ text, delay = 100, className }) => {
@@ -21,15 +23,25 @@ const TypeWriter = ({ text, delay = 100, className }) => {
 
   return <span className={className}>{currentText}</span>;
 
+};
+
   //Link download curriculo
 
-};
 
 const TelaInicio = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = curriculo;
     link.download = 'Curriculo_Gabriel_Sales.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleDownloadEuropass = () => {
+    const link = document.createElement('a');
+    link.href = europass;
+    link.download = 'Europass.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -62,7 +74,10 @@ const TelaInicio = () => {
           </a>
         </div>
       </div>
-      <button className="botao-curriculo" onClick={handleDownload}>Currículo</button>
+      <div className="botoes-curriculo">
+        <button className="botao-curriculo" onClick={handleDownload}>Currículo</button>
+        <button className="botao-curriculo" onClick={handleDownloadEuropass}>Europass</button>
+      </div>
       <div className="scroll-indicator">
         <div className="mouse">
           <div className="wheel"></div>
