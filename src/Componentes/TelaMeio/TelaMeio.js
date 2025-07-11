@@ -5,7 +5,7 @@ import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGith
 import projeto1 from '../Imagens/projeto1.png';
 import projeto2 from '../Imagens/projeto2.png';
 import projeto3 from '../Imagens/projeto3.png';
-import projeto4 from '../Imagens/projeto4.png';
+import projeto4 from '../Imagens/projeto04.png';
 
 
 
