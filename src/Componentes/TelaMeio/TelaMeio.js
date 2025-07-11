@@ -1,7 +1,7 @@
 import React from 'react';
 import './TelaMeio.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents } from 'react-icons/si';
+import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack } from 'react-icons/si';
 import projeto1 from '../Imagens/projeto1.png';
 import projeto2 from '../Imagens/projeto2.png';
 import projeto3 from '../Imagens/projeto3.png';
@@ -52,7 +52,7 @@ const TelaMeio = () => {
     },
     {
       nome: "PentaBooks",
-      descricao: "Site tipo: Biblioteca | Site de livros",
+      descricao: "Site tipo: Biblioteca",
       imagem: projeto4,
       link: "https://pentabooks.netlify.app/",
       tecnologias: [
@@ -99,6 +99,9 @@ const TelaMeio = () => {
         { nome: "Git", icone: <FaGitAlt /> },
         { nome: "GitHub", icone: <SiGithub /> },
         { nome: "Vite", icone: <SiVite /> },
+        { nome: "Node.js", icone: <SiNodedotjs /> },
+        { nome: "Express", icone: <SiExpress /> },
+        { nome: "Webpack", icone: <SiWebpack /> },
       ]
     }
   ];
