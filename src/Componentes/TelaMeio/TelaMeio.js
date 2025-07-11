@@ -5,6 +5,7 @@ import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGith
 import projeto1 from '../Imagens/projeto1.png';
 import projeto2 from '../Imagens/projeto2.png';
 import projeto3 from '../Imagens/projeto3.png';
+import projeto4 from '../Imagens/projeto4.png';
 
 
 
@@ -44,6 +45,17 @@ const TelaMeio = () => {
       link: "https://uai-jordan.netlify.app/",
       tecnologias: [
         { nome: "HTML5", icone: <FaHtml5 /> },
+        { nome: "CSS3", icone: <FaCss3Alt /> },
+        { nome: "JavaScript", icone: <FaJs /> },
+        { nome: "React", icone: <FaReact /> }
+      ]
+    },
+    {
+      nome: "PentaBooks",
+      descricao: "Site tipo: Biblioteca | Site de livros",
+      imagem: projeto4,
+      link: "https://pentabooks.netlify.app/",
+      tecnologias: [
         { nome: "CSS3", icone: <FaCss3Alt /> },
         { nome: "JavaScript", icone: <FaJs /> },
         { nome: "React", icone: <FaReact /> }
