@@ -56,6 +56,7 @@ const TelaMeio = () => {
       imagem: projeto4,
       link: "https://pentabooks.netlify.app/",
       tecnologias: [
+        { nome: "HTML5", icone: <FaHtml5 /> },
         { nome: "CSS3", icone: <FaCss3Alt /> },
         { nome: "JavaScript", icone: <FaJs /> },
         { nome: "React", icone: <FaReact /> }
