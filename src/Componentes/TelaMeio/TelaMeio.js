@@ -1,7 +1,7 @@
 import React from 'react';
 import './TelaMeio.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack } from 'react-icons/si';
+import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiVscodium, SiSpringboot, SiAxios, SiSwagger } from 'react-icons/si';
 import projeto1 from '../Imagens/projeto1.png';
 import projeto2 from '../Imagens/projeto2.png';
 import projeto3 from '../Imagens/projeto3.png';
@@ -59,17 +59,22 @@ const TelaMeio = () => {
         { nome: "HTML5", icone: <FaHtml5 /> },
         { nome: "CSS3", icone: <FaCss3Alt /> },
         { nome: "JavaScript", icone: <FaJs /> },
+        { nome: "API", icone: <SiSwagger /> },
+        { nome: "Axios", icone: <SiAxios /> },
         { nome: "React", icone: <FaReact /> }
+
       ]
     }];
 
   const habilidades = [
     {
-      categoria: "Linguagens",
+      categoria: "Backend",
       items: [
         { nome: "Java", icone: <FaJava /> },
-        { nome: "JavaScript", icone: <FaJs /> },
-        { nome: "TypeScript", icone: <SiTypescript /> },
+        { nome: "Spring Boot", icone: <SiSpringboot /> },
+        { nome: "Node.js", icone: <SiNodedotjs /> },
+        { nome: "Express", icone: <SiExpress /> },
+        { nome: "API", icone: <SiSwagger /> },
       ]
     },
     {
@@ -91,6 +96,7 @@ const TelaMeio = () => {
         { nome: "Angular", icone: <SiAngular /> },
         { nome: "Tailwind", icone: <SiTailwindcss /> },
         { nome: "Styled Components", icone: <SiStyledcomponents /> },
+        { nome: "Webpack", icone: <SiWebpack /> },
       ]
     },
     {
@@ -99,9 +105,19 @@ const TelaMeio = () => {
         { nome: "Git", icone: <FaGitAlt /> },
         { nome: "GitHub", icone: <SiGithub /> },
         { nome: "Vite", icone: <SiVite /> },
-        { nome: "Node.js", icone: <SiNodedotjs /> },
-        { nome: "Express", icone: <SiExpress /> },
-        { nome: "Webpack", icone: <SiWebpack /> },
+        { nome: "Postman", icone: <SiPostman /> },
+        { nome: "Axios", icone: <SiAxios /> },
+        { nome: "Windows", icone: <div style={{fontSize: '3rem', color: '#64ffda', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>⊞</div> },
+        { nome: "IntelliJ IDEA", icone: <SiJetbrains /> },
+        { nome: "VS Code", icone: <SiVscodium /> },
+      ]
+    },
+    {
+      categoria: "Design",
+      items: [
+        { nome: "Figma", icone: <SiFigma /> },
+        { nome: "Canva", icone: <SiCanva /> },
+        { nome: "Photoshop", icone: <SiAdobephotoshop /> },
       ]
     }
   ];

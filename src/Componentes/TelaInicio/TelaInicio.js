@@ -25,7 +25,7 @@ const TypeWriter = ({ text, delay = 100, className }) => {
 
 };
 
-  //Link download curriculo
+//Link download curriculo
 
 
 const TelaInicio = () => {
