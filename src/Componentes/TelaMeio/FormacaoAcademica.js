@@ -5,6 +5,7 @@ import logoSensu from '../Imagens/faculdadesensu_logo.jpeg';
 import logoCpmGo from '../Imagens/LOGO-CEPMG.png';
 import logoSenac from '../Imagens/senacbrasil_logo.jpeg';
 import logoBasileu from '../Imagens/logo_basileu.png';
+import { motion } from 'framer-motion';
 
 const formacoes = [
   {
@@ -69,20 +70,40 @@ Trabalhos em grupo e projetos integradores promoveram o desenvolvimento de habil
   }
 ];
 
+const MotionH2 = ({ children, delay = 0 }) => (
+  <motion.h2
+    className="titulo-projetos"
+    initial={{ y: -60, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.7, delay, ease: 'easeOut' }}
+    viewport={{ once: true, amount: 0.7 }}
+  >
+    {children}
+  </motion.h2>
+);
+
 const FormacaoAcademica = () => {
   return (
-    <div className="tela-meio">
-      <h2 className="titulo-projetos">Formação Acadêmica</h2>
+    <div className="formacao-academica">
       <div className="container-experiencias">
         {formacoes.map((form, idx) => (
-          <div className="experiencia-item experiencia-clickable" key={idx} style={{ flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1.2rem', display: 'flex' }}>
+          <motion.div
+            className="experiencia-item experiencia-clickable"
+            key={idx}
+            style={{ flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1.2rem', display: 'flex' }}
+            initial={{ x: -80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            exit={{ x: -80, opacity: 0 }}
+            transition={{ duration: 0.7, delay: idx * 0.18, ease: 'easeOut' }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
             <img src={form.logo} alt={form.instituicao} style={{ width: '70px', height: '70px', objectFit: 'contain', borderRadius: '12px', background: '#fff', padding: '0.3rem', marginBottom: '0.7rem' }} />
             <h3 style={{ margin: 0 }}>{form.instituicao}</h3>
             <span className="experiencia-periodo">{form.periodo}</span>
             <div style={{ color: '#bdbdbd', fontSize: '1rem', marginBottom: '0.5rem' }}>{form.curso}</div>
             <div style={{ whiteSpace: 'pre-line', color: '#fff', fontSize: '1rem', marginBottom: '0.5rem' }}>{form.descricao}</div>
             <div style={{ color: '#64ffda', fontSize: '0.95rem' }}><b>Competências:</b> {form.competencias}</div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

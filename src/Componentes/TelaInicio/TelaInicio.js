@@ -3,6 +3,7 @@ import './TelaInicio.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import curriculo from '../Arquivos/Curriculo_Gabriel.pdf';
 import europass from '../Arquivos/Europass.pdf';
+import { motion } from 'framer-motion';
 
 
 //Digita o titulo
@@ -49,7 +50,12 @@ const TelaInicio = () => {
 
   return (
     <div className="tela-inicio">
-      <div className="conteudo">
+      <motion.div
+        className="conteudo"
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
+      >
         <h1 className="nome">
           <TypeWriter text="Gabriel Henriques Sales" className="typing-text" delay={100} />
           <span className="emoji">👋</span>
@@ -73,12 +79,33 @@ const TelaInicio = () => {
             <FaLinkedin />
           </a>
         </div>
-      </div>
+      </motion.div>
       <div className="botoes-curriculo">
-        <button className="botao-curriculo" onClick={handleDownload}>Currículo</button>
-        <button className="botao-curriculo" onClick={handleDownloadEuropass}>Europass</button>
+        <motion.button
+          className="botao-curriculo"
+          onClick={handleDownload}
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1.8, delay: 0.9, ease: 'easeOut' }}
+        >
+          Currículo
+        </motion.button>
+        <motion.button
+          className="botao-curriculo"
+          onClick={handleDownloadEuropass}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1.8, delay: 0.9, ease: 'easeOut' }}
+        >
+          Europass
+        </motion.button>
       </div>
-      <div className="scroll-indicator">
+      <motion.div
+        className="scroll-indicator"
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1.8, delay: 2.9, ease: 'easeOut' }}
+      >
         <div className="mouse">
           <div className="wheel"></div>
         </div>
@@ -87,7 +114,7 @@ const TelaInicio = () => {
           <span className="arrow">↓</span>
           <span className="arrow">↓</span>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

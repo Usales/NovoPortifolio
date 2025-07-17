@@ -8,6 +8,7 @@ import projeto3 from '../Imagens/projeto3.png';
 import projeto4 from '../Imagens/projeto04.png';
 import projeto5 from '../Imagens/projeto5.png';
 import FormacaoAcademica from './FormacaoAcademica';
+import { motion } from 'framer-motion';
 
 
 const experienciasDetalhadas = [
@@ -209,12 +210,33 @@ const TelaMeio = () => {
 
   const [experienciaSelecionada, setExperienciaSelecionada] = useState(null);
 
+  const MotionH2 = ({ children, delay = 0 }) => (
+    <motion.h2
+      className="titulo-projetos"
+      initial={{ y: -60, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      exit={{ y: -60, opacity: 0 }}
+      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
+      viewport={{ once: false, amount: 0.7 }}
+    >
+      {children}
+    </motion.h2>
+  );
+
   return (
     <div className="tela-meio">
       {/* <h2 className="titulo-habilidades">Habilidades e Ferramentas</h2> */}
       <div className="container-habilidades">
         {habilidades.map((categoria, index) => (
-          <div key={index} className="categoria">
+          <motion.div
+            key={index}
+            className="categoria"
+            initial={{ x: -80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            exit={{ x: -80, opacity: 0 }}
+            transition={{ duration: 0.7, delay: index * 0.18, ease: 'easeOut' }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
             <h3 className="titulo-categoria">{categoria.categoria}</h3>
             <div className="grid-habilidades">
               {categoria.items.map((item, itemIndex) => (
@@ -224,19 +246,24 @@ const TelaMeio = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      <h2 className="titulo-projetos">Projetos</h2>
+      <MotionH2 delay={0.1}>Projetos</MotionH2>
       <div className="container-projetos">
         {projetos.map((projeto, index) => (
-          <a 
-            key={index} 
-            href={projeto.link} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <motion.a
+            key={index}
+            href={projeto.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="card-projeto"
+            initial={{ scale: 0.6, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.10, opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 + index * 0.13, ease: 'easeOut' }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             <div className="imagem-container">
               <img src={projeto.imagem} alt={projeto.nome} className="imagem-projeto" />
@@ -253,12 +280,12 @@ const TelaMeio = () => {
                 </div>
               </div>
             </div>
-          </a>
+          </motion.a>
         ))}
       </div>
 
       {/* Seção Sobre Mim */}
-      <h2 className="titulo-projetos">Sobre Mim</h2>
+      <MotionH2 delay={0.2}>Sobre Mim</MotionH2>
       <div className="container-sobre-mim">
         <div className="sobre-mim-foto">
           <img src={require('../Imagens/foto.png')} alt="Gabriel Henriques Sales" className="foto-sobre-mim" />
@@ -277,19 +304,24 @@ const TelaMeio = () => {
       </div>
       
      {/* Seção Experiências */}
-     <h2 className="titulo-projetos">Experiências</h2>
+     <MotionH2 delay={0.3}>Experiências</MotionH2>
      <div className="container-experiencias">
        {experienciasDetalhadas.map((exp, idx) => (
-         <div
+         <motion.div
            key={idx}
            className="experiencia-item experiencia-clickable"
            onClick={() => setExperienciaSelecionada(exp)}
            style={{ cursor: 'pointer' }}
+           initial={{ x: -80, opacity: 0 }}
+           whileInView={{ x: 0, opacity: 1 }}
+           exit={{ x: -80, opacity: 0 }}
+           transition={{ duration: 0.7, delay: idx * 0.18, ease: 'easeOut' }}
+           viewport={{ once: false, amount: 0.3 }}
          >
            <h3>{exp.titulo}</h3>
            <span className="experiencia-periodo">{exp.periodo}</span>
            <p>{exp.resumo}</p>
-         </div>
+         </motion.div>
        ))}
      </div>
 
@@ -319,6 +351,7 @@ const TelaMeio = () => {
      {/* Adicione aqui o componente de certificações, se necessário */}
 
      {/* Seção Formação Acadêmica */}
+     <MotionH2 delay={0.4}>Formação Acadêmica</MotionH2>
      <FormacaoAcademica />
     </div>
   );
