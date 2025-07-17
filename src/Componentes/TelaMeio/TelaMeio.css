@@ -609,3 +609,289 @@ h2 {
         font-size: 0.75rem;
     }
 } 
+
+.container-sobre-mim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 0 auto 3rem auto;
+    max-width: 900px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sobre-mim-foto {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto-sobre-mim {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 5%;
+    border: 1px solid #64ffda;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+    background: #222;
+}
+
+.sobre-mim-texto {
+    flex: 2;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+@media (max-width: 900px) {
+    .container-sobre-mim {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    .sobre-mim-texto {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+} 
+
+.container-experiencias {
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.experiencia-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+.experiencia-item h3 {
+    margin: 0 0 0.5rem 0;
+    color: #64ffda;
+    font-size: 1.3rem;
+}
+
+.experiencia-periodo {
+    display: block;
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.7;
+    margin-bottom: 0.7rem;
+}
+
+.experiencia-item p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .container-experiencias {
+        padding: 0 1rem;
+    }
+    .experiencia-item {
+        padding: 1.2rem;
+    }
+} 
+
+/* Modal de Experiência */
+.modal-experiencia-conteudo-scroll {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Garante que o modal continue centralizado e overlay escuro */
+.modal-experiencia-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 20, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(1px);
+}
+
+.modal-experiencia {
+  background: #18181f;
+  color: #fff;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-radius: 18px;
+  max-width: 920px;
+  width: 92vw;
+  box-shadow: 0 0 14px 1px #fff, 0 0 60px 8px #fff2;
+  border: 0.1px solid #fff;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 10;
+  animation: painelGrow 0.5s cubic-bezier(.4,1.6,.6,1) both;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+@keyframes modalGrow {
+  from {
+    transform: scale(0.15);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fechar-modal {
+  position: absolute;
+  top: 14px;
+  right: 22px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #fff;
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px #fff);
+  transition: color 0.2s, filter 0.2s;
+  z-index: 2;
+}
+.fechar-modal:hover {
+  color: #e63946;
+  filter: drop-shadow(0 0 8px #fff);
+}
+
+.modal-experiencia h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  /* Removido o text-shadow para tirar o efeito neon do texto */
+}
+
+.modal-experiencia .experiencia-periodo {
+  color: #bdbdbd;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.modal-experiencia ul {
+  margin-top: 1.2rem;
+  padding-left: 1.2rem;
+  color: #e0e0e0;
+}
+
+.modal-experiencia li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .modal-experiencia {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    max-width: 98vw;
+  }
+}
+
+.experiencia-clickable {
+  transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+}
+
+.experiencia-clickable:hover {
+  background: #23232b;
+  box-shadow: 0 0 2px 2px #fff, 0 0 4px 4px #fff2;
+  /* NÃO altere a cor do texto! */
+} 
+
+.painel-experiencia {
+  background: #18181f;
+  color: #fff;
+  margin: 2.5rem auto 2rem auto;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-radius: 18px;
+  max-width: 920px;
+  width: 92vw;
+  box-shadow: 0 0 14px 1px #fff, 0 0 60px 8px #fff2;
+  border: 0.1px solid #fff;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 10;
+  animation: painelGrow 0.5s cubic-bezier(.4,1.6,.6,1) both;
+}
+
+@keyframes painelGrow {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.painel-experiencia h2 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.painel-experiencia .experiencia-periodo {
+  color: #bdbdbd;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.painel-experiencia ul {
+  margin-top: 1.2rem;
+  padding-left: 1.2rem;
+  color: #e0e0e0;
+}
+
+.painel-experiencia li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.painel-experiencia .fechar-modal {
+  position: absolute;
+  top: 14px;
+  right: 22px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #fff;
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px #fff);
+  transition: color 0.2s, filter 0.2s;
+  z-index: 2;
+}
+.painel-experiencia .fechar-modal:hover {
+  color: #e63946;
+  filter: drop-shadow(0 0 8px #fff);
+}
+
+@media (max-width: 600px) {
+  .painel-experiencia {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    max-width: 98vw;
+  }
+} 
