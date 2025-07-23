@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './TelaInicio.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import curriculo from '../Arquivos/Curriculo_Gabriel.pdf';
+import CV from '../Arquivos/Curriculo_Gabriel.pdf';
 import europass from '../Arquivos/Europass.pdf';
+import coverletter from '../Arquivos/Carta_Apresentacao_Gabriel_Sales.pdf'
 import { motion } from 'framer-motion';
 
 
@@ -32,7 +33,7 @@ const TypeWriter = ({ text, delay = 100, className }) => {
 const TelaInicio = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = curriculo;
+    link.href = CV;
     link.download = 'Curriculo_Gabriel_Sales.pdf';
     document.body.appendChild(link);
     link.click();
@@ -43,6 +44,15 @@ const TelaInicio = () => {
     const link = document.createElement('a');
     link.href = europass;
     link.download = 'Europass.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleDownloadcoverletter = () => {
+    const link = document.createElement('a');
+    link.href = coverletter;
+    link.download = 'coverletter.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -84,20 +94,29 @@ const TelaInicio = () => {
         <motion.button
           className="botao-curriculo"
           onClick={handleDownload}
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1.8, delay: 0.9, ease: 'easeOut' }}
+          initial={{ y: -60, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.7, ease: 'easeOut' }}
         >
-          Currículo
+          Curriculum Vitae
         </motion.button>
         <motion.button
           className="botao-curriculo"
           onClick={handleDownloadEuropass}
-          initial={{ x: 100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1.8, delay: 0.9, ease: 'easeOut' }}
+          initial={{ y: -60, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 1.0, ease: 'easeOut' }}
         >
           Europass
+        </motion.button>
+        <motion.button
+          className="botao-curriculo"
+          onClick={handleDownloadcoverletter}
+          initial={{ y: -60, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 1.3, ease: 'easeOut' }}
+        >
+          Cover Letter
         </motion.button>
       </div>
       <motion.div
