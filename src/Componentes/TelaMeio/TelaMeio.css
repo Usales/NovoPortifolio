@@ -275,6 +275,38 @@ h2 {
     color: #ffffff;
 }
 
+/* Tooltip para experiências */
+.habilidade-item {
+    position: relative;
+}
+
+.habilidade-item[data-experiencia]::after {
+    content: attr(data-experiencia);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #64ffda;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid #64ffda;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.habilidade-item[data-experiencia]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
 @media (max-width: 768px) {
     .tela-meio {
         padding: 2rem 1rem;

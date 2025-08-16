@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './TelaMeio.css';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiVscodium, SiSpringboot, SiAxios, SiSwagger, SiSupabase } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt, FaLinux, FaLaptopCode, FaHeadset, FaCogs, FaCode } from 'react-icons/fa';
+import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiVscodium, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux } from 'react-icons/si';
 import projeto1 from '../Imagens/projeto1.png';
 import projeto2 from '../Imagens/projeto2.png';
 import projeto3 from '../Imagens/projeto3.png';
@@ -194,6 +194,9 @@ const TelaMeio = () => {
         { nome: "Postman", icone: <SiPostman /> },
         { nome: "Axios", icone: <SiAxios /> },
         { nome: "Windows", icone: <div style={{fontSize: '3rem', color: '#64ffda', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>⊞</div> },
+        { nome: "Linux", icone: <FaLinux /> },
+        { nome: "Ubuntu", icone: <SiUbuntu /> },
+        { nome: "Kali Linux", icone: <SiKalilinux /> },
         { nome: "IntelliJ IDEA", icone: <SiJetbrains /> },
         { nome: "VS Code", icone: <SiVscodium /> },
       ]
@@ -204,6 +207,14 @@ const TelaMeio = () => {
         { nome: "Figma", icone: <SiFigma /> },
         { nome: "Canva", icone: <SiCanva /> },
         { nome: "Photoshop", icone: <SiAdobephotoshop /> },
+      ]
+    },
+    {
+      categoria: "Experiências",
+      items: [
+        { nome: "FullStack", icone: <FaLaptopCode />, experiencia: "1 ano" },
+        { nome: "Suporte de TI", icone: <FaHeadset />, experiencia: "3 anos" },
+        { nome: "Low-Code | ChatBots", icone: <FaCode />, experiencia: "1 ano" },
       ]
     }
   ];
@@ -240,7 +251,11 @@ const TelaMeio = () => {
             <h3 className="titulo-categoria">{categoria.categoria}</h3>
             <div className="grid-habilidades">
               {categoria.items.map((item, itemIndex) => (
-                <div key={itemIndex} className="habilidade-item">
+                <div 
+                  key={itemIndex} 
+                  className="habilidade-item"
+                  data-experiencia={item.experiencia}
+                >
                   <div className="icone">{item.icone}</div>
                   <span className="nome-habilidade">{item.nome}</span>
                 </div>
