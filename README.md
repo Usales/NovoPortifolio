@@ -1,6 +1,6 @@
 # Portfólio Gabriel Henriques Sales
 
-Bem-vindo ao meu portfólio! Este projeto foi desenvolvido em ReactJS para apresentar minhas habilidades, ferramentas, projetos e experiências como desenvolvedor Front-end.
+Bem-vindo ao meu portfólio! Este projeto foi desenvolvido em ReactJS para apresentar minhas habilidades, ferramentas, projetos e experiências como desenvolvedor.
 
 ## 🚀 Sobre o Projeto
 
