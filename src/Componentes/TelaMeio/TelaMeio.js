@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './TelaMeio.css';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt, FaLinux, FaLaptopCode, FaHeadset, FaCogs, FaCode } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiVscodium, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt, FaLinux, FaLaptopCode, FaHeadset, FaCogs, FaCode, FaChartBar, FaChartLine, FaChartPie, FaCodeBranch } from 'react-icons/fa';
+import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiVscodium, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux, SiZendesk, SiSlack } from 'react-icons/si';
+import { AiFillWindows } from 'react-icons/ai';
+import { VscVscode } from 'react-icons/vsc';
 import projeto1 from '../Imagens/projeto1.png';
 import projeto2 from '../Imagens/projeto2.png';
 import projeto3 from '../Imagens/projeto3.png';
@@ -193,12 +195,16 @@ const TelaMeio = () => {
         { nome: "Vite", icone: <SiVite /> },
         { nome: "Postman", icone: <SiPostman /> },
         { nome: "Axios", icone: <SiAxios /> },
-        { nome: "Windows", icone: <div style={{fontSize: '3rem', color: '#64ffda', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>⊞</div> },
+        { nome: "PowerBI", icone: <FaChartPie style={{color: '#64FFDA'}} /> },
+        { nome: "Windows", icone: <AiFillWindows style={{color: '#64ffda'}} /> },
         { nome: "Linux", icone: <FaLinux /> },
         { nome: "Ubuntu", icone: <SiUbuntu /> },
         { nome: "Kali Linux", icone: <SiKalilinux /> },
         { nome: "IntelliJ IDEA", icone: <SiJetbrains /> },
-        { nome: "VS Code", icone: <SiVscodium /> },
+        { nome: "VS Code", icone: <VscVscode /> },
+        { nome: "Zendesk", icone: <SiZendesk /> },
+        { nome: "GLPI", icone: <FaHeadset /> },
+        { nome: "Slack", icone: <SiSlack /> },
       ]
     },
     {
