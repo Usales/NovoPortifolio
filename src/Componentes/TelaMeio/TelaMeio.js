@@ -9,6 +9,7 @@ import projeto2 from '../Imagens/projeto2.png';
 import projeto3 from '../Imagens/projeto3.png';
 import projeto4 from '../Imagens/projeto04.png';
 import projeto5 from '../Imagens/projeto5.png';
+import projeto6 from '../Imagens/projeto6.png';
 import FormacaoAcademica from './FormacaoAcademica';
 import { motion } from 'framer-motion';
 
@@ -150,6 +151,19 @@ const TelaMeio = () => {
         { nome: "React", icone: <FaReact /> },
         { nome: "Vite", icone: <SiVite /> },
         { nome: "Supabase", icone: <SiSupabase /> }
+      ]
+    },
+    {
+      nome: "Atende+",
+      descricao: "Base de conhecimento para Suporte de TI",
+      imagem: projeto6,
+      link: "https://atende.netlify.app/",
+      tecnologias: [
+        { nome: "HTML5", icone: <FaHtml5 /> },
+        { nome: "CSS3", icone: <FaCss3Alt /> },
+        { nome: "JavaScript", icone: <FaJs /> },
+        { nome: "React", icone: <FaReact /> },
+        { nome: "Vite", icone: <SiVite /> }
       ]
     }];
 
