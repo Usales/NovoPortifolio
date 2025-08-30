@@ -71,7 +71,7 @@ const TelaInicio = () => {
           <span className="emoji">👋</span>
         </h1>
         <h2 className="cargo">
-          <TypeWriter text="Desenvolvedor Fullstack" className="typing-text" delay={50} />
+          <TypeWriter text="Desenvolvedor Fullstack | Suporte de TI & Helpdesk" className="typing-text" delay={50} />
         </h2>
         <div className="redes-sociais">
           <a 
