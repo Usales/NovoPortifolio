@@ -25,6 +25,169 @@
   min-width: 400px;
 }
 
+.nome {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+}
+
+.cargo {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 400;
+  opacity: 0.9;
+  text-align: center;
+  width: 100%;
+}
+
+.social-link {
+  color: #ffffff;
+  font-size: 3rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Desktop Large (>1200px) */
+@media (min-width: 1201px) {
+  .conteudo {
+    min-width: 500px;
+    padding: 4rem;
+  }
+  .nome {
+    font-size: 4rem;
+  }
+  .cargo {
+    font-size: 2.5rem;
+  }
+  .social-link {
+    font-size: 3.5rem;
+  }
+}
+
+/* Desktop (>1024px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .conteudo {
+    min-width: 450px;
+    padding: 3.5rem;
+  }
+  .nome {
+    font-size: 3.5rem;
+  }
+  .cargo {
+    font-size: 2.2rem;
+  }
+  .social-link {
+    font-size: 3.2rem;
+  }
+}
+
+/* Large Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .conteudo {
+    min-width: 380px;
+    padding: 3rem;
+  }
+  .nome {
+    font-size: 3rem;
+  }
+  .cargo {
+    font-size: 1.8rem;
+  }
+  .social-link {
+    font-size: 2.8rem;
+  }
+}
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .conteudo {
+    min-width: 320px;
+    padding: 2.5rem;
+  }
+  .nome {
+    font-size: 2.5rem;
+  }
+  .cargo {
+    font-size: 1.5rem;
+  }
+  .social-link {
+    font-size: 2.5rem;
+  }
+  .redes-sociais {
+    gap: 1.2rem;
+  }
+  .botao-curriculo {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+  .conteudo {
+    min-width: 280px;
+    width: 90vw;
+    padding: 2rem;
+  }
+  .nome {
+    font-size: 2rem;
+  }
+  .cargo {
+    font-size: 1.2rem;
+  }
+  .social-link {
+    font-size: 2.2rem;
+  }
+  .redes-sociais {
+    gap: 1rem;
+  }
+  .botao-curriculo {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  .scroll-indicator {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Ultra-small (≤320px) */
+@media (max-width: 320px) {
+  .conteudo {
+    min-width: unset;
+    width: 95vw;
+    padding: 1.5rem;
+  }
+  .nome {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+  .cargo {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  .social-link {
+    font-size: 2rem;
+  }
+  .redes-sociais {
+    gap: 0.8rem;
+  }
+  .botao-curriculo {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+  .scroll-indicator {
+    margin-top: 1rem;
+  }
+  .emoji {
+    font-size: 1.2rem;
+  }
+}
+
 .saudacao {
   display: flex;
   align-items: center;
@@ -170,104 +333,7 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .conteudo {
-    min-width: 350px;
-    padding: 2.5rem;
-  }
-  .nome {
-    font-size: 2.8rem;
-  }
-}
 
-@media (max-width: 1024px) {
-  .conteudo {
-    min-width: 300px;
-    padding: 2rem;
-  }
-  .nome {
-    font-size: 2.2rem;
-  }
-  .cargo {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .conteudo {
-    min-width: 220px;
-    padding: 1.2rem;
-  }
-  .nome {
-    font-size: 1.5rem;
-  }
-  .cargo {
-    font-size: 1rem;
-  }
-  .botao-curriculo {
-    font-size: 1rem;
-    padding: 0.7rem 1.2rem;
-  }
-  .redes-sociais {
-    gap: 0.7rem;
-  }
-  .scroll-indicator {
-    margin-top: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .conteudo {
-    min-width: unset;
-    width: 95vw;
-    padding: 0.5rem;
-    margin: 0.2rem;
-  }
-  .nome {
-    font-size: 1.1rem;
-  }
-  .cargo {
-    font-size: 0.9rem;
-  }
-  .botao-curriculo {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.7rem;
-  }
-  .redes-sociais {
-    gap: 0.4rem;
-  }
-  .scroll-indicator {
-    margin-top: 1rem;
-  }
-}
-
-@media (max-width: 380px) {
-  .conteudo {
-    min-width: unset;
-    width: 98vw;
-    padding: 0.2rem;
-    margin: 0.1rem;
-  }
-  .nome, .cargo {
-    font-size: 0.95rem;
-    word-break: break-word;
-    text-align: center;
-    white-space: normal;
-    line-height: 1.1;
-    width: 100%;
-    display: block;
-  }
-  .emoji {
-    font-size: 1.1rem;
-  }
-  .botao-curriculo {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.5rem;
-  }
-  .redes-sociais {
-    gap: 0.2rem;
-  }
-}
 
 @media (min-width: 769px) {
   .scroll-indicator {
