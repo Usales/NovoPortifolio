@@ -92,18 +92,126 @@ const FormacaoAcademica = () => {
 
       {/* Modal de Detalhes da Formação */}
       {formacaoSelecionada && (
-        <div className="modal-experiencia-overlay">
-          <div className="modal-experiencia">
+        <div className="modal-experiencia-overlay" onClick={() => setFormacaoSelecionada(null)}>
+          <div className="modal-experiencia" onClick={(e) => e.stopPropagation()} style={{
+            maxHeight: '90vh',
+            overflowY: 'auto',
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
             <button className="fechar-modal" onClick={() => setFormacaoSelecionada(null)}>&times;</button>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-              <img src={formacaoSelecionada.logo} alt={formacaoSelecionada.instituicao} style={{ width: '80px', height: '80px', objectFit: 'contain', borderRadius: '12px', background: '#fff', padding: '0.4rem' }} />
-              <h2 style={{ margin: 0, color: '#64ffda' }}>{formacaoSelecionada.instituicao}</h2>
-              <span className="experiencia-periodo">{formacaoSelecionada.periodo}</span>
-              <div style={{ color: '#bdbdbd', fontSize: '1.1rem' }}>{formacaoSelecionada.curso}</div>
+            
+            {/* Cabeçalho do Modal */}
+            <div style={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center', 
+              textAlign: 'center', 
+              gap: '1rem', 
+              marginBottom: '2rem',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+              paddingBottom: '1.5rem',
+              flexShrink: 0
+            }}>
+              <img 
+                src={formacaoSelecionada.logo} 
+                alt={formacaoSelecionada.instituicao} 
+                style={{ 
+                  width: '90px', 
+                  height: '90px', 
+                  objectFit: 'contain', 
+                  borderRadius: '15px', 
+                  background: '#fff', 
+                  padding: '0.5rem',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+                }} 
+              />
+              <h2 style={{ 
+                margin: 0, 
+                color: '#64ffda', 
+                fontSize: '1.8rem',
+                fontWeight: '600' 
+              }}>
+                {formacaoSelecionada.instituicao}
+              </h2>
+              <span className="experiencia-periodo" style={{ 
+                fontSize: '1.1rem',
+                fontWeight: '500' 
+              }}>
+                {formacaoSelecionada.periodo}
+              </span>
+              <div style={{ 
+                color: '#e0e0e0', 
+                fontSize: '1.2rem', 
+                fontWeight: '500',
+                textAlign: 'center'
+              }}>
+                {formacaoSelecionada.curso}
+              </div>
             </div>
-            <div className="modal-experiencia-conteudo-scroll">
-              <div style={{ whiteSpace: 'pre-line', color: '#fff', fontSize: '1rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>{formacaoSelecionada.descricao}</div>
-              <div style={{ color: '#64ffda', fontSize: '1rem' }}><b>Competências:</b> {formacaoSelecionada.competencias}</div>
+            
+            {/* Conteúdo do Modal */}
+            <div style={{
+              flex: '1',
+              overflowY: 'auto',
+              paddingRight: '0.5rem',
+              minHeight: 0
+            }}>
+              {/* Descrição */}
+              <div style={{ 
+                marginBottom: '2rem' 
+              }}>
+                <h3 style={{ 
+                  color: '#64ffda', 
+                  fontSize: '1.3rem', 
+                  marginBottom: '1rem',
+                  borderLeft: '3px solid #64ffda',
+                  paddingLeft: '1rem'
+                }}>
+                  Sobre a Formação
+                </h3>
+                <div style={{ 
+                  whiteSpace: 'pre-line', 
+                  color: '#fff', 
+                  fontSize: '1rem', 
+                  lineHeight: '1.7',
+                  textAlign: 'left'
+                }}>
+                  {formacaoSelecionada.descricao}
+                </div>
+              </div>
+              
+              {/* Competências */}
+              {formacaoSelecionada.competencias && (
+                <div style={{ 
+                  marginBottom: '3rem',
+                  paddingBottom: '2rem'
+                }}>
+                  <h3 style={{ 
+                    color: '#64ffda', 
+                    fontSize: '1.3rem', 
+                    marginBottom: '1rem',
+                    borderLeft: '3px solid #64ffda',
+                    paddingLeft: '1rem'
+                  }}>
+                    Competências Desenvolvidas
+                  </h3>
+                  <div style={{ 
+                    color: '#e0e0e0', 
+                    fontSize: '1rem',
+                    lineHeight: '1.8',
+                    textAlign: 'left',
+                    padding: '1.5rem',
+                    backgroundColor: 'rgba(100, 255, 218, 0.1)',
+                    borderRadius: '10px',
+                    border: '1px solid rgba(100, 255, 218, 0.2)',
+                    wordWrap: 'break-word',
+                    whiteSpace: 'normal'
+                  }}>
+                    {formacaoSelecionada.competencias}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
