@@ -755,12 +755,8 @@ h2 {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 1rem;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out 0.3s;
-}
-
-.card-projeto:hover .tecnologias-container {
     opacity: 1;
+    transition: opacity 0.4s ease-in-out 0.3s;
 }
 
 .tech-card {
@@ -833,8 +829,8 @@ h2 {
 }
 
 .foto-sobre-mim {
-    width: 220px;
-    height: 280px;
+    width: 440px;
+    height: 560px;
     object-fit: cover;
     border-radius: 5%;
     border: 1px solid #64ffda;
@@ -845,12 +841,17 @@ h2 {
 .sobre-mim-texto {
     flex: 2;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.7;
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+}
+
+.sobre-mim-texto strong {
+    font-weight: 700;
+    color: #64ffda;
 }
 
 /* Desktop Large (>1200px) */
@@ -864,7 +865,7 @@ h2 {
         height: 320px;
     }
     .sobre-mim-texto {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 }
 
@@ -879,7 +880,7 @@ h2 {
         height: 260px;
     }
     .sobre-mim-texto {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 

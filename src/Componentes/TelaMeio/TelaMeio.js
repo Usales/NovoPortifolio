@@ -11,7 +11,6 @@ import projeto4 from '../Imagens/projeto04.png';
 import projeto5 from '../Imagens/projeto5.png';
 import projeto6 from '../Imagens/projeto6.png';
 import FormacaoAcademica from './FormacaoAcademica';
-import { motion } from 'framer-motion';
 
 
 const experienciasDetalhadas = [
@@ -209,8 +208,8 @@ const TelaMeio = () => {
         { nome: "Vite", icone: <SiVite /> },
         { nome: "Postman", icone: <SiPostman /> },
         { nome: "Axios", icone: <SiAxios /> },
-        { nome: "PowerBI", icone: <FaChartPie style={{color: '#64FFDA'}} /> },
-        { nome: "Windows", icone: <AiFillWindows style={{color: '#64ffda'}} /> },
+        { nome: "PowerBI", icone: <FaChartPie style={{ color: '#64FFDA' }} /> },
+        { nome: "Windows", icone: <AiFillWindows style={{ color: '#64ffda' }} /> },
         { nome: "Linux", icone: <FaLinux /> },
         { nome: "Ubuntu", icone: <SiUbuntu /> },
         { nome: "Kali Linux", icone: <SiKalilinux /> },
@@ -241,38 +240,20 @@ const TelaMeio = () => {
 
   const [experienciaSelecionada, setExperienciaSelecionada] = useState(null);
 
-  const MotionH2 = ({ children, delay = 0 }) => (
-    <motion.h2
-      className="titulo-projetos"
-      initial={{ y: -60, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      exit={{ y: -60, opacity: 0 }}
-      transition={{ duration: 0.7, delay, ease: 'easeOut' }}
-      viewport={{ once: false, amount: 0.7 }}
-    >
-      {children}
-    </motion.h2>
-  );
-
   return (
     <div className="tela-meio">
       {/* <h2 className="titulo-habilidades">Habilidades e Ferramentas</h2> */}
       <div className="container-habilidades">
         {habilidades.map((categoria, index) => (
-          <motion.div
+          <div
             key={index}
             className="categoria"
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            exit={{ x: -80, opacity: 0 }}
-            transition={{ duration: 0.7, delay: index * 0.18, ease: 'easeOut' }}
-            viewport={{ once: false, amount: 0.3 }}
           >
             <h3 className="titulo-categoria">{categoria.categoria}</h3>
             <div className="grid-habilidades">
               {categoria.items.map((item, itemIndex) => (
-                <div 
-                  key={itemIndex} 
+                <div
+                  key={itemIndex}
                   className="habilidade-item"
                   data-experiencia={item.experiencia}
                 >
@@ -281,24 +262,19 @@ const TelaMeio = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
-      <MotionH2 delay={0.1}>Projetos</MotionH2>
+      <h2 className="titulo-projetos">Projetos</h2>
       <div className="container-projetos">
         {projetos.map((projeto, index) => (
-          <motion.a
+          <a
             key={index}
             href={projeto.link}
             target="_blank"
             rel="noopener noreferrer"
             className="card-projeto"
-            initial={{ scale: 0.6, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.10, opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 + index * 0.13, ease: 'easeOut' }}
-            viewport={{ once: false, amount: 0.3 }}
           >
             <div className="imagem-container">
               <img src={projeto.imagem} alt={projeto.nome} className="imagem-projeto" />
@@ -315,79 +291,74 @@ const TelaMeio = () => {
                 </div>
               </div>
             </div>
-          </motion.a>
+          </a>
         ))}
       </div>
 
       {/* Seção Sobre Mim */}
-      <MotionH2 delay={0.2}>Sobre Mim</MotionH2>
+      <h2 className="titulo-projetos">Sobre Mim</h2>
       <div className="container-sobre-mim">
         <div className="sobre-mim-foto">
           <img src={require('../Imagens/foto.png')} alt="Gabriel Henriques Sales" className="foto-sobre-mim" />
         </div>
         <div className="sobre-mim-texto">
           <p>
-            Sou Gabriel Henriques Sales, desenvolvedor FullStack de 21 anos, com experiência no desenvolvimento de interfaces web, design de telas e suporte técnico. Tenho conhecimento em Angular, React, Tailwind CSS, TypeScript, JavaScript, HTML5, CSS3 e ferramentas de design como Figma e Photoshop.
+            Sou Gabriel Henrique Sales, desenvolvedor Full Stack e profissional de Suporte de TI, atuo front-end com CSS3, JavaScript, TypeScript, Tailwind, Styled Components e outras tecnologias, criando interfaces modernas, responsivas, acessíveis utilizando IA para aperfeiçoa-las.
           </p>
           <p>
-            Atualmente trabalho como Suporte de TI, mas continuo buscando minha vaga com foco em desenvolvimento enquanto melhoro e prático minhas habilidades com foco na criação de interfaces responsivas, acessíveis e visualmente funcionais.
+            No back-end, tenho experiência no desenvolvimento e integração de APIs REST, modelagem e manipulação de dados, além de práticas de boas arquiteturas. Já atuei também no suporte de TI, suporte técnico, helpdesk e manutenção de redes, garantindo a disponibilidade e a segurança de sistemas, além de atender usuários com ferramentas como Zendesk, GLPI e Jira.
           </p>
           <p>
-            Consigo me comunicar em Português, Inglês, Espanhol e entendo Italiano e Japonês.
+            Sou fluente em português, possuo inglês avançado e conhecimentos em japonês e italiano. Além disso, tenho habilidades em UX/UI, design gráfico e análise de dados com Power BI.
           </p>
         </div>
       </div>
-      
-     {/* Seção Experiências */}
-     <MotionH2 delay={0.3}>Experiências</MotionH2>
-     <div className="container-experiencias">
-       {experienciasDetalhadas.map((exp, idx) => (
-         <motion.div
-           key={idx}
-           className="experiencia-item experiencia-clickable"
-           onClick={() => setExperienciaSelecionada(exp)}
-           style={{ cursor: 'pointer' }}
-           initial={{ x: -80, opacity: 0 }}
-           whileInView={{ x: 0, opacity: 1 }}
-           exit={{ x: -80, opacity: 0 }}
-           transition={{ duration: 0.7, delay: idx * 0.18, ease: 'easeOut' }}
-           viewport={{ once: false, amount: 0.3 }}
-         >
-           <h3>{exp.titulo}</h3>
-           <span className="experiencia-periodo">{exp.periodo}</span>
-           <p>{exp.resumo}</p>
-         </motion.div>
-       ))}
-     </div>
 
-     {/* Modal de Detalhes da Experiência */}
-     {experienciaSelecionada && (
-       <div className="modal-experiencia-overlay">
-         <div className="modal-experiencia">
-           <button className="fechar-modal" onClick={() => setExperienciaSelecionada(null)}>&times;</button>
-           <h2>{experienciaSelecionada.titulo}</h2>
-           {experienciaSelecionada.local && (
-             <span className="experiencia-periodo">{experienciaSelecionada.local}</span>
-           )}
-           <span className="experiencia-periodo">{experienciaSelecionada.periodo}</span>
-           <p>{experienciaSelecionada.resumo}</p>
-           <div className="modal-experiencia-conteudo-scroll">
-             <ul>
-               {experienciaSelecionada.detalhes.map((det, i) => (
-                 <li key={i}>{det}</li>
-               ))}
-             </ul>
-           </div>
-         </div>
-       </div>
-     )}
+      {/* Seção Experiências */}
+      <h2 className="titulo-projetos">Experiências</h2>
+      <div className="container-experiencias">
+        {experienciasDetalhadas.map((exp, idx) => (
+          <div
+            key={idx}
+            className="experiencia-item experiencia-clickable"
+            onClick={() => setExperienciaSelecionada(exp)}
+            style={{ cursor: 'pointer' }}
+          >
+            <h3>{exp.titulo}</h3>
+            <span className="experiencia-periodo">{exp.periodo}</span>
+            <p>{exp.resumo}</p>
+          </div>
+        ))}
+      </div>
 
-     {/* Seção Certificações */}
-     {/* Adicione aqui o componente de certificações, se necessário */}
+      {/* Modal de Detalhes da Experiência */}
+      {experienciaSelecionada && (
+        <div className="modal-experiencia-overlay">
+          <div className="modal-experiencia">
+            <button className="fechar-modal" onClick={() => setExperienciaSelecionada(null)}>&times;</button>
+            <h2>{experienciaSelecionada.titulo}</h2>
+            {experienciaSelecionada.local && (
+              <span className="experiencia-periodo">{experienciaSelecionada.local}</span>
+            )}
+            <span className="experiencia-periodo">{experienciaSelecionada.periodo}</span>
+            <p>{experienciaSelecionada.resumo}</p>
+            <div className="modal-experiencia-conteudo-scroll">
+              <ul>
+                {experienciaSelecionada.detalhes.map((det, i) => (
+                  <li key={i}>{det}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
 
-     {/* Seção Formação Acadêmica */}
-     <MotionH2 delay={0.4}>Formação Acadêmica</MotionH2>
-     <FormacaoAcademica />
+      {/* Seção Certificações */}
+      {/* Adicione aqui o componente de certificações, se necessário */}
+
+      {/* Seção Formação Acadêmica */}
+      <h2 className="titulo-projetos">Formação Acadêmica</h2>
+      <FormacaoAcademica />
     </div>
   );
 };

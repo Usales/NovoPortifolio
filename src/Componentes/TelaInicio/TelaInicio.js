@@ -3,7 +3,7 @@ import './TelaInicio.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import CV from '../Arquivos/Curriculo_Gabriel.pdf';
 import europass from '../Arquivos/Europass.pdf';
-import coverletter from '../Arquivos/Carta_Apresentacao_Gabriel_Sales.pdf'
+import coverletter from '../Arquivos/Carta_Apresentacao_Gabriel_Sales.pdf';
 import { motion } from 'framer-motion';
 
 
@@ -64,7 +64,7 @@ const TelaInicio = () => {
         className="conteudo"
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
+        transition={{ duration: 1.2, ease: 'easeOut', delay: 0 }}
       >
         <h1 className="nome">
           <TypeWriter text="Gabriel Henriques Sales" className="typing-text" delay={100} />
@@ -96,7 +96,7 @@ const TelaInicio = () => {
           onClick={handleDownload}
           initial={{ y: -60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 1.5 }}
         >
           Curriculum Vitae
         </motion.button>
@@ -105,7 +105,7 @@ const TelaInicio = () => {
           onClick={handleDownloadEuropass}
           initial={{ y: -60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 1.0, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 2.0 }}
         >
           Europass
         </motion.button>
@@ -114,7 +114,7 @@ const TelaInicio = () => {
           onClick={handleDownloadcoverletter}
           initial={{ y: -60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.7, delay: 1.3, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 2.5 }}
         >
           Cover Letter
         </motion.button>
@@ -123,7 +123,7 @@ const TelaInicio = () => {
         className="scroll-indicator"
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1.8, delay: 2.9, ease: 'easeOut' }}
+        transition={{ duration: 1.0, ease: 'easeOut', delay: 4.0 }}
       >
         <div className="mouse">
           <div className="wheel"></div>

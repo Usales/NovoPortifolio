@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TelaMeio.css';
 import logoSenaiFatesg from '../Imagens/faculdade_senai_fatesg_logo.jpeg';
 import logoSensu from '../Imagens/faculdadesensu_logo.jpeg';
 import logoCpmGo from '../Imagens/LOGO-CEPMG.png';
 import logoSenac from '../Imagens/senacbrasil_logo.jpeg';
 import logoBasileu from '../Imagens/logo_basileu.png';
-import { motion } from 'framer-motion';
 
 const formacoes = [
   {
@@ -70,42 +69,45 @@ Trabalhos em grupo e projetos integradores promoveram o desenvolvimento de habil
   }
 ];
 
-const MotionH2 = ({ children, delay = 0 }) => (
-  <motion.h2
-    className="titulo-projetos"
-    initial={{ y: -60, opacity: 0 }}
-    whileInView={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.7, delay, ease: 'easeOut' }}
-    viewport={{ once: true, amount: 0.7 }}
-  >
-    {children}
-  </motion.h2>
-);
-
 const FormacaoAcademica = () => {
+  const [formacaoSelecionada, setFormacaoSelecionada] = useState(null);
+
   return (
     <div className="formacao-academica">
       <div className="container-experiencias">
         {formacoes.map((form, idx) => (
-          <motion.div
+          <div
             className="experiencia-item experiencia-clickable"
             key={idx}
-            style={{ flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1.2rem', display: 'flex' }}
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            exit={{ x: -80, opacity: 0 }}
-            transition={{ duration: 0.7, delay: idx * 0.18, ease: 'easeOut' }}
-            viewport={{ once: false, amount: 0.3 }}
+            onClick={() => setFormacaoSelecionada(form)}
+            style={{ cursor: 'pointer', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1.2rem', display: 'flex' }}
           >
             <img src={form.logo} alt={form.instituicao} style={{ width: '70px', height: '70px', objectFit: 'contain', borderRadius: '12px', background: '#fff', padding: '0.3rem', marginBottom: '0.7rem' }} />
-            <h3 style={{ margin: 0 }}>{form.instituicao}</h3>
+            <h3 style={{ margin: 0, color: '#64ffda' }}>{form.instituicao}</h3>
             <span className="experiencia-periodo">{form.periodo}</span>
             <div style={{ color: '#bdbdbd', fontSize: '1rem', marginBottom: '0.5rem' }}>{form.curso}</div>
-            <div style={{ whiteSpace: 'pre-line', color: '#fff', fontSize: '1rem', marginBottom: '0.5rem' }}>{form.descricao}</div>
-            <div style={{ color: '#64ffda', fontSize: '0.95rem' }}><b>Competências:</b> {form.competencias}</div>
-          </motion.div>
+          </div>
         ))}
       </div>
+
+      {/* Modal de Detalhes da Formação */}
+      {formacaoSelecionada && (
+        <div className="modal-experiencia-overlay">
+          <div className="modal-experiencia">
+            <button className="fechar-modal" onClick={() => setFormacaoSelecionada(null)}>&times;</button>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+              <img src={formacaoSelecionada.logo} alt={formacaoSelecionada.instituicao} style={{ width: '80px', height: '80px', objectFit: 'contain', borderRadius: '12px', background: '#fff', padding: '0.4rem' }} />
+              <h2 style={{ margin: 0, color: '#64ffda' }}>{formacaoSelecionada.instituicao}</h2>
+              <span className="experiencia-periodo">{formacaoSelecionada.periodo}</span>
+              <div style={{ color: '#bdbdbd', fontSize: '1.1rem' }}>{formacaoSelecionada.curso}</div>
+            </div>
+            <div className="modal-experiencia-conteudo-scroll">
+              <div style={{ whiteSpace: 'pre-line', color: '#fff', fontSize: '1rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>{formacaoSelecionada.descricao}</div>
+              <div style={{ color: '#64ffda', fontSize: '1rem' }}><b>Competências:</b> {formacaoSelecionada.competencias}</div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
