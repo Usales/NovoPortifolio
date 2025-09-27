@@ -10,6 +10,7 @@ import projeto3 from '../Imagens/projeto3.png';
 import projeto4 from '../Imagens/projeto04.png';
 import projeto5 from '../Imagens/projeto5.png';
 import projeto6 from '../Imagens/projeto6.png';
+import projeto7 from '../Imagens/projeto7.png';
 import FormacaoAcademica from './FormacaoAcademica';
 
 
@@ -163,6 +164,21 @@ const TelaMeio = () => {
         { nome: "JavaScript", icone: <FaJs /> },
         { nome: "React", icone: <FaReact /> },
         { nome: "Vite", icone: <SiVite /> }
+      ]
+    },
+    {
+      nome: "FoodDidDo",
+      descricao: "Base de Receitas",
+      imagem: projeto7,
+      link: "https://fooddiddo.netlify.app/",
+      tecnologias: [
+        { nome: "HTML5", icone: <FaHtml5 /> },
+        { nome: "CSS3", icone: <FaCss3Alt /> },
+        { nome: "JavaScript", icone: <FaJs /> },
+        { nome: "React", icone: <FaReact /> },
+        { nome: "Vite", icone: <SiVite /> },
+        { nome: "API", icone: <SiSwagger /> },
+        { nome: "Supabase", icone: <SiSupabase />}
       ]
     }];
 
