@@ -51,7 +51,7 @@ const experienciasDetalhadas = [
     ]
   },
   {
-    titulo: "Analista de Suporte Técnico N2 - OMNICHANEL - TI SOLUTIONS TECH INOVATIONS LTDA",
+    titulo: "Analista de Suporte Técnico N3 - OMNICHANEL - TI SOLUTIONS TECH INOVATIONS LTDA",
     logo: logoTiSolutions,
     periodo: "ago de 2025 - Atual · 2 meses",
     local: "Travessa Kalil Karan, 110 - Alto da Rua Xv, Curitiba - PR, 80.045-285",
