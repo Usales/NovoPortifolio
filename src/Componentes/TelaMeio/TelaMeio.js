@@ -289,9 +289,6 @@ const TelaMeio = () => {
         { nome: "AnyDesk", icone: <SiAnydesk /> },
         { nome: "Zendesk", icone: <SiZendesk /> },
         { nome: "Jira", icone: <FaJira /> },
-        { nome: "ServiceNow", icone: <FaCogs /> },
-        { nome: "Lansweeper", icone: <FaCogs /> },
-        { nome: "FLUIG", icone: <FaCogs /> },
         
         // Desenvolvimento
         { nome: "Git", icone: <FaGitAlt /> },
