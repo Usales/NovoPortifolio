@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './TelaInicio.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import CV from '../Arquivos/Curriculo_Gabriel.pdf';
+import CVEnglish from '../Arquivos/Curriculo_Gabriel_Inglês.pdf';
 import europass from '../Arquivos/Europass.pdf';
 import coverletter from '../Arquivos/Carta_Apresentacao_Gabriel_Sales.pdf';
 import { motion } from 'framer-motion';
@@ -58,6 +59,15 @@ const TelaInicio = () => {
     document.body.removeChild(link);
   };
 
+  const handleDownloadEnglishCV = () => {
+    const link = document.createElement('a');
+    link.href = CVEnglish;
+    link.download = 'Curriculo_Gabriel_Inglês.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="tela-inicio">
       <motion.div
@@ -98,7 +108,16 @@ const TelaInicio = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 1.5 }}
         >
-          Curriculum Vitae
+          CV Português
+        </motion.button>
+        <motion.button
+          className="botao-curriculo"
+          onClick={handleDownloadEnglishCV}
+          initial={{ y: -60, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 1.8 }}
+        >
+          CV inglês
         </motion.button>
         <motion.button
           className="botao-curriculo"
