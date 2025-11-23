@@ -124,7 +124,7 @@
   .redes-sociais {
     gap: 1.2rem;
   }
-  /* O grid 2x2 já está definido na media query específica acima */
+  /* O grid 4x1 já está definido na media query específica acima */
 }
 
 /* Mobile (≤480px) */
@@ -146,11 +146,11 @@
   .redes-sociais {
     gap: 1rem;
   }
-  /* O grid 2x2 já está definido nas media queries específicas acima */
+  /* Grid 4x1 para mobile - 4 colunas em uma linha */
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
   }
   .scroll-indicator {
     margin-top: 1.5rem;
@@ -178,11 +178,11 @@
   .redes-sociais {
     gap: 0.8rem;
   }
-  /* Grid 2x2 para telas muito pequenas */
+  /* Grid 4x1 para telas muito pequenas - 4 colunas em uma linha */
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
   }
   .scroll-indicator {
     margin-top: 1rem;
@@ -442,15 +442,15 @@
   margin-top: 2rem;
 }
 
-/* Mobile e Tablet - Grid 2x2 para botões CV (aplicado em todas as versões mobile e tablet em retrato) */
+/* Mobile e Tablet - Grid 4x1 para botões CV (aplicado em todas as versões mobile e tablet em retrato) */
 /* Cobre: iPhone SE (375px), iPhone 13 (390px), iPhone XR (414px), iPhone 12 Pro (390px), 
    iPhone 14 Pro Max (430px), Pixel 7 (412px), Galaxy S8+ (360px), Galaxy S20 Ultra (412px), 
    Galaxy A30s (360px) e todos os outros até 768px */
 @media screen and (max-width: 768px) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 0.8rem;
     width: 100%;
     max-width: 100%;
@@ -471,8 +471,8 @@
 @media screen and (max-width: 375px) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 0.7rem;
     padding: 0 0.8rem;
   }
@@ -488,8 +488,8 @@
 @media screen and (min-width: 376px) and (max-width: 390px) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 0.8rem;
     padding: 0 1rem;
   }
@@ -505,8 +505,8 @@
 @media screen and (min-width: 391px) and (max-width: 430px) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 0.9rem;
     padding: 0 1.2rem;
   }
@@ -522,8 +522,8 @@
 @media screen and (min-width: 431px) and (max-width: 480px) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 1rem;
     padding: 0 1.3rem;
   }
@@ -539,8 +539,8 @@
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 1.1rem;
     padding: 0 1.5rem;
     max-width: 500px;
@@ -555,12 +555,12 @@
   }
 }
 
-/* Orientação paisagem em mobile - manter grid 2x2 */
+/* Orientação paisagem em mobile - manter grid 4x1 */
 @media screen and (max-width: 768px) and (orientation: landscape) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 0.7rem;
     padding: 0 0.8rem;
   }
