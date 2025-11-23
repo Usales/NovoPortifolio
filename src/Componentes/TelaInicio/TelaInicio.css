@@ -96,9 +96,9 @@
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.6rem;
     width: 100%;
-    max-width: 450px;
+    max-width: 350px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 2.5rem;
@@ -107,8 +107,8 @@
   .botao-curriculo {
     margin-top: 0 !important;
     width: 100%;
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -131,9 +131,9 @@
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 0.8rem;
+    gap: 0.5rem;
     width: 100%;
-    max-width: 380px;
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 2rem;
@@ -142,8 +142,8 @@
   .botao-curriculo {
     margin-top: 0 !important;
     width: 100%;
-    padding: 0.7rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -447,9 +447,9 @@
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 0.8rem;
+    gap: 0.5rem;
     width: 100%;
-    max-width: 380px;
+    max-width: 300px;
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
@@ -460,8 +460,8 @@
   .botao-curriculo {
     margin-top: 0 !important;
     width: 100%;
-    padding: 0.7rem 1rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.7rem;
   }
   
   .scroll-indicator {
