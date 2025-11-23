@@ -74,18 +74,19 @@
     display: grid !important;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    gap: 0.5rem;
+    gap: 0.4rem;
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 2rem;
     justify-content: unset;
   }
   .botao-curriculo {
     margin-top: 0 !important;
     width: 100%;
-    padding: 0.5rem 0.6rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem;
+    font-size: 0.75rem;
   }
 }
 
