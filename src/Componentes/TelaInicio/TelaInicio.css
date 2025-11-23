@@ -79,8 +79,12 @@
     max-width: 450px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 2rem;
+    padding: 1rem;
     justify-content: unset;
+    background: rgba(255, 0, 0, 0.2);
+    border: 2px solid rgba(255, 0, 0, 0.6);
+    border-radius: 15px;
+    box-sizing: border-box;
   }
   .botao-curriculo {
     margin-top: 0 !important;
@@ -101,8 +105,12 @@
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 2.5rem;
+    padding: 1rem;
     justify-content: unset;
+    background: rgba(255, 0, 0, 0.2);
+    border: 2px solid rgba(255, 0, 0, 0.6);
+    border-radius: 15px;
+    box-sizing: border-box;
   }
   .botao-curriculo {
     margin-top: 0 !important;
@@ -136,8 +144,12 @@
     max-width: 420px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 2rem;
+    padding: 1rem;
     justify-content: unset;
+    background: rgba(255, 0, 0, 0.2);
+    border: 2px solid rgba(255, 0, 0, 0.6);
+    border-radius: 15px;
+    box-sizing: border-box;
   }
   .botao-curriculo {
     margin-top: 0 !important;
@@ -453,8 +465,12 @@
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 2rem;
+    padding: 1rem;
     justify-content: unset;
+    background: rgba(255, 0, 0, 0.2);
+    border: 2px solid rgba(255, 0, 0, 0.6);
+    border-radius: 15px;
+    box-sizing: border-box;
   }
   
   .botao-curriculo {
@@ -565,6 +581,11 @@
   margin-top: 2rem;
   width: 100%;
   max-width: 100%;
+  background: rgba(255, 0, 0, 0.2);
+  border: 2px solid rgba(255, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 /* Mobile e Tablet - Grid 4x1 para botões CV (aplicado em todas as versões mobile e tablet em retrato) */
