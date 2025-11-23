@@ -70,6 +70,42 @@
   .social-link {
     font-size: 3.5rem;
   }
+  .botoes-curriculo {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: unset;
+  }
+  .botao-curriculo {
+    margin-top: 0 !important;
+    width: 100%;
+  }
+}
+
+/* Desktop Extra Large (>1920px) */
+@media (min-width: 1921px) {
+  .botoes-curriculo {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: unset;
+  }
+  .botao-curriculo {
+    margin-top: 0 !important;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    font-size: 1.3rem;
+  }
 }
 
 /* Desktop (>1024px) */
@@ -86,6 +122,21 @@
   }
   .social-link {
     font-size: 3.2rem;
+  }
+  .botoes-curriculo {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: unset;
+  }
+  .botao-curriculo {
+    margin-top: 0 !important;
+    width: 100%;
   }
 }
 
@@ -386,8 +437,21 @@
   }
   
   .botoes-curriculo {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 750px;
     margin-top: 2rem;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: unset;
+  }
+  
+  .botao-curriculo {
+    margin-top: 0 !important;
+    width: 100%;
   }
   
   .scroll-indicator {
@@ -400,6 +464,21 @@
   .tela-inicio {
     align-items: center;
     justify-content: center;
+  }
+  .botoes-curriculo {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: unset;
+  }
+  .botao-curriculo {
+    margin-top: 0 !important;
+    width: 100%;
   }
 }
 
