@@ -72,25 +72,21 @@
   }
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    gap: 0.4rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.8rem;
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem;
+    padding: 0 2rem;
     justify-content: unset;
-    background: rgba(255, 0, 0, 0.2);
-    border: 2px solid rgba(255, 0, 0, 0.6);
-    border-radius: 15px;
-    box-sizing: border-box;
   }
   .botao-curriculo {
     margin-top: 0 !important;
     width: 100%;
-    padding: 0.5rem 0.3rem;
-    font-size: 0.75rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -98,25 +94,21 @@
 @media (min-width: 1921px) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem;
+    padding: 0 2.5rem;
     justify-content: unset;
-    background: rgba(255, 0, 0, 0.2);
-    border: 2px solid rgba(255, 0, 0, 0.6);
-    border-radius: 15px;
-    box-sizing: border-box;
   }
   .botao-curriculo {
     margin-top: 0 !important;
     width: 100%;
-    padding: 0.5rem 0.4rem;
-    font-size: 0.8rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -137,25 +129,21 @@
   }
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    gap: 0.4rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.8rem;
     width: 100%;
-    max-width: 420px;
+    max-width: 380px;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem;
+    padding: 0 2rem;
     justify-content: unset;
-    background: rgba(255, 0, 0, 0.2);
-    border: 2px solid rgba(255, 0, 0, 0.6);
-    border-radius: 15px;
-    box-sizing: border-box;
   }
   .botao-curriculo {
     margin-top: 0 !important;
     width: 100%;
-    padding: 0.5rem 0.3rem;
-    font-size: 0.75rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -457,27 +445,23 @@
   
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    gap: 0.4rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.8rem;
     width: 100%;
-    max-width: 420px;
+    max-width: 380px;
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem;
+    padding: 0 2rem;
     justify-content: unset;
-    background: rgba(255, 0, 0, 0.2);
-    border: 2px solid rgba(255, 0, 0, 0.6);
-    border-radius: 15px;
-    box-sizing: border-box;
   }
   
   .botao-curriculo {
     margin-top: 0 !important;
     width: 100%;
-    padding: 0.5rem 0.3rem;
-    font-size: 0.75rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
   }
   
   .scroll-indicator {
@@ -500,12 +484,7 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem;
     justify-content: unset;
-    background: rgba(255, 0, 0, 0.2);
-    border: 2px solid rgba(255, 0, 0, 0.6);
-    border-radius: 15px;
-    box-sizing: border-box;
   }
   .botao-curriculo {
     margin-top: 0 !important;
@@ -586,11 +565,6 @@
   margin-top: 2rem;
   width: 100%;
   max-width: 100%;
-  background: rgba(255, 0, 0, 0.2);
-  border: 2px solid rgba(255, 0, 0, 0.6);
-  border-radius: 15px;
-  padding: 1rem;
-  box-sizing: border-box;
 }
 
 /* Mobile e Tablet - Grid 4x1 para botões CV (aplicado em todas as versões mobile e tablet em retrato) */
