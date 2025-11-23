@@ -72,25 +72,20 @@
   }
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0;
-    width: auto;
-    max-width: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    justify-content: center;
+    justify-content: unset;
   }
   .botao-curriculo {
     margin-top: 0 !important;
-    width: 200px;
-    height: 50px;
-    padding: 0;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 !important;
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -98,25 +93,20 @@
 @media (min-width: 1921px) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0;
-    width: auto;
-    max-width: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    justify-content: center;
+    justify-content: unset;
   }
   .botao-curriculo {
     margin-top: 0 !important;
-    width: 220px;
-    height: 55px;
-    padding: 0;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 !important;
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -137,25 +127,20 @@
   }
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0;
-    width: auto;
-    max-width: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
-    justify-content: center;
+    justify-content: unset;
   }
   .botao-curriculo {
     margin-top: 0 !important;
-    width: 200px;
-    height: 50px;
-    padding: 0;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 !important;
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -457,27 +442,22 @@
   
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0;
-    width: auto;
-    max-width: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 550px;
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
-    justify-content: center;
+    justify-content: unset;
   }
   
   .botao-curriculo {
     margin-top: 0 !important;
-    width: 200px;
-    height: 50px;
-    padding: 0;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 !important;
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
   }
   
   .scroll-indicator {
@@ -493,24 +473,20 @@
   }
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0;
-    width: auto;
-    max-width: none;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    justify-content: center;
+    justify-content: unset;
   }
   .botao-curriculo {
     margin-top: 0 !important;
-    width: 200px;
-    height: 50px;
-    padding: 0;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
   }
 }
 
