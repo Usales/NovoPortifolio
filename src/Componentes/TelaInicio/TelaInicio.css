@@ -124,7 +124,21 @@
   .redes-sociais {
     gap: 1.2rem;
   }
-  /* O grid 4x1 já está definido na media query específica acima */
+  /* Grid 4x1 para tablet - 4 colunas em uma linha */
+  .botoes-curriculo {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    justify-content: unset;
+  }
+  .botao-curriculo {
+    margin-top: 0 !important;
+    width: 100%;
+  }
 }
 
 /* Mobile (≤480px) */
@@ -151,6 +165,15 @@
     display: grid !important;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    justify-content: unset;
+  }
+  .botao-curriculo {
+    margin-top: 0 !important;
+    width: 100%;
   }
   .scroll-indicator {
     margin-top: 1.5rem;
@@ -183,6 +206,15 @@
     display: grid !important;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
+    gap: 0.7rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.8rem;
+    justify-content: unset;
+  }
+  .botao-curriculo {
+    margin-top: 0 !important;
+    width: 100%;
   }
   .scroll-indicator {
     margin-top: 1rem;
@@ -440,6 +472,8 @@
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Mobile e Tablet - Grid 4x1 para botões CV (aplicado em todas as versões mobile e tablet em retrato) */
@@ -543,7 +577,8 @@
     grid-template-rows: 1fr;
     gap: 1.1rem;
     padding: 0 1.5rem;
-    max-width: 500px;
+    width: 100%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -552,6 +587,7 @@
     margin-top: 0 !important;
     padding: 1.1rem 1rem;
     font-size: 1rem;
+    width: 100%;
   }
 }
 
@@ -569,5 +605,44 @@
     margin-top: 0 !important;
     padding: 0.8rem 0.7rem;
     font-size: 0.88rem;
+  }
+}
+
+/* Resolução específica 720x1560 - Grid 2x2 otimizado (DEVE VIR POR ÚLTIMO PARA TER PRIORIDADE) */
+@media screen and (width: 720px) and (height: 1560px),
+       screen and (min-width: 700px) and (max-width: 740px) and (min-height: 1500px) and (max-height: 1600px),
+       screen and (min-width: 710px) and (max-width: 730px) {
+  .botoes-curriculo {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 2rem !important;
+    padding: 0 1.5rem !important;
+    justify-content: unset !important;
+  }
+  
+  .botao-curriculo {
+    margin-top: 0 !important;
+    width: 100% !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .conteudo {
+    width: 90vw;
+    max-width: 680px;
+    padding: 2.5rem;
+    min-width: 300px;
+  }
+  
+  .nome {
+    font-size: 2.2rem;
+  }
+  
+  .cargo {
+    font-size: 1.3rem;
   }
 } 
