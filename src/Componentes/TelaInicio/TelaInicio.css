@@ -439,4 +439,44 @@
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
+}
+
+/* Mobile específico para 414x896 (iPhone 11 Pro Max e similares) - Grid 2x2 */
+@media screen and (min-width: 413px) and (max-width: 415px) and (min-height: 895px) and (max-height: 897px) {
+  .botoes-curriculo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 380px;
+    margin-top: 2rem;
+  }
+  
+  .botao-curriculo {
+    margin-top: 0;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile genérico para telas de 414px de largura (grid 2x2) */
+@media screen and (min-width: 414px) and (max-width: 480px) {
+  .botoes-curriculo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 380px;
+    margin-top: 2rem;
+  }
+  
+  .botao-curriculo {
+    margin-top: 0;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
 } 

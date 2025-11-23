@@ -21,13 +21,54 @@ import logoTiSolutions from '../Imagens/ti_solutions_logo.jpg';
 import logoSe7e from '../Imagens/se7e_sistemas_logo.jpg';
 
 // Data base para cálculos de experiência - Atualizar quando necessário
-const DATA_BASE_EXPERIENCIA = new Date('2025-10-18');
+const DATA_BASE_EXPERIENCIA = new Date('2025-11-22');
+
+// Função para calcular período entre datas
+const calcularPeriodo = (dataInicio, dataFim = new Date()) => {
+  const meses = [
+    'jan', 'fev', 'mar', 'abr', 'mai', 'jun',
+    'jul', 'ago', 'set', 'out', 'nov', 'dez'
+  ];
+  
+  const inicio = new Date(dataInicio);
+  const fim = dataFim;
+  
+  const inicioStr = `${meses[inicio.getMonth()]} de ${inicio.getFullYear()}`;
+  const fimStr = "Atual";
+  
+  // Calcular diferença em meses
+  const anos = fim.getFullYear() - inicio.getFullYear();
+  const mesesDiff = fim.getMonth() - inicio.getMonth();
+  const diasDiff = fim.getDate() - inicio.getDate();
+  
+  let totalMeses = anos * 12 + mesesDiff;
+  if (diasDiff < 0) totalMeses -= 1;
+  
+  let periodoStr = "";
+  if (totalMeses < 1) {
+    periodoStr = "menos de 1 mês";
+  } else if (totalMeses === 1) {
+    periodoStr = "1 mês";
+  } else if (totalMeses < 12) {
+    periodoStr = `${totalMeses} meses`;
+  } else {
+    const anosCalc = Math.floor(totalMeses / 12);
+    const mesesRestantes = totalMeses % 12;
+    if (mesesRestantes === 0) {
+      periodoStr = anosCalc === 1 ? "1 ano" : `${anosCalc} anos`;
+    } else {
+      periodoStr = `${anosCalc} ${anosCalc === 1 ? 'ano' : 'anos'} ${mesesRestantes} ${mesesRestantes === 1 ? 'mês' : 'meses'}`;
+    }
+  }
+  
+  return `${inicioStr} - ${fimStr} · ${periodoStr}`;
+};
 
 const experienciasDetalhadas = [
   {
     titulo: "Analista de Suporte N3 Trainee - SE7E SISTEMAS Unipessoal Limitada",
     logo: logoSe7e,
-    periodo: "set de 2025 - Atual · 1 mês",
+    periodo: calcularPeriodo('2025-09-01'),
     local: "Av. do Comércio, 25 - Sala 907 - Vila Maria Jose, Goiânia - GO, 74815-390",
     resumo: "Atendimento de chamados técnicos relacionados ao sistema Data7, realizando identificação, análise e resolução de incidentes. Correção de erros em bases de dados e manutenção preventiva de equipamentos.",
     detalhes: [
@@ -53,7 +94,7 @@ const experienciasDetalhadas = [
   {
     titulo: "Analista de Suporte Técnico N3 - OMNICHANEL - TI SOLUTIONS TECH INOVATIONS LTDA",
     logo: logoTiSolutions,
-    periodo: "ago de 2025 - Atual · 2 meses",
+    periodo: calcularPeriodo('2025-08-01'),
     local: "Travessa Kalil Karan, 110 - Alto da Rua Xv, Curitiba - PR, 80.045-285",
     resumo: "Prestação de suporte técnico especializado no sistema omnichannel, assegurando o funcionamento contínuo e a satisfação dos clientes corporativos. Atuação no módulo Agents AI com treinamentos personalizados.",
     detalhes: [
@@ -111,7 +152,7 @@ const experienciasDetalhadas = [
   {
     titulo: "Desenvolvedor Freelancer UpWork",
     logo: logoUpwork,
-    periodo: "jan de 2024 - Atual · 1 ano 9 meses",
+    periodo: calcularPeriodo('2024-01-01'),
     resumo: "Desenvolvimento de sites institucionais, landing pages e sistemas web para clientes diversos, utilizando principalmente React.js, Angular, JavaScript, HTML5, CSS3 e Tailwind CSS.",
     detalhes: [
       "Criação de sites responsivos e otimizados para SEO.",
