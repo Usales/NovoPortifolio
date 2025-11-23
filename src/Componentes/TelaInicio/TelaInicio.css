@@ -72,11 +72,11 @@
   }
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 1.5rem;
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     justify-content: unset;
@@ -91,11 +91,11 @@
 @media (min-width: 1921px) {
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
     width: 100%;
-    max-width: 900px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     justify-content: unset;
@@ -125,11 +125,11 @@
   }
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 1.2rem;
     width: 100%;
-    max-width: 750px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
     justify-content: unset;
@@ -438,11 +438,11 @@
   
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 1.2rem;
     width: 100%;
-    max-width: 750px;
+    max-width: 550px;
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
@@ -467,11 +467,11 @@
   }
   .botoes-curriculo {
     display: grid !important;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 1.2rem;
     width: 100%;
-    max-width: 750px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
     justify-content: unset;
