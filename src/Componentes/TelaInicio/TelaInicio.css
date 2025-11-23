@@ -434,7 +434,8 @@
 
 /* Mobile e Tablet - Grid 2x2 para botões CV (aplicado em todas as versões mobile e tablet em retrato) */
 /* Cobre: iPhone SE (375px), iPhone XR (414px), iPhone 12 Pro (390px), iPhone 14 Pro Max (430px), 
-   Pixel 7 (412px), Galaxy S8+ (360px), Galaxy S20 Ultra (412px) e todos os outros até 768px */
+   Pixel 7 (412px), Galaxy S8+ (360px), Galaxy S20 Ultra (412px), Galaxy A30s (360px) 
+   e todos os outros até 768px */
 @media screen and (max-width: 768px) {
   .botoes-curriculo {
     display: grid;
@@ -455,7 +456,7 @@
   }
 }
 
-/* Mobile muito pequeno (até 375px) - iPhone SE, Galaxy S8+ e similares */
+/* Mobile muito pequeno (até 375px) - iPhone SE, Galaxy S8+, Galaxy A30s e similares */
 @media screen and (max-width: 375px) {
   .botoes-curriculo {
     gap: 0.7rem;
