@@ -219,6 +219,7 @@ const Particles = ({
     sizeRandomness,
     cameraDistance,
     disableRotation,
+    particleColors,
   ]);
 
   return (

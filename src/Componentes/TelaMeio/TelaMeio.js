@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './TelaMeio.css';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt, FaLinux, FaLaptopCode, FaHeadset, FaCogs, FaCode, FaChartBar, FaChartLine, FaChartPie, FaCodeBranch, FaJira } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiVscodium, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux, SiZendesk, SiSlack, SiMysql, SiOpenai, SiTeamviewer, SiAnydesk } from 'react-icons/si';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt, FaLinux, FaLaptopCode, FaHeadset, FaCogs, FaCode, FaChartPie, FaJira } from 'react-icons/fa';
+import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux, SiZendesk, SiMysql, SiOpenai, SiTeamviewer, SiAnydesk } from 'react-icons/si';
 import { AiFillWindows } from 'react-icons/ai';
 import { VscVscode } from 'react-icons/vsc';
 import { DiMsqlServer } from 'react-icons/di';
@@ -20,8 +20,6 @@ import logoNovoMundo from '../Imagens/logo_novo_mundo.png';
 import logoTiSolutions from '../Imagens/ti_solutions_logo.jpg';
 import logoSe7e from '../Imagens/se7e_sistemas_logo.jpg';
 
-// Data base para cálculos de experiência - Atualizar quando necessário
-const DATA_BASE_EXPERIENCIA = new Date('2025-11-22');
 
 // Função para calcular período entre datas
 const calcularPeriodo = (dataInicio, dataFim = new Date()) => {
