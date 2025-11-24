@@ -15,7 +15,6 @@ Este portfólio tem como objetivo demonstrar minhas principais competências té
 - **Seção de experiências** com logos das empresas e detalhes completos
 - **Seção de formação acadêmica** com modal interativo
 - **Layout responsivo** para desktop e mobile
-- **Tema escuro** com efeitos de partículas estelares
 
 ## 🛠️ Tecnologias Utilizadas
 - **ReactJS** - Framework principal
