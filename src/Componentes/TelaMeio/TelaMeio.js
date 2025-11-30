@@ -13,6 +13,7 @@ import projeto4 from '../Imagens/projeto04.png';
 import projeto5 from '../Imagens/projeto5.png';
 import projeto6 from '../Imagens/projeto6.png';
 import projeto7 from '../Imagens/projeto7.png';
+import projeto8 from '../Imagens/projeto8.png';
 import FormacaoAcademica from './FormacaoAcademica';
 import logoCiee from '../Imagens/logo_ciee.jpg';
 import logoUpwork from '../Imagens/logo_upwork.png';
@@ -278,6 +279,20 @@ const TelaMeio = () => {
         { nome: "Vite", icone: <SiVite /> },
         { nome: "API", icone: <SiSwagger /> },
         { nome: "Supabase", icone: <SiSupabase />}
+      ]
+    },
+    {
+      nome: "EaDuck",
+      descricao: "Plataforma de Gestão e Comunicação Escolar",
+      imagem: projeto8,
+      link: "https://weaduck.netlify.app/login",
+      tecnologias: [
+        { nome: "Angular", icone: <SiAngular /> },
+        { nome: "TypeScript", icone: <SiTypescript /> },
+        { nome: "TailwindCSS", icone: <SiTailwindcss /> },
+        { nome: "Java", icone: <FaJava /> },
+        { nome: "Spring Boot", icone: <SiSpringboot /> },
+        { nome: "PostgreSQL", icone: <SiPostgresql /> }
       ]
     }];
 
