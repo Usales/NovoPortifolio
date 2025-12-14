@@ -373,8 +373,8 @@ const TelaMeio = () => {
       items: [
         { nome: "FullStack", icone: <FaLaptopCode />, experiencia: "1 ano 9 meses" },
         { nome: "Suporte de TI", icone: <FaHeadset />, experiencia: "4 anos" },
-        { nome: "Analista de Sistemas", icone: <FaCogs />, experiencia: "1 mês" },
-        { nome: "ChatBots & AI", icone: <FaCode />, experiencia: "2 meses" },
+        { nome: "Analista de Sistemas", icone: <FaCogs />, experiencia: "4 meses" },
+        { nome: "ChatBots & AI", icone: <FaCode />, experiencia: "4 meses" },
       ]
     }
   ];
