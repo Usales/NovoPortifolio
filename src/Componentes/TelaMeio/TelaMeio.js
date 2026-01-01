@@ -29,7 +29,15 @@ const calcularPeriodo = (dataInicio, dataFim = new Date()) => {
     'jul', 'ago', 'set', 'out', 'nov', 'dez'
   ];
   
-  const inicio = new Date(dataInicio);
+  // Criar data de início de forma segura (evita problemas de fuso horário)
+  let inicio;
+  if (typeof dataInicio === 'string') {
+    const [ano, mes, dia] = dataInicio.split('-').map(Number);
+    inicio = new Date(ano, mes - 1, dia);
+  } else {
+    inicio = new Date(dataInicio);
+  }
+  
   const fim = dataFim;
   
   const inicioStr = `${meses[inicio.getMonth()]} de ${inicio.getFullYear()}`;
