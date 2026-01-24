@@ -181,7 +181,7 @@ const FormacaoAcademica = () => {
             </div>
             
             {/* Conteúdo do Modal */}
-            <div style={{
+            <div className="modal-conteudo-scroll" style={{
               flex: '1',
               overflowY: 'auto',
               paddingRight: '0.5rem',

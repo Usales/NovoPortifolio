@@ -1190,4 +1190,66 @@ h2 {
     padding: 1.2rem 0.5rem 1rem 0.5rem;
     max-width: 98vw;
   }
+}
+
+/* Scrollbar customizada para o modal de experiência */
+.modal-experiencia {
+  scrollbar-width: thin;
+  scrollbar-color: #64ffda rgba(255, 255, 255, 0.1);
+}
+
+/* Webkit (Chrome, Safari, Edge) */
+.modal-experiencia::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-experiencia::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin: 8px 0;
+}
+
+.modal-experiencia::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #64ffda 0%, rgba(100, 255, 218, 0.8) 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.modal-experiencia::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #64ffda 0%, #7dffdf 100%);
+  box-shadow: 0 0 8px rgba(100, 255, 218, 0.5);
+}
+
+/* Scrollbar para elementos internos com scroll dentro do modal */
+.modal-experiencia > div[style*="overflow-y: auto"],
+.modal-conteudo-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #64ffda rgba(255, 255, 255, 0.1);
+}
+
+.modal-experiencia > div[style*="overflow-y: auto"]::-webkit-scrollbar,
+.modal-conteudo-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-experiencia > div[style*="overflow-y: auto"]::-webkit-scrollbar-track,
+.modal-conteudo-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin: 4px 0;
+}
+
+.modal-experiencia > div[style*="overflow-y: auto"]::-webkit-scrollbar-thumb,
+.modal-conteudo-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #64ffda 0%, rgba(100, 255, 218, 0.8) 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.modal-experiencia > div[style*="overflow-y: auto"]::-webkit-scrollbar-thumb:hover,
+.modal-conteudo-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #64ffda 0%, #7dffdf 100%);
+  box-shadow: 0 0 6px rgba(100, 255, 218, 0.4);
 } 
