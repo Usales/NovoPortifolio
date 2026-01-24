@@ -12,37 +12,7 @@ const formacoes = [
     logo: logoSenaiFatesg,
     curso: "Bacharelado em Engenharia de Software",
     periodo: "jan de 2022 - dez de 2025",
-    descricao: `🎓 Graduando em Engenharia de Software
-  
-  Ao longo da minha formação em Engenharia de Software, desenvolvi competências técnicas, analíticas e práticas voltadas à construção de soluções tecnológicas eficientes, escaláveis e alinhadas às necessidades do negócio. Minha trajetória acadêmica proporcionou uma base sólida em engenharia de sistemas, arquitetura de software, dados, inteligência artificial e gestão.
-  
-  💡 Desenvolvimento de Software
-  - Estrutura de Dados, Algoritmos e Programação
-  - Engenharia de Requisitos e Processos de Software
-  - Testes, Qualidade de Software e Gerência de Configuração
-  - Design de Software e Interação Humano-Computador
-  - Manutenção, evolução e documentação de sistemas
-  
-  🖥️ Tecnologias e Arquitetura de Sistemas
-  - Sistemas Operacionais, Redes de Computadores e Computação em Nuvem
-  - Arquitetura de Computadores e Sistemas Microcontrolados
-  - Sistemas Distribuídos e Construção de Software
-  - Governança de Software, Segurança da Informação e Serviços de TI
-  
-  📊 Dados e Inteligência Artificial
-  - Banco de Dados Relacionais e Não Relacionais
-  - Mineração de Dados, Big Data e Processos de ETL
-  - Governança, qualidade e análise de dados
-  - Inteligência Artificial, Redes Neurais e Computação Evolutiva
-  - Análise de Algoritmos e apoio à tomada de decisão
-  
-  📈 Gestão, Ética e Inovação
-  - Gerência de Projetos de Software (planejamento, execução e controle)
-  - Governança de TI e alinhamento estratégico entre tecnologia e negócio
-  - Engenharia Econômica aplicada a Software
-  - Ética, Legislação em Tecnologia da Informação e Propriedade Intelectual
-  - Sustentabilidade, TI Verde e responsabilidade socioambiental
-  - Tecnologias emergentes, inovação e visão estratégica`,
+    descricao: `🎓 Graduando em Engenharia de Software\n\nFormação focada no desenvolvimento de soluções tecnológicas robustas, escaláveis e alinhadas às necessidades do negócio. Base sólida em engenharia de sistemas, arquitetura de software, dados, inteligência artificial e gestão.\n\n💡 Desenvolvimento: Estrutura de Dados, Algoritmos, Engenharia de Requisitos, Testes, Qualidade de Software, Design de Software, IHC e Manutenção de Sistemas\n\n🖥️ Arquitetura: Sistemas Operacionais, Redes, Computação em Nuvem, Sistemas Distribuídos, Governança de Software e Segurança da Informação\n\n📊 Dados & IA: Bancos de Dados Relacionais e Não Relacionais, Mineração de Dados, Big Data, ETL, Inteligência Artificial, Redes Neurais e Análise de Algoritmos\n\n📈 Gestão: Gerência de Projetos, Governança de TI, Engenharia Econômica, Ética e Legislação em TI, Sustentabilidade e TI Verde`,
     competencias: "🎯 Design de Interface do Usuário (UI) · 🧠 Experiência do Usuário (UX) · 💻 Programação · 🌐 Desenvolvimento Front-end · 🔄 Desenvolvimento Full Stack · 🗄️ PostgreSQL · 📊 PL/SQL · ☕ Java · 🟨 JavaScript · 🔷 TypeScript · ⚛️ React.js · 🅰️ AngularJS · 🎨 Figma · 🖌️ Illustrator · 🖥️ CMD · 🛠️ Administração de Redes · 📡 Tecnologia da Informação"
   },
   {
