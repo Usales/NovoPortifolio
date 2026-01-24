@@ -12,8 +12,38 @@ const formacoes = [
     logo: logoSenaiFatesg,
     curso: "Bacharelado em Engenharia de Software",
     periodo: "jan de 2022 - dez de 2025",
-    descricao: `🎓 Graduando em Engenharia de Software\n\nAo longo da minha formação em Engenharia de Software, desenvolvi competências técnicas e práticas em diversas áreas da computação e da engenharia de sistemas. Minha trajetória acadêmica me proporcionou uma base sólida em:\n\n💡 Desenvolvimento de Software\n- Estrutura de Dados, Algoritmos e Programação\n- Engenharia de Requisitos e Processos de Software\n- Testes, Qualidade e Gerência de Configuração\n- Design de Software e Interação Humano-Computador\n\n🖥️ Tecnologias e Arquitetura de Sistemas\n- Sistemas Operacionais, Redes de Computadores e Computação em Nuvem\n- Arquitetura de Computadores e Sistemas Microcontrolados\n- Construção de Software e Sistemas Distribuídos\n\n📊 Dados e Inteligência Artificial\n- Banco de Dados, Mineração de Dados e Big Data\n- Inteligência Artificial e Análise de Algoritmos\n- Computação Gráfica e Linguagens Formais\n\n📈 Gestão, Ética e Inovação\n- Gerência de Projetos de Software e Governança de TI`,
-    competencias: "Design de interface do usuário · Programação · Figma (Software) · ilustrador · CMD · Experiência do usuário (UX) · Desenvolvimento de front-end · Atuação em conhecimentos de informática · Administração de redes · Tecnologia da informação · Desenvolvimento FullStack · PostgreSQL · PL/SQL · Java · JavaScript · TypeScript · React.js · AngularJS"
+    descricao: `🎓 Graduando em Engenharia de Software
+  
+  Ao longo da minha formação em Engenharia de Software, desenvolvi competências técnicas, analíticas e práticas voltadas à construção de soluções tecnológicas eficientes, escaláveis e alinhadas às necessidades do negócio. Minha trajetória acadêmica proporcionou uma base sólida em engenharia de sistemas, arquitetura de software, dados, inteligência artificial e gestão.
+  
+  💡 Desenvolvimento de Software
+  - Estrutura de Dados, Algoritmos e Programação
+  - Engenharia de Requisitos e Processos de Software
+  - Testes, Qualidade de Software e Gerência de Configuração
+  - Design de Software e Interação Humano-Computador
+  - Manutenção, evolução e documentação de sistemas
+  
+  🖥️ Tecnologias e Arquitetura de Sistemas
+  - Sistemas Operacionais, Redes de Computadores e Computação em Nuvem
+  - Arquitetura de Computadores e Sistemas Microcontrolados
+  - Sistemas Distribuídos e Construção de Software
+  - Governança de Software, Segurança da Informação e Serviços de TI
+  
+  📊 Dados e Inteligência Artificial
+  - Banco de Dados Relacionais e Não Relacionais
+  - Mineração de Dados, Big Data e Processos de ETL
+  - Governança, qualidade e análise de dados
+  - Inteligência Artificial, Redes Neurais e Computação Evolutiva
+  - Análise de Algoritmos e apoio à tomada de decisão
+  
+  📈 Gestão, Ética e Inovação
+  - Gerência de Projetos de Software (planejamento, execução e controle)
+  - Governança de TI e alinhamento estratégico entre tecnologia e negócio
+  - Engenharia Econômica aplicada a Software
+  - Ética, Legislação em Tecnologia da Informação e Propriedade Intelectual
+  - Sustentabilidade, TI Verde e responsabilidade socioambiental
+  - Tecnologias emergentes, inovação e visão estratégica`,
+    competencias: "🎯 Design de Interface do Usuário (UI) · 🧠 Experiência do Usuário (UX) · 💻 Programação · 🌐 Desenvolvimento Front-end · 🔄 Desenvolvimento Full Stack · 🗄️ PostgreSQL · 📊 PL/SQL · ☕ Java · 🟨 JavaScript · 🔷 TypeScript · ⚛️ React.js · 🅰️ AngularJS · 🎨 Figma · 🖌️ Illustrator · 🖥️ CMD · 🛠️ Administração de Redes · 📡 Tecnologia da Informação"
   },
   {
     instituicao: "Faculdade Sensu",
