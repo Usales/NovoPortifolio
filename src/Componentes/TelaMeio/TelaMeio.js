@@ -121,6 +121,20 @@ const experienciasDetalhadas = [
     ]
   },
   {
+    titulo: "Desenvolvedor Freelancer UpWork",
+    logo: logoUpwork,
+    periodo: calcularPeriodo('2024-01-01'),
+    resumo: "Desenvolvimento de sites institucionais, landing pages e sistemas web para clientes diversos, utilizando principalmente React.js, Angular, JavaScript, HTML5, CSS3 e Tailwind CSS.",
+    detalhes: [
+      "Criação de sites responsivos e otimizados para SEO.",
+      "Desenvolvimento de sistemas personalizados conforme demanda do cliente.",
+      "Integração com APIs e bancos de dados.(Alguns casos)",
+      "Acompanhamento do cliente desde a primeira reunião até a entrega final.",
+      "Manutenção e atualização de projetos já entregues(Mediante novas propostas).",
+      "Entrega da documentação do Site detalhada."
+    ]
+  },
+  {
     titulo: "Técnico de Informática - CIEE - Centro de Integração Empresa-Escola",
     logo: logoCiee,
     periodo: "ago de 2023 - set de 2025 · 2 anos 1 mês",
@@ -154,20 +168,6 @@ const experienciasDetalhadas = [
       "- Desenvolvimento e integração: Aplicações web para suporte técnico e integração de sistemas",
       "- Soft skills: Comunicação eficaz, capacidade de resolução de problemas, proatividade, trabalho em equipa",
       "- Boas práticas: Familiaridade com ITIL e metodologias de suporte estruturado"
-    ]
-  },
-  {
-    titulo: "Desenvolvedor Freelancer UpWork",
-    logo: logoUpwork,
-    periodo: calcularPeriodo('2024-01-01'),
-    resumo: "Desenvolvimento de sites institucionais, landing pages e sistemas web para clientes diversos, utilizando principalmente React.js, Angular, JavaScript, HTML5, CSS3 e Tailwind CSS.",
-    detalhes: [
-      "Criação de sites responsivos e otimizados para SEO.",
-      "Desenvolvimento de sistemas personalizados conforme demanda do cliente.",
-      "Integração com APIs e bancos de dados.(Alguns casos)",
-      "Acompanhamento do cliente desde a primeira reunião até a entrega final.",
-      "Manutenção e atualização de projetos já entregues(Mediante novas propostas).",
-      "Entrega da documentação do Site detalhada."
     ]
   },
   {
