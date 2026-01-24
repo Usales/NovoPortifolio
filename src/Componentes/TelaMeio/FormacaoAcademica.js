@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './TelaMeio.css';
 import logoSenaiFatesg from '../Imagens/faculdade_senai_fatesg_logo.jpeg';
 import logoSensu from '../Imagens/faculdadesensu_logo.jpeg';
@@ -101,6 +101,23 @@ Trabalhos em grupo e projetos integradores promoveram o desenvolvimento de habil
 
 const FormacaoAcademica = () => {
   const [formacaoSelecionada, setFormacaoSelecionada] = useState(null);
+
+  // Fechar modal com tecla ESC
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.key === 'Escape' && formacaoSelecionada) {
+        setFormacaoSelecionada(null);
+      }
+    };
+
+    if (formacaoSelecionada) {
+      document.addEventListener('keydown', handleEscKey);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, [formacaoSelecionada]);
 
   return (
     <div className="formacao-academica">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './TelaMeio.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt, FaLinux, FaLaptopCode, FaHeadset, FaCogs, FaCode, FaChartPie, FaJira } from 'react-icons/fa';
 import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux, SiZendesk, SiMysql, SiOpenai, SiTeamviewer, SiAnydesk } from 'react-icons/si';
@@ -388,6 +388,23 @@ const TelaMeio = () => {
   ];
 
   const [experienciaSelecionada, setExperienciaSelecionada] = useState(null);
+
+  // Fechar modal com tecla ESC
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.key === 'Escape' && experienciaSelecionada) {
+        setExperienciaSelecionada(null);
+      }
+    };
+
+    if (experienciaSelecionada) {
+      document.addEventListener('keydown', handleEscKey);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, [experienciaSelecionada]);
 
   return (
     <div className="tela-meio">
