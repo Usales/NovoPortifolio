@@ -24,6 +24,14 @@ const formacoes = [
     competencias: "Análise Criminal · Gestão Estratégica em Segurança Pública · Direitos Humanos e Práticas Policiais · Criminologia · Mediação e Técnicas de Negociação"
   },
   {
+    instituicao: "Faculdade Sensu",
+    logo: logoSensu,
+    curso: "Bacharelado, Segurança Pública",
+    periodo: "jun de 2024 - jun de 2025",
+    descricao: `🎓 Formação em Segurança Pública | Faculdade Sensu\n\nEm formação na área de Segurança Pública, com uma abordagem multidisciplinar voltada à análise, prevenção e gestão estratégica da segurança no contexto social contemporâneo.\n\nPrincipais áreas de estudo:\n\n📊 Análise Criminal e Inteligência e Contrainteligência Aplicada\n\n🔍 Criminologia, Prevenção da Violência e Diagnóstico em Segurança Pública\n\n⚖️ Direitos Humanos, Legislação Específica e Execução Penal\n\n🧠 Psicologia, Ética, Filosofia nas Relações e Teoria do Estado\n\n🛠️ Planejamento Estratégico, Modelos de Policiamento e Gestão Institucional\n\n💻 Tecnologias Digitais Aplicadas à Segurança Pública\n\n👥 Atendimento a Grupos Vulneráveis, Negociação e Primeiros Socorros\n\n💡 Em constante desenvolvimento de competências críticas, éticas e técnicas para atuação profissional focada na proteção da sociedade, valorizando os direitos fundamentais e a eficiência nas políticas públicas de segurança.`,
+    competencias: "Análise Criminal · Gestão Estratégica em Segurança Pública · Direitos Humanos e Práticas Policiais · Criminologia · Mediação e Técnicas de Negociação"
+  },
+  {
     instituicao: "Colégio Estadual da Polícia Militar de Goiás - Unidade Hugo De Carvalho Ramos",
     logo: logoCpmGo,
     curso: "Diploma do Ensino Médio, Ensino Médio Completo",
@@ -36,27 +44,7 @@ const formacoes = [
     logo: logoSenac,
     curso: "Diploma, Letras - Língua Inglesa e Literaturas de Língua Inglesa",
     periodo: "jan de 2019 - dez de 2020",
-    descricao: `📘 Proficiência em Língua Inglesa
-
-Aprofundei conhecimentos gramaticais, fonéticos e linguísticos aplicados à comunicação oral e escrita.
-
-Estudei obras literárias em inglês, ampliando minha visão crítica e cultural.
-
-📚 Didática e Ensino de ESL (English as a Second Language)
-
-Desenvolvi metodologias para ensino de inglês como segunda língua.
-
-Realizei práticas voltadas ao ensino em diferentes níveis de proficiência, com foco na fluência e compreensão intercultural.
-
-🎨 Expressão Visual e Recursos Ilustrativos
-
-Explorei técnicas de ilustração para uso educacional e criativo.
-
-Utilizei softwares de edição e criação visual como apoio ao ensino e à comunicação.
-
-🤝 Comunicação Interpessoal e Colaboração
-
-Trabalhos em grupo e projetos integradores promoveram o desenvolvimento de habilidades colaborativas e comunicativas.`,
+    descricao: `📘 Proficiência em Língua Inglesa\n\nAprofundei conhecimentos gramaticais, fonéticos e linguísticos aplicados à comunicação oral e escrita. Estudei obras literárias em inglês, ampliando minha visão crítica e cultural.\n\n📚 Didática e Ensino de ESL: Desenvolvi metodologias para ensino de inglês como segunda língua, com práticas voltadas a diferentes níveis de proficiência, focando em fluência e compreensão intercultural.\n\n🎨 Expressão Visual: Explorei técnicas de ilustração para uso educacional e criativo, utilizando softwares de edição e criação visual como apoio ao ensino.\n\n🤝 Comunicação: Trabalhos em grupo e projetos integradores promoveram o desenvolvimento de habilidades colaborativas e comunicativas.`,
     competencias: "Idiomas · ilustrador · ESL (Inglês como segunda língua)"
   },
   {
