@@ -489,7 +489,7 @@ const TelaMeio = () => {
         <div className="modal-experiencia-overlay" onClick={() => setExperienciaSelecionada(null)}>
           <div className="modal-experiencia" onClick={(e) => e.stopPropagation()} style={{
             maxHeight: '90vh',
-            overflowY: 'auto',
+            overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column'
           }}>
@@ -545,7 +545,7 @@ const TelaMeio = () => {
             </div>
             
             {/* Conteúdo do Modal */}
-            <div style={{
+            <div className="modal-conteudo-scroll" style={{
               flex: '1',
               overflowY: 'auto',
               paddingRight: '0.5rem',
@@ -588,13 +588,11 @@ const TelaMeio = () => {
                 }}>
                   Principais Atividades
                 </h3>
-                <div className="modal-experiencia-conteudo-scroll">
-                  <ul>
-                    {experienciaSelecionada.detalhes.map((det, i) => (
-                      <li key={i}>{det}</li>
-                    ))}
-                  </ul>
-                </div>
+                <ul>
+                  {experienciaSelecionada.detalhes.map((det, i) => (
+                    <li key={i}>{det}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

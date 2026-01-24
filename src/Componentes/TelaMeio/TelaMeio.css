@@ -980,12 +980,7 @@ h2 {
     }
 } 
 
-/* Modal de Experiência */
-.modal-experiencia-conteudo-scroll {
-  max-height: 55vh;
-  overflow-y: auto;
-  padding-right: 0.5rem;
-}
+/* Modal de Experiência - Classe removida, scroll agora é gerenciado pelo modal-conteudo-scroll */
 
 /* Garante que o modal continue centralizado e overlay escuro */
 .modal-experiencia-overlay {
