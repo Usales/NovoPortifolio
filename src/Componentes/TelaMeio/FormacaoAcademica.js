@@ -30,7 +30,7 @@ const formacoes = [
     curso: "Curso de Japonês",
     periodo: "jan de 2021 - dez de 2024",
     descricao: `🇯🇵 Curso de Língua Japonesa | KAIKAN - ANBG\n\nFormação em língua japonesa na Associação Nipo Brasileira de Goiás, desenvolvendo competências comunicativas e culturais para interação efetiva em contextos japoneses.\n\n📚 Conteúdo: Gramática japonesa, sistemas de escrita (Hiragana, Katakana, Kanji), conversação, compreensão auditiva, leitura e escrita\n\n🎌 Cultura: Estudos sobre tradições, costumes e valores da cultura japonesa, facilitando a compreensão intercultural\n\n💬 Comunicação: Desenvolvimento de habilidades para comunicação oral e escrita em diferentes contextos formais e informais`,
-    competencias: "Idiomas · Japonês · Hiragana · Katakana · Kanji · Comunicação Intercultural · Cultura Japonesa"
+    competencias: "Idiomas · Japonês · Hiragana · Katakana · Kanji · Comunicação Intercultural · Cultura Japonesa · Cozinha Japonesa · Organização de Eventos · Atendimento ao Público"
   },
   {
     instituicao: "Colégio Estadual da Polícia Militar de Goiás - Unidade Hugo De Carvalho Ramos",
