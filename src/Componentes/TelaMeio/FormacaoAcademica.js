@@ -5,6 +5,7 @@ import logoSensu from '../Imagens/faculdadesensu_logo.jpeg';
 import logoCpmGo from '../Imagens/LOGO-CEPMG.png';
 import logoSenac from '../Imagens/senacbrasil_logo.jpeg';
 import logoBasileu from '../Imagens/logo_basileu.png';
+import logoKaikan from '../Imagens/logoKaikan.png';
 
 const formacoes = [
   {
@@ -24,12 +25,12 @@ const formacoes = [
     competencias: "Análise Criminal · Gestão Estratégica em Segurança Pública · Direitos Humanos e Práticas Policiais · Criminologia · Mediação e Técnicas de Negociação"
   },
   {
-    instituicao: "Faculdade Sensu",
-    logo: logoSensu,
-    curso: "Bacharelado, Segurança Pública",
-    periodo: "jun de 2024 - jun de 2025",
-    descricao: `🎓 Formação em Segurança Pública | Faculdade Sensu\n\nEm formação na área de Segurança Pública, com uma abordagem multidisciplinar voltada à análise, prevenção e gestão estratégica da segurança no contexto social contemporâneo.\n\nPrincipais áreas de estudo:\n\n📊 Análise Criminal e Inteligência e Contrainteligência Aplicada\n\n🔍 Criminologia, Prevenção da Violência e Diagnóstico em Segurança Pública\n\n⚖️ Direitos Humanos, Legislação Específica e Execução Penal\n\n🧠 Psicologia, Ética, Filosofia nas Relações e Teoria do Estado\n\n🛠️ Planejamento Estratégico, Modelos de Policiamento e Gestão Institucional\n\n💻 Tecnologias Digitais Aplicadas à Segurança Pública\n\n👥 Atendimento a Grupos Vulneráveis, Negociação e Primeiros Socorros\n\n💡 Em constante desenvolvimento de competências críticas, éticas e técnicas para atuação profissional focada na proteção da sociedade, valorizando os direitos fundamentais e a eficiência nas políticas públicas de segurança.`,
-    competencias: "Análise Criminal · Gestão Estratégica em Segurança Pública · Direitos Humanos e Práticas Policiais · Criminologia · Mediação e Técnicas de Negociação"
+    instituicao: "KAIKAN - ANBG - Associação Nipo Brasileira de Goiás",
+    logo: logoKaikan,
+    curso: "Curso de Japonês",
+    periodo: "jan de 2021 - dez de 2024",
+    descricao: `🇯🇵 Curso de Língua Japonesa | KAIKAN - ANBG\n\nFormação em língua japonesa na Associação Nipo Brasileira de Goiás, desenvolvendo competências comunicativas e culturais para interação efetiva em contextos japoneses.\n\n📚 Conteúdo: Gramática japonesa, sistemas de escrita (Hiragana, Katakana, Kanji), conversação, compreensão auditiva, leitura e escrita\n\n🎌 Cultura: Estudos sobre tradições, costumes e valores da cultura japonesa, facilitando a compreensão intercultural\n\n💬 Comunicação: Desenvolvimento de habilidades para comunicação oral e escrita em diferentes contextos formais e informais`,
+    competencias: "Idiomas · Japonês · Hiragana · Katakana · Kanji · Comunicação Intercultural · Cultura Japonesa"
   },
   {
     instituicao: "Colégio Estadual da Polícia Militar de Goiás - Unidade Hugo De Carvalho Ramos",
