@@ -4,8 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh; /* viewport dinâmico: evita estouro em mobile/navegadores com barra de endereço */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +12,6 @@
   z-index: 10;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .conteudo {
@@ -28,9 +26,7 @@
   align-items: center;
   justify-content: center;
   min-width: 400px;
-  max-width: min(100%, calc(100vw - 2rem)); /* evita overflow horizontal em qualquer viewport */
   margin: 0;
-  box-sizing: border-box;
 }
 
 .nome {
@@ -482,8 +478,6 @@
 .botoes-curriculo {
   margin-top: 2rem;
   width: 100%;
-  max-width: min(100%, calc(100vw - 2rem)); /* evita overflow horizontal no Netlify/outros viewports */
-  box-sizing: border-box;
 }
 
 /* Mobile e Tablet - Grid 4x1 para botões CV (aplicado em todas as versões mobile e tablet em retrato) */
