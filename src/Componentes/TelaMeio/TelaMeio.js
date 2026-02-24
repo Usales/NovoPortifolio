@@ -22,14 +22,19 @@ import logoTiSolutions from '../Imagens/ti_solutions_logo.jpg';
 import logoSe7e from '../Imagens/se7e_sistemas_logo.jpg';
 
 
-// Função para calcular período entre datas (locale: 'pt-BR' | 'en' | 'fr')
+// Função para calcular período entre datas (locale: 'pt-BR' | 'en' | 'fr' | 'de' | 'it' | 'ja')
 const calcularPeriodo = (dataInicio, dataFim = new Date(), locale = 'pt-BR') => {
   const mesesPT = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
   const mesesEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const mesesFR = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
-  const meses = locale === 'en' ? mesesEN : locale === 'fr' ? mesesFR : mesesPT;
-  const atual = locale === 'en' ? 'Current' : locale === 'fr' ? 'Actuel' : 'Atual';
-  const de = locale === 'en' ? ' ' : locale === 'fr' ? ' ' : ' de ';
+  const mesesDE = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Juni', 'Juli', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
+  const mesesIT = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+  const mesesJA = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+  const mesesMap = { en: mesesEN, fr: mesesFR, de: mesesDE, it: mesesIT, ja: mesesJA };
+  const meses = mesesMap[locale] || mesesPT;
+  const atualMap = { en: 'Current', fr: 'Actuel', de: 'Aktuell', it: 'Attuale', ja: '現在' };
+  const atual = atualMap[locale] || 'Atual';
+  const de = (locale && locale !== 'pt-BR') ? ' ' : ' de ';
 
   let inicio;
   if (typeof dataInicio === 'string') {
@@ -69,6 +74,36 @@ const calcularPeriodo = (dataInicio, dataFim = new Date(), locale = 'pt-BR') => 
       const mesesRestantes = totalMeses % 12;
       if (mesesRestantes === 0) periodoStr = anosCalc === 1 ? '1 an' : `${anosCalc} ans`;
       else periodoStr = `${anosCalc} ${anosCalc === 1 ? 'an' : 'ans'} ${mesesRestantes} ${mesesRestantes === 1 ? 'mois' : 'mois'}`;
+    }
+  } else if (locale === 'de') {
+    if (totalMeses < 1) periodoStr = 'weniger als 1 Monat';
+    else if (totalMeses === 1) periodoStr = '1 Monat';
+    else if (totalMeses < 12) periodoStr = `${totalMeses} Monate`;
+    else {
+      const anosCalc = Math.floor(totalMeses / 12);
+      const mesesRestantes = totalMeses % 12;
+      if (mesesRestantes === 0) periodoStr = anosCalc === 1 ? '1 Jahr' : `${anosCalc} Jahre`;
+      else periodoStr = `${anosCalc} ${anosCalc === 1 ? 'Jahr' : 'Jahre'} ${mesesRestantes} ${mesesRestantes === 1 ? 'Monat' : 'Monate'}`;
+    }
+  } else if (locale === 'it') {
+    if (totalMeses < 1) periodoStr = 'meno di 1 mese';
+    else if (totalMeses === 1) periodoStr = '1 mese';
+    else if (totalMeses < 12) periodoStr = `${totalMeses} mesi`;
+    else {
+      const anosCalc = Math.floor(totalMeses / 12);
+      const mesesRestantes = totalMeses % 12;
+      if (mesesRestantes === 0) periodoStr = anosCalc === 1 ? '1 anno' : `${anosCalc} anni`;
+      else periodoStr = `${anosCalc} ${anosCalc === 1 ? 'anno' : 'anni'} ${mesesRestantes} ${mesesRestantes === 1 ? 'mese' : 'mesi'}`;
+    }
+  } else if (locale === 'ja') {
+    if (totalMeses < 1) periodoStr = '1ヶ月未満';
+    else if (totalMeses === 1) periodoStr = '1ヶ月';
+    else if (totalMeses < 12) periodoStr = `${totalMeses}ヶ月`;
+    else {
+      const anosCalc = Math.floor(totalMeses / 12);
+      const mesesRestantes = totalMeses % 12;
+      if (mesesRestantes === 0) periodoStr = anosCalc === 1 ? '1年' : `${anosCalc}年`;
+      else periodoStr = `${anosCalc}年${mesesRestantes}ヶ月`;
     }
   } else {
     if (totalMeses < 1) periodoStr = 'menos de 1 mês';
@@ -297,6 +332,90 @@ const TRANSLATIONS_MEIO_FR = {
   ],
 };
 
+const TRANSLATIONS_MEIO_DE = {
+  sectionTitles: { projetos: 'Projekte', sobreMim: 'Über mich', experiencias: 'Berufserfahrung', formacaoAcademica: 'Ausbildung' },
+  categories: { backend: 'Backend', bancoDeDados: 'Datenbank', frontend: 'Front-end', ferramentas: 'Werkzeuge', experiencias: 'Erfahrung' },
+  experienceSkills: [
+    { nome: 'FullStack', experiencia: '3 Jahre 2 Monate' },
+    { nome: 'IT-Support', experiencia: '5 Jahre' },
+    { nome: 'Systemanalytiker', experiencia: '7 Monate' },
+    { nome: 'ChatBots & KI', experiencia: '7 Monate' },
+  ],
+  modal: { sobreExperiencia: 'Über diese Rolle', principaisAtividades: 'Hauptaufgaben' },
+  aboutMe: [
+    'Ich bin Gabriel Henrique Sales, Full-Stack-Entwickler und IT-Support-Mitarbeiter mit Fokus auf moderne, skalierbare digitale Lösungen.',
+    'Im Frontend entwickle ich responsive Oberflächen mit CSS3, JavaScript, TypeScript, Tailwind CSS und Styled Components, mit Microfrontends und KI.',
+    'Im Backend arbeite ich an REST-APIs, Datenmodellierung und Best Practices für Architektur und Sicherheit.',
+    'Mit Erfahrung in technischem Support, Helpdesk und Netzwerken. Fließend Portugiesisch, fortgeschrittenes Englisch, Grundkenntnisse in Japanisch und Italienisch, UX/UI, Photoshop und Power BI.',
+  ],
+  projectDescriptions: [
+    'Website: E-Commerce | Getränkehandlung',
+    'Website: Fotoalbum | Astrophotografie',
+    'Website: Schuhgeschäft',
+    'Website: Bibliothek',
+    'System: Personalverwaltung',
+    'Wissensdatenbank für IT-Support',
+    'Rezeptdatenbank',
+    'Plattform für Schulverwaltung und -kommunikation',
+  ],
+};
+
+const TRANSLATIONS_MEIO_IT = {
+  sectionTitles: { projetos: 'Progetti', sobreMim: 'Chi sono', experiencias: 'Esperienza', formacaoAcademica: 'Formazione' },
+  categories: { backend: 'Backend', bancoDeDados: 'Database', frontend: 'Front-end', ferramentas: 'Strumenti', experiencias: 'Esperienza' },
+  experienceSkills: [
+    { nome: 'FullStack', experiencia: '3 anni 2 mesi' },
+    { nome: 'Supporto IT', experiencia: '5 anni' },
+    { nome: 'Analista di sistemi', experiencia: '7 mesi' },
+    { nome: 'ChatBots e IA', experiencia: '7 mesi' },
+  ],
+  modal: { sobreExperiencia: 'Su questo ruolo', principaisAtividades: 'Attività principali' },
+  aboutMe: [
+    'Sono Gabriel Henrique Sales, sviluppatore Full Stack e professionista del supporto IT, focalizzato su soluzioni digitali moderne e scalabili.',
+    'In front-end sviluppo interfacce responsive con CSS3, JavaScript, TypeScript, Tailwind CSS e Styled Components, con Microfrontends e IA.',
+    'In back-end lavoro su API REST, modellazione dati e best practice di architettura e sicurezza.',
+    'Esperienza in supporto tecnico, helpdesk e reti. Fluente in portoghese, inglese avanzato, basi di giapponese e italiano, UX/UI, Photoshop e Power BI.',
+  ],
+  projectDescriptions: [
+    'Sito: E-commerce | Negozio di bevande',
+    'Sito: Album fotografico | Astrofotografia',
+    'Sito: Negozio di calzature',
+    'Sito: Biblioteca',
+    'Sistema: Gestione del personale',
+    'Base di conoscenza per supporto IT',
+    'Base di ricette',
+    'Piattaforma di gestione e comunicazione scolastica',
+  ],
+};
+
+const TRANSLATIONS_MEIO_JA = {
+  sectionTitles: { projetos: 'プロジェクト', sobreMim: '自己紹介', experiencias: '経験', formacaoAcademica: '学歴' },
+  categories: { backend: 'バックエンド', bancoDeDados: 'データベース', frontend: 'フロントエンド', ferramentas: 'ツール', experiencias: '経験' },
+  experienceSkills: [
+    { nome: 'FullStack', experiencia: '3年2ヶ月' },
+    { nome: 'ITサポート', experiencia: '5年' },
+    { nome: 'システムアナリスト', experiencia: '7ヶ月' },
+    { nome: 'チャットボット＆AI', experiencia: '7ヶ月' },
+  ],
+  modal: { sobreExperiencia: 'この役職について', principaisAtividades: '主な業務' },
+  aboutMe: [
+    'ガブリエル・エンリケ・サレスです。フルスタック開発者兼ITサポート担当。モダンでスケーラブルなデジタルソリューションに注力しています。',
+    'フロントエンドではCSS3、JavaScript、TypeScript、Tailwind CSS、Styled Componentsを用いたレスポンシブなインターフェースを開発。マイクロフロントエンドとAIを活用しています。',
+    'バックエンドではREST APIの作成・統合、データモデリング、アーキテクチャとセキュリティのベストプラクティスを実装しています。',
+    'テクニカルサポート、ヘルプデスク、ネットワークの経験あり。ポルトガル語ネイティブ、英語上級、日本語・イタリア語の基礎。UX/UIデザイン、Photoshop、Power BIのスキルあり。',
+  ],
+  projectDescriptions: [
+    'サイト種別: EC | 飲料店',
+    'サイト種別: フォトアルバム | 天体写真サイト',
+    'サイト種別: 靴店',
+    'サイト種別: 図書館',
+    'システム種別: 人事管理',
+    'ITサポート用ナレッジベース',
+    'レシピベース',
+    '学校管理・連絡プラットフォーム',
+  ],
+};
+
 // Experiências em inglês (mesma ordem que experienciasDetalhadas)
 const experienciasDetalhadasEN = [
   {
@@ -423,10 +542,47 @@ const experienciasDetalhadasFR = [
   { titulo: "Développeur logiciel - Novo Mundo S.A.", periodo: "Mars 2022 - Mars 2023 · 1 an 1 mois", local: "Goiânia, Goiás, Brésil · Sur site", resumo: "Développeur stagiaire. Développement, maintenance et support de systèmes, participation à des projets web et mobile.", detalhes: ["Gestion des tickets de support.", "Développement, tests et maintenance de systèmes (Java, JavaScript, Python).", "Debugging et tests unitaires.", "Analyse des besoins, méthodologies agiles (Scrum, Kanban).", "Git, Vue.js, Flutter, Docker."] },
 ];
 
+const EXPERIENCIAS_BY_LOCALE = {
+  en: experienciasDetalhadasEN,
+  fr: experienciasDetalhadasFR,
+};
+const experienciasDetalhadasDE = [
+  { titulo: "N3-Support-Analyst Trainee - SE7E SISTEMAS", dataInicio: '2025-08-01', local: "Goiânia - GO", resumo: "Technische Tickets zum Data7-System. Datenbankfehler beheben, vorbeugende Wartung.", detalhes: ["Bearbeitung von Data7-Support-Tickets.", "Datenbanken: PostgreSQL, Sybase, SQL Server.", "Systemupdates, Wartung von Geräten.", "TeamViewer, AnyDesk, KCS, ITIL.", "Windows 11, Windows Server, Android, VMs."] },
+  { titulo: "N3 Technischer Support - OMNICHANEL - TI SOLUTIONS", dataInicio: '2025-07-01', local: "Curitiba - PR", resumo: "Fachsupport für Omnichannel-System. Agents AI Modul, Schulungen.", detalhes: ["Omnichannel-Support.", "Agents AI, ChatGPT-Integration.", "LGPD-konforme Umgebungen.", "Jira, Zendesk, SQL Server, PostgreSQL."] },
+  { titulo: "Freelance-Entwickler UpWork", dataInicio: '2024-01-01', resumo: "Institutionswebsites, Landing Pages, Webanwendungen. React.js, Angular, Tailwind CSS.", detalhes: ["Responsive Sites, SEO.", "Individuelle Systeme.", "API- und Datenbankanbindung.", "Dokumentation."] },
+  { titulo: "IT-Techniker - CIEE", periodo: "Aug 2023 - Sep 2025 · 2 Jahre 1 Monat", local: "Goiânia, Brasilien", resumo: "IT-Support, Benutzerbetreuung, Systemwartung, Lansweeper, KCS, Jira, Zendesk.", detalhes: ["Support intern und extern.", "Lansweeper, FLUIG, SonicWall.", "REST-APIs."] },
+  { titulo: "Softwareentwickler - Novo Mundo S.A.", periodo: "Mär 2022 - Mär 2023 · 1 Jahr 1 Monat", local: "Goiânia · Vor Ort", resumo: "Trainee. Entwicklung, Wartung, Support. Web und Mobile.", detalhes: ["Java, JavaScript, Python.", "Scrum, Kanban.", "Vue.js, Flutter, Docker."] },
+];
+const experienciasDetalhadasIT = [
+  { titulo: "Analista support N3 tirocinante - SE7E SISTEMAS", dataInicio: '2025-08-01', local: "Goiânia - GO", resumo: "Gestione ticket tecnici Data7. Correzioni database, manutenzione preventiva.", detalhes: ["Ticket tecnici Data7.", "PostgreSQL, Sybase, SQL Server.", "Aggiornamenti sistema.", "TeamViewer, AnyDesk, KCS, ITIL.", "Windows 11, Android, VMs."] },
+  { titulo: "Analista support tecnico N3 - OMNICHANEL - TI SOLUTIONS", dataInicio: '2025-07-01', local: "Curitiba - PR", resumo: "Supporto specializzato sistema omnichannel. Modulo Agents AI, formazione.", detalhes: ["Supporto omnichannel.", "Agents AI, ChatGPT.", "Ambienti test e produzione, LGPD.", "SQL Server, PostgreSQL."] },
+  { titulo: "Sviluppatore freelance UpWork", dataInicio: '2024-01-01', resumo: "Siti istituzionali, landing page, sistemi web. React.js, Angular, Tailwind CSS.", detalhes: ["Siti responsive, SEO.", "Sistemi personalizzati.", "API e database.", "Documentazione."] },
+  { titulo: "Tecnico informatico - CIEE", periodo: "Ago 2023 - Set 2025 · 2 anni 1 mese", local: "Goiânia, Brasile", resumo: "Supporto IT, utenti interni ed esterni, Lansweeper, KCS, Jira, Zendesk.", detalhes: ["Help Desk.", "Lansweeper, FLUIG, SonicWall.", "API REST."] },
+  { titulo: "Sviluppatore software - Novo Mundo S.A.", periodo: "Mar 2022 - Mar 2023 · 1 anno 1 mese", local: "Goiânia · In sede", resumo: "Tirocinante. Sviluppo, manutenzione, supporto. Web e mobile.", detalhes: ["Java, JavaScript, Python.", "Scrum, Kanban.", "Vue.js, Flutter, Docker."] },
+];
+const experienciasDetalhadasJA = [
+  { titulo: "N3サポートアナリスト トレーニー - SE7E SISTEMAS", dataInicio: '2025-08-01', local: "ゴイアニア - GO", resumo: "Data7システムに関する技術チケット対応。DB修正、予防保守。", detalhes: ["Data7チケット対応。", "PostgreSQL、Sybase、SQL Server。", "システム更新。", "TeamViewer、AnyDesk、KCS、ITIL。", "Windows 11、Android、VM。"] },
+  { titulo: "N3テクニカルサポート - OMNICHANEL - TI SOLUTIONS", dataInicio: '2025-07-01', local: "クリチバ - PR", resumo: "オムニチャネルシステムの専門サポート。Agents AIモジュール。", detalhes: ["オムニチャネルサポート。", "Agents AI、ChatGPT連携。", "LGPD準拠環境。", "SQL Server、PostgreSQL。"] },
+  { titulo: "フリーランス開発者 UpWork", dataInicio: '2024-01-01', resumo: "コーポレートサイト、ランディングページ、Webシステム。React.js、Angular、Tailwind CSS。", detalhes: ["レスポンシブサイト、SEO。", "カスタムシステム。", "API・DB連携。", "ドキュメント。"] },
+  { titulo: "IT技術者 - CIEE", periodo: "2023年8月 - 2025年9月 · 2年1ヶ月", local: "ゴイアニア、ブラジル", resumo: "ITサポート、内外ユーザー対応、Lansweeper、KCS、Jira、Zendesk。", detalhes: ["ヘルプデスク。", "Lansweeper、FLUIG、SonicWall。", "REST API。"] },
+  { titulo: "ソフトウェア開発者 - Novo Mundo S.A.", periodo: "2022年3月 - 2023年3月 · 1年1ヶ月", local: "ゴイアニア・オンサイト", resumo: "トレーニー。開発、保守、サポート。Web・モバイル。", detalhes: ["Java、JavaScript、Python。", "Scrum、Kanban。", "Vue.js、Flutter、Docker。"] },
+];
+EXPERIENCIAS_BY_LOCALE.de = experienciasDetalhadasDE;
+EXPERIENCIAS_BY_LOCALE.it = experienciasDetalhadasIT;
+EXPERIENCIAS_BY_LOCALE.ja = experienciasDetalhadasJA;
+
+const TELA_MEIO_T = {
+  en: TRANSLATIONS_MEIO,
+  fr: TRANSLATIONS_MEIO_FR,
+  de: TRANSLATIONS_MEIO_DE,
+  it: TRANSLATIONS_MEIO_IT,
+  ja: TRANSLATIONS_MEIO_JA,
+};
+
 const TelaMeio = ({ locale = 'pt-BR' }) => {
   const isEn = locale === 'en';
   const isFr = locale === 'fr';
-  const t = isEn ? TRANSLATIONS_MEIO : isFr ? TRANSLATIONS_MEIO_FR : null;
+  const t = TELA_MEIO_T[locale] || null;
 
   const projetos = [
     {
@@ -721,14 +877,10 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
       {/* Seção Experiências */}
       <h2 className="titulo-projetos">{t ? t.sectionTitles.experiencias : 'Experiências'}</h2>
       <div className="container-experiencias">
-        {(isEn ? experienciasDetalhadasEN.map((e, i) => ({
+        {(EXPERIENCIAS_BY_LOCALE[locale] ? EXPERIENCIAS_BY_LOCALE[locale].map((e, i) => ({
           ...e,
           logo: experienciasDetalhadas[i].logo,
-          periodo: e.dataInicio ? calcularPeriodo(e.dataInicio, new Date(), 'en') : e.periodo,
-        })) : isFr ? experienciasDetalhadasFR.map((e, i) => ({
-          ...e,
-          logo: experienciasDetalhadas[i].logo,
-          periodo: e.dataInicio ? calcularPeriodo(e.dataInicio, new Date(), 'fr') : e.periodo,
+          periodo: e.dataInicio ? calcularPeriodo(e.dataInicio, new Date(), locale) : e.periodo,
         })) : experienciasDetalhadas).map((exp, idx) => (
           <div
             key={idx}

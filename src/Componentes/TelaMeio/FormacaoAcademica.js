@@ -76,10 +76,37 @@ const formacoesEN = [
   { instituicao: "Basileu França", curso: "Certificate, Public Arts", periodo: "Jan 2011 - Dec 2017", descricao: "Activities and groups: e.g. Theater, Choir, Crafts, Plastic Arts, Realistic Drawing, Performing Arts, Circus, Musical Theater, Dance and Painting.", competencias: "Illustrator" },
 ];
 
+const formacoesDE = [
+  { instituicao: "Faculdade SENAI Fatesg", curso: "Bachelor Softwaretechnik", periodo: "Jan 2022 - Dez 2025", descricao: "🎓 Studium Softwaretechnik. Robuste, skalierbare Lösungen. Entwicklung, Architektur, Daten, KI.", competencias: "UI · UX · Programmierung · Front-end · Full Stack · PostgreSQL · Java · JavaScript · TypeScript · React · Figma" },
+  { instituicao: "Faculdade Sensu", curso: "Bachelor Öffentliche Sicherheit", periodo: "Jun 2024 - Jun 2025", descricao: "🎓 Öffentliche Sicherheit. Kriminalanalyse, Kriminologie, Menschenrechte.", competencias: "Kriminalanalyse · Strategisches Management · Mediation" },
+  { instituicao: "KAIKAN - ANBG", curso: "Japanischkurs", periodo: "Jan 2021 - Dez 2024", descricao: "🇯🇵 Japanisch. Grammatik, Hiragana, Katakana, Kanji, Kultur.", competencias: "Sprachen · Japanisch · interkulturelle Kommunikation" },
+  { instituicao: "Colégio da PM Goiás - Hugo De Carvalho Ramos", curso: "Abitur", periodo: "Jan 2019 - Dez 2021", descricao: "🎓 Gymnasium. Disziplin, Werte.", competencias: "Sprachen · Illustrator · militärische Ausbildung" },
+  { instituicao: "Senac Brasil", curso: "Diplom Anglistik", periodo: "Jan 2019 - Dez 2020", descricao: "📘 Englisch. ESL, visueller Ausdruck.", competencias: "Sprachen · Illustrator · ESL" },
+  { instituicao: "Basileu França", curso: "Zertifikat Öffentliche Kunst", periodo: "Jan 2011 - Dez 2017", descricao: "Theater, Chor, Kunsthandwerk, Zirkus, Tanz.", competencias: "Illustrator" },
+];
+const formacoesIT = [
+  { instituicao: "Faculdade SENAI Fatesg", curso: "Laurea in Ingegneria del software", periodo: "Gen 2022 - Dic 2025", descricao: "🎓 Studente di ingegneria del software. Soluzioni robuste e scalabili. Sviluppo, architettura, dati, IA.", competencias: "UI · UX · Programmazione · Front-end · Full Stack · PostgreSQL · Java · React · Figma" },
+  { instituicao: "Faculdade Sensu", curso: "Laurea in Sicurezza pubblica", periodo: "Giu 2024 - Giu 2025", descricao: "🎓 Sicurezza pubblica. Analisi criminale, criminologia, diritti umani.", competencias: "Analisi criminale · Gestione strategica · Mediazione" },
+  { instituicao: "KAIKAN - ANBG", curso: "Corso di giapponese", periodo: "Gen 2021 - Dic 2024", descricao: "🇯🇵 Lingua giapponese. Grammatica, Hiragana, Katakana, Kanji.", competencias: "Lingue · Giapponese · comunicazione interculturale" },
+  { instituicao: "Colégio da PM Goiás - Hugo De Carvalho Ramos", curso: "Diploma di scuola superiore", periodo: "Gen 2019 - Dic 2021", descricao: "🎓 Scuola superiore. Disciplina, valori civici.", competencias: "Lingue · Illustratore · formazione militare" },
+  { instituicao: "Senac Brasil", curso: "Diploma in Lettere - Inglese", periodo: "Gen 2019 - Dic 2020", descricao: "📘 Inglese. ESL, espressione visiva.", competencias: "Lingue · Illustratore · ESL" },
+  { instituicao: "Basileu França", curso: "Certificato Arti pubbliche", periodo: "Gen 2011 - Dic 2017", descricao: "Teatro, coro, artigianato, circo, danza.", competencias: "Illustratore" },
+];
+const formacoesJA = [
+  { instituicao: "Faculdade SENAI Fatesg", curso: "ソフトウェア工学学士", periodo: "2022年1月 - 2025年12月", descricao: "🎓 ソフトウェア工学在学中。堅牢でスケーラブルなソリューション。開発、アーキテクチャ、データ、AI。", competencias: "UI・UX・プログラミング・フロントエンド・Full Stack・PostgreSQL・Java・React・Figma" },
+  { instituicao: "Faculdade Sensu", curso: "公安学士", periodo: "2024年6月 - 2025年6月", descricao: "🎓 公安。犯罪分析、犯罪学、人権。", competencias: "犯罪分析・戦略管理・調停" },
+  { instituicao: "KAIKAN - ANBG", curso: "日本語コース", periodo: "2021年1月 - 2024年12月", descricao: "🇯🇵 日本語。文法、ひらがな、カタカナ、漢字、文化。", competencias: "言語・日本語・異文化コミュニケーション" },
+  { instituicao: "Colégio da PM Goiás - Hugo De Carvalho Ramos", curso: "高校卒業", periodo: "2019年1月 - 2021年12月", descricao: "🎓 高校。規律、市民的価値。", competencias: "言語・イラストレーター・軍事訓練" },
+  { instituicao: "Senac Brasil", curso: "文学卒業 - 英語", periodo: "2019年1月 - 2020年12月", descricao: "📘 英語。ESL、視覚表現。", competencias: "言語・イラストレーター・ESL" },
+  { instituicao: "Basileu França", curso: "証明書 パブリックアート", periodo: "2011年1月 - 2017年12月", descricao: "演劇、合唱、工芸、サーカス、ダンス。", competencias: "イラストレーター" },
+];
+
+const FORMACOES_BY_LOCALE = { en: formacoesEN, fr: formacoesFR, de: formacoesDE, it: formacoesIT, ja: formacoesJA };
+
 const FormacaoAcademica = ({ locale = 'pt-BR' }) => {
   const isEn = locale === 'en';
   const isFr = locale === 'fr';
-  const formacoesList = isEn ? formacoesEN.map((f, i) => ({ ...f, logo: formacoes[i].logo })) : isFr ? formacoesFR.map((f, i) => ({ ...f, logo: formacoes[i].logo })) : formacoes;
+  const formacoesList = FORMACOES_BY_LOCALE[locale] ? FORMACOES_BY_LOCALE[locale].map((f, i) => ({ ...f, logo: formacoes[i].logo })) : formacoes;
   const [formacaoSelecionada, setFormacaoSelecionada] = useState(null);
 
   // Fechar modal com tecla ESC
@@ -195,7 +222,7 @@ const FormacaoAcademica = ({ locale = 'pt-BR' }) => {
                   borderLeft: '3px solid #64ffda',
                   paddingLeft: '1rem'
                 }}>
-                  {isEn ? 'About this program' : isFr ? 'À propos de la formation' : 'Sobre a Formação'}
+                  {isEn ? 'About this program' : isFr ? 'À propos de la formation' : locale === 'de' ? 'Über diese Ausbildung' : locale === 'it' ? 'Su questa formazione' : locale === 'ja' ? 'このプログラムについて' : 'Sobre a Formação'}
                 </h3>
                 <div style={{ 
                   whiteSpace: 'pre-line', 
@@ -221,7 +248,7 @@ const FormacaoAcademica = ({ locale = 'pt-BR' }) => {
                     borderLeft: '3px solid #64ffda',
                     paddingLeft: '1rem'
                   }}>
-                    {isEn ? 'Skills developed' : isFr ? 'Compétences développées' : 'Competências Desenvolvidas'}
+                    {isEn ? 'Skills developed' : isFr ? 'Compétences développées' : locale === 'de' ? 'Entwickelte Kompetenzen' : locale === 'it' ? 'Competenze sviluppate' : locale === 'ja' ? '習得スキル' : 'Competências Desenvolvidas'}
                   </h3>
                   <div style={{ 
                     color: '#e0e0e0', 

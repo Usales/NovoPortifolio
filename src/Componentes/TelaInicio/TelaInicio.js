@@ -51,6 +51,27 @@ const TRANSLATIONS = {
     europass: 'Europass',
     coverLetter: 'Lettre de motivation',
   },
+  de: {
+    cargo: 'Software-Ingenieur | IT-Support-Analyst👨🏻‍💻',
+    cvPortugues: 'CV Portugiesisch',
+    cvIngles: 'CV Englisch',
+    europass: 'Europass',
+    coverLetter: 'Anschreiben',
+  },
+  it: {
+    cargo: 'Ingegnere del software | Analista di supporto👨🏻‍💻',
+    cvPortugues: 'CV Portoghese',
+    cvIngles: 'CV Inglese',
+    europass: 'Europass',
+    coverLetter: 'Lettera di presentazione',
+  },
+  ja: {
+    cargo: 'ソフトウェアエンジニア | ITサポートアナリスト👨🏻‍💻',
+    cvPortugues: 'CV ポルトガル語',
+    cvIngles: 'CV 英語',
+    europass: 'Europass',
+    coverLetter: 'カバーレター',
+  },
 };
 
 const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
@@ -166,7 +187,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 2.8 }}
-        title="Idiomas: Português (BR), Inglês, Francês, Alemão, Suíça (DE/FR), Italiano, Japonês"
+        title="Idiomas: Português (BR), Inglês, Francês, Alemão, Italiano, Japonês"
       >
         <div
           className="flag-container flag-container--clickable"
@@ -207,23 +228,42 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
             <ReactCountryFlag countryCode="FR" svg style={{ width: '1.75rem', height: '1.75rem' }} />
           </span>
         </div>
-        <div className="flag-container">
-          <span className="flag" title="Alemanha - Alemão" aria-label="Alemanha - Alemão">
+        <div
+          className="flag-container flag-container--clickable"
+          role="button"
+          tabIndex={0}
+          onClick={() => onLocaleChange?.('de')}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('de'); }}
+          title="Alemanha - Alemão"
+          aria-label="Auf Deutsch wechseln"
+        >
+          <span className="flag">
             <ReactCountryFlag countryCode="DE" svg style={{ width: '1.75rem', height: '1.75rem' }} />
           </span>
         </div>
-        <div className="flag-container">
-          <span className="flag" title="Suíça - Alemão e Francês" aria-label="Suíça - Alemão e Francês">
-            <ReactCountryFlag countryCode="CH" svg style={{ width: '1.75rem', height: '1.75rem' }} />
-          </span>
-        </div>
-        <div className="flag-container">
-          <span className="flag" title="Itália - Italiano" aria-label="Itália - Italiano">
+        <div
+          className="flag-container flag-container--clickable"
+          role="button"
+          tabIndex={0}
+          onClick={() => onLocaleChange?.('it')}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('it'); }}
+          title="Itália - Italiano"
+          aria-label="Passa all'italiano"
+        >
+          <span className="flag">
             <ReactCountryFlag countryCode="IT" svg style={{ width: '1.75rem', height: '1.75rem' }} />
           </span>
         </div>
-        <div className="flag-container">
-          <span className="flag" title="Japão - Japonês" aria-label="Japão - Japonês">
+        <div
+          className="flag-container flag-container--clickable"
+          role="button"
+          tabIndex={0}
+          onClick={() => onLocaleChange?.('ja')}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('ja'); }}
+          title="Japão - Japonês"
+          aria-label="日本語に切り替え"
+        >
+          <span className="flag">
             <ReactCountryFlag countryCode="JP" svg style={{ width: '1.75rem', height: '1.75rem' }} />
           </span>
         </div>
