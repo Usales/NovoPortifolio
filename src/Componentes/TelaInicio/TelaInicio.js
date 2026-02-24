@@ -44,6 +44,13 @@ const TRANSLATIONS = {
     europass: 'Europass',
     coverLetter: 'Cover Letter',
   },
+  fr: {
+    cargo: 'Ingénieur logiciel | Analyste support👨🏻‍💻',
+    cvPortugues: 'CV Portugais',
+    cvIngles: 'CV Anglais',
+    europass: 'Europass',
+    coverLetter: 'Lettre de motivation',
+  },
 };
 
 const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
@@ -187,8 +194,16 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
             <ReactCountryFlag countryCode="GB" svg style={{ width: '1.75rem', height: '1.75rem' }} />
           </span>
         </div>
-        <div className="flag-container">
-          <span className="flag" title="França - Francês" aria-label="França - Francês">
+        <div
+          className="flag-container flag-container--clickable"
+          role="button"
+          tabIndex={0}
+          onClick={() => onLocaleChange?.('fr')}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('fr'); }}
+          title="França - Francês"
+          aria-label="Passer en français"
+        >
+          <span className="flag">
             <ReactCountryFlag countryCode="FR" svg style={{ width: '1.75rem', height: '1.75rem' }} />
           </span>
         </div>

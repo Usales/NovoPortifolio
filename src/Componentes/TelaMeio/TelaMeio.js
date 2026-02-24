@@ -22,13 +22,14 @@ import logoTiSolutions from '../Imagens/ti_solutions_logo.jpg';
 import logoSe7e from '../Imagens/se7e_sistemas_logo.jpg';
 
 
-// Função para calcular período entre datas (locale: 'pt-BR' | 'en')
+// Função para calcular período entre datas (locale: 'pt-BR' | 'en' | 'fr')
 const calcularPeriodo = (dataInicio, dataFim = new Date(), locale = 'pt-BR') => {
   const mesesPT = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
   const mesesEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  const meses = locale === 'en' ? mesesEN : mesesPT;
-  const atual = locale === 'en' ? 'Current' : 'Atual';
-  const de = locale === 'en' ? ' ' : ' de ';
+  const mesesFR = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+  const meses = locale === 'en' ? mesesEN : locale === 'fr' ? mesesFR : mesesPT;
+  const atual = locale === 'en' ? 'Current' : locale === 'fr' ? 'Actuel' : 'Atual';
+  const de = locale === 'en' ? ' ' : locale === 'fr' ? ' ' : ' de ';
 
   let inicio;
   if (typeof dataInicio === 'string') {
@@ -58,6 +59,16 @@ const calcularPeriodo = (dataInicio, dataFim = new Date(), locale = 'pt-BR') => 
       const mesesRestantes = totalMeses % 12;
       if (mesesRestantes === 0) periodoStr = anosCalc === 1 ? '1 year' : `${anosCalc} years`;
       else periodoStr = `${anosCalc} ${anosCalc === 1 ? 'year' : 'years'} ${mesesRestantes} ${mesesRestantes === 1 ? 'month' : 'months'}`;
+    }
+  } else if (locale === 'fr') {
+    if (totalMeses < 1) periodoStr = 'moins d\'1 mois';
+    else if (totalMeses === 1) periodoStr = '1 mois';
+    else if (totalMeses < 12) periodoStr = `${totalMeses} mois`;
+    else {
+      const anosCalc = Math.floor(totalMeses / 12);
+      const mesesRestantes = totalMeses % 12;
+      if (mesesRestantes === 0) periodoStr = anosCalc === 1 ? '1 an' : `${anosCalc} ans`;
+      else periodoStr = `${anosCalc} ${anosCalc === 1 ? 'an' : 'ans'} ${mesesRestantes} ${mesesRestantes === 1 ? 'mois' : 'mois'}`;
     }
   } else {
     if (totalMeses < 1) periodoStr = 'menos de 1 mês';
@@ -243,6 +254,49 @@ const TRANSLATIONS_MEIO = {
   ],
 };
 
+// Traduções para francês (locale === 'fr')
+const TRANSLATIONS_MEIO_FR = {
+  sectionTitles: {
+    projetos: 'Projets',
+    sobreMim: 'À propos',
+    experiencias: 'Expérience',
+    formacaoAcademica: 'Formation',
+  },
+  categories: {
+    backend: 'Backend',
+    bancoDeDados: 'Base de données',
+    frontend: 'Front-end',
+    ferramentas: 'Outils',
+    experiencias: 'Expérience',
+  },
+  experienceSkills: [
+    { nome: 'FullStack', experiencia: '3 ans 2 mois' },
+    { nome: 'Support TI', experiencia: '5 ans' },
+    { nome: 'Analyste systèmes', experiencia: '7 mois' },
+    { nome: 'ChatBots & IA', experiencia: '7 mois' },
+  ],
+  modal: {
+    sobreExperiencia: 'À propos du poste',
+    principaisAtividades: 'Activités principales',
+  },
+  aboutMe: [
+    "Je suis Gabriel Henrique Sales, développeur Full Stack et professionnel du support TI, axé sur la création de solutions numériques modernes, évolutives et performantes.",
+    "En front-end, je développe des interfaces responsives et accessibles avec CSS3, JavaScript, TypeScript, Tailwind CSS et Styled Components, en appliquant les Microfrontends et l'IA pour améliorer l'expérience, le design et les tests.",
+    "En back-end, je travaille sur la création et l'intégration d'API REST, la modélisation de données et la mise en œuvre des bonnes pratiques d'architecture et de sécurité.",
+    "Avec une expérience en support technique, helpdesk et réseaux, j'ai une vision systémique de l'infrastructure et une maîtrise d'outils comme Zendesk et Jira. Je parle couramment le portugais, avec un anglais avancé et des notions de japonais et d'italien, ainsi que des compétences en design UX/UI, Photoshop et Power BI.",
+  ],
+  projectDescriptions: [
+    'Site type : E-commerce | Magasin de boissons',
+    'Site type : Album photo | Site d\'astrophotographie',
+    'Site type : Magasin de chaussures',
+    'Site type : Bibliothèque',
+    'Système type : Gestion du personnel',
+    'Base de connaissances pour le support TI',
+    'Base de recettes',
+    'Plateforme de gestion et communication scolaire',
+  ],
+};
+
 // Experiências em inglês (mesma ordem que experienciasDetalhadas)
 const experienciasDetalhadasEN = [
   {
@@ -360,9 +414,19 @@ const experienciasDetalhadasEN = [
   },
 ];
 
+// Experiências em francês (mesma ordem que experienciasDetalhadas)
+const experienciasDetalhadasFR = [
+  { titulo: "Analyste support N3 stagiaire - SE7E SISTEMAS Unipessoal Limitada", dataInicio: '2025-08-01', local: "Av. do Comércio, 25 - Bureau 907 - Vila Maria Jose, Goiânia - GO, 74815-390", resumo: "Prise en charge de tickets techniques liés au système Data7, identification, analyse et résolution d'incidents. Correction d'erreurs en base de données et maintenance préventive des équipements.", detalhes: ["Prise en charge des tickets techniques liés au système Data7.", "Correction d'erreurs dans les bases de données (PostgreSQL, Sybase, Microsoft SQL Server).", "Mise en œuvre de mises à jour et d'améliorations du système.", "Maintenance préventive et corrective des équipements.", "Gestion des relations avec les fournisseurs.", "Tests et validations post-déploiement.", "Base de connaissances interne.", "Support à distance, configuration et diagnostic logiciel.", "Installation et configuration de Windows et Android.", "  ↓  ", "Compétences : PostgreSQL, Sybase, SQL Server, Data7, TeamViewer, AnyDesk, SQL, KCS, ITIL, Windows 11, Windows Server, Android, VMs."] },
+  { titulo: "Analyste support technique N3 - OMNICHANEL - TI SOLUTIONS TECH INOVATIONS LTDA", dataInicio: '2025-07-01', local: "Travessa Kalil Karan, 110 - Curitiba - PR", resumo: "Support technique spécialisé sur le système omnichannel. Intervention sur le module Agents AI avec formations personnalisées.", detalhes: ["Support technique spécialisé pour le système omnichannel.", "Prise en charge directe des clients et partenaires.", "Module Agents AI, formations pour équipes support et revendeurs, intégration chatbots et ChatGPT.", "Environnements de test et de production, conformité LGPD.", "Projets d'amélioration continue, automatisation des flux.", "Formation des agents et utilisateurs.", "Collaboration avec la produit.", "Confidentialité et propriété intellectuelle.", "Catalogage des problèmes chatbots.", "  ↓  ", "Omnichannel • ChatGPT API • Agents AI • SQL Server • PostgreSQL."] },
+  { titulo: "Développeur freelance UpWork", dataInicio: '2024-01-01', resumo: "Développement de sites institutionnels, landing pages et systèmes web. React.js, Angular, JavaScript, HTML5, CSS3, Tailwind CSS.", detalhes: ["Sites responsives et optimisés SEO.", "Systèmes personnalisés selon la demande client.", "Intégration APIs et bases de données.", "Suivi client de la première réunion à la livraison.", "Maintenance et mises à jour des projets livrés.", "Documentation détaillée du site."] },
+  { titulo: "Technicien informatique - CIEE - Centre d'intégration entreprise-école", periodo: "Août 2023 - Sept 2025 · 2 ans 1 mois", local: "Goiânia, Goiás, Brésil", resumo: "Support TI, prise en charge des utilisateurs internes et externes, maintenance des systèmes, infrastructure et intégration de solutions.", detalhes: ["Support technique aux utilisateurs internes et externes.", "Analyse des besoins, alimentation des données, Help Desk.", "Installation et configuration de logiciels et équipements.", "Inventaire des actifs TI (Lansweeper), méthodologie KCS.", "Configuration de pare-feu SonicWall.", "Déplacements techniques, documentation du réseau.", "Système FLUIG, Jira Software, Zendesk.", "Intégration via API REST."] },
+  { titulo: "Développeur logiciel - Novo Mundo S.A.", periodo: "Mars 2022 - Mars 2023 · 1 an 1 mois", local: "Goiânia, Goiás, Brésil · Sur site", resumo: "Développeur stagiaire. Développement, maintenance et support de systèmes, participation à des projets web et mobile.", detalhes: ["Gestion des tickets de support.", "Développement, tests et maintenance de systèmes (Java, JavaScript, Python).", "Debugging et tests unitaires.", "Analyse des besoins, méthodologies agiles (Scrum, Kanban).", "Git, Vue.js, Flutter, Docker."] },
+];
+
 const TelaMeio = ({ locale = 'pt-BR' }) => {
   const isEn = locale === 'en';
-  const t = TRANSLATIONS_MEIO;
+  const isFr = locale === 'fr';
+  const t = isEn ? TRANSLATIONS_MEIO : isFr ? TRANSLATIONS_MEIO_FR : null;
 
   const projetos = [
     {
@@ -585,15 +649,15 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
       <div className="container-habilidades">
         {habilidades.map((categoria, index) => {
           const categoryKey = ['backend', 'bancoDeDados', 'frontend', 'ferramentas', 'experiencias'][index];
-          const categoryLabel = isEn ? (t.categories[categoryKey] || categoria.categoria) : categoria.categoria;
+          const categoryLabel = t ? (t.categories[categoryKey] || categoria.categoria) : categoria.categoria;
           return (
             <div key={index} className="categoria">
               <h3 className="titulo-categoria">{categoryLabel}</h3>
               <div className="grid-habilidades">
                 {categoria.items.map((item, itemIndex) => {
-                  const expSkill = categoryKey === 'experiencias' && t.experienceSkills[itemIndex];
-                  const nome = (isEn && expSkill) ? expSkill.nome : item.nome;
-                  const exp = (isEn && expSkill) ? expSkill.experiencia : item.experiencia;
+                  const expSkill = categoryKey === 'experiencias' && t?.experienceSkills?.[itemIndex];
+                  const nome = (t && expSkill) ? expSkill.nome : item.nome;
+                  const exp = (t && expSkill) ? expSkill.experiencia : item.experiencia;
                   return (
                     <div key={itemIndex} className="habilidade-item" data-experiencia={exp}>
                       <div className="icone">{item.icone}</div>
@@ -607,7 +671,7 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
         })}
       </div>
 
-      <h2 className="titulo-projetos">{isEn ? t.sectionTitles.projetos : 'Projetos'}</h2>
+      <h2 className="titulo-projetos">{t ? t.sectionTitles.projetos : 'Projetos'}</h2>
       <div className="container-projetos">
         {projetos.map((projeto, index) => (
           <a
@@ -621,7 +685,7 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
               <img src={projeto.imagem} alt={projeto.nome} className="imagem-projeto" />
               <div className="overlay">
                 <h3 className="nome-projeto">{projeto.nome}</h3>
-                <p className="descricao-projeto">{isEn ? t.projectDescriptions[index] : projeto.descricao}</p>
+                <p className="descricao-projeto">{t ? t.projectDescriptions[index] : projeto.descricao}</p>
                 <div className="tecnologias-container">
                   {projeto.tecnologias.map((tech, techIndex) => (
                     <div key={techIndex} className="tech-card">
@@ -637,13 +701,13 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
       </div>
 
       {/* Seção Sobre Mim */}
-      <h2 className="titulo-projetos">{isEn ? t.sectionTitles.sobreMim : 'Sobre Mim'}</h2>
+      <h2 className="titulo-projetos">{t ? t.sectionTitles.sobreMim : 'Sobre Mim'}</h2>
       <div className="container-sobre-mim">
         <div className="sobre-mim-foto">
           <img src={require('../Imagens/foto.png')} alt="Gabriel Henriques Sales" className="foto-sobre-mim" />
         </div>
         <div className="sobre-mim-texto">
-          {isEn ? t.aboutMe.map((para, i) => <p key={i}>{para}</p>) : (
+          {t ? t.aboutMe.map((para, i) => <p key={i}>{para}</p>) : (
             <>
               <p>Sou Gabriel Henrique Sales, desenvolvedor Full Stack e profissional de Suporte de TI, focado em criar soluções digitais modernas, escaláveis e de alta performance.</p>
               <p>No front-end, desenvolvo interfaces responsivas e acessíveis com CSS3, JavaScript, TypeScript, Tailwind CSS e Styled Components, aplicando Microfrontends e IA para aprimorar experiência, design e testes.</p>
@@ -655,12 +719,16 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
       </div>
 
       {/* Seção Experiências */}
-      <h2 className="titulo-projetos">{isEn ? t.sectionTitles.experiencias : 'Experiências'}</h2>
+      <h2 className="titulo-projetos">{t ? t.sectionTitles.experiencias : 'Experiências'}</h2>
       <div className="container-experiencias">
         {(isEn ? experienciasDetalhadasEN.map((e, i) => ({
           ...e,
           logo: experienciasDetalhadas[i].logo,
           periodo: e.dataInicio ? calcularPeriodo(e.dataInicio, new Date(), 'en') : e.periodo,
+        })) : isFr ? experienciasDetalhadasFR.map((e, i) => ({
+          ...e,
+          logo: experienciasDetalhadas[i].logo,
+          periodo: e.dataInicio ? calcularPeriodo(e.dataInicio, new Date(), 'fr') : e.periodo,
         })) : experienciasDetalhadas).map((exp, idx) => (
           <div
             key={idx}
@@ -754,7 +822,7 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
                   borderLeft: '3px solid #64ffda',
                   paddingLeft: '1rem'
                 }}>
-                  {isEn ? t.modal.sobreExperiencia : 'Sobre a Experiência'}
+                  {t ? t.modal.sobreExperiencia : 'Sobre a Experiência'}
                 </h3>
                 <div style={{ 
                   color: '#fff', 
@@ -778,7 +846,7 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
                   borderLeft: '3px solid #64ffda',
                   paddingLeft: '1rem'
                 }}>
-                  {isEn ? t.modal.principaisAtividades : 'Principais Atividades'}
+                  {t ? t.modal.principaisAtividades : 'Principais Atividades'}
                 </h3>
                 <ul>
                   {experienciaSelecionada.detalhes.map((det, i) => (
@@ -795,7 +863,7 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
       {/* Adicione aqui o componente de certificações, se necessário */}
 
       {/* Seção Formação Acadêmica */}
-      <h2 className="titulo-projetos">{isEn ? t.sectionTitles.formacaoAcademica : 'Formação Acadêmica'}</h2>
+      <h2 className="titulo-projetos">{t ? t.sectionTitles.formacaoAcademica : 'Formação Acadêmica'}</h2>
       <FormacaoAcademica locale={locale} />
     </div>
   );

@@ -58,6 +58,15 @@ const formacoes = [
   }
 ];
 
+const formacoesFR = [
+  { instituicao: "Faculdade SENAI Fatesg", curso: "Licence en génie logiciel", periodo: "Janv. 2022 - Déc. 2025", descricao: "🎓 Étudiant en génie logiciel. Formation axée sur des solutions technologiques robustes et évolutives. Développement, architecture, données, IA et gestion.", competencias: "🎯 Conception d'interface (UI) · 🧠 Expérience utilisateur (UX) · 💻 Programmation · 🌐 Front-end · 🔄 Full Stack · 🗄️ PostgreSQL · ☕ Java · 🟨 JavaScript · 🔷 TypeScript · ⚛️ React.js · 🎨 Figma · 📡 Technologies de l'information" },
+  { instituicao: "Faculdade Sensu", curso: "Licence, Sécurité publique", periodo: "Juin 2024 - Juin 2025", descricao: "🎓 Formation en sécurité publique. Approche multidisciplinaire : analyse, prévention et gestion stratégique de la sécurité.", competencias: "Analyse criminelle · Gestion stratégique · Droits de l'homme · Criminologie · Médiation et négociation" },
+  { instituicao: "KAIKAN - ANBG - Associação Nipo Brasileira de Goiás", curso: "Cours de japonais", periodo: "Janv. 2021 - Déc. 2024", descricao: "🇯🇵 Formation en langue japonaise. Grammaire, écriture (Hiragana, Katakana, Kanji), conversation et culture japonaise.", competencias: "Langues · Japonais · Communication interculturelle · Culture japonaise" },
+  { instituicao: "Colégio Estadual da Polícia Militar de Goiás - Hugo De Carvalho Ramos", curso: "Diplôme du secondaire", periodo: "Janv. 2019 - Déc. 2021", descricao: "🎓 Enseignement secondaire. Discipline, rigueur académique et valeurs civiques. Mathématiques, sciences, langues, sports.", competencias: "Langues · Illustrateur · Formation militaire" },
+  { instituicao: "Senac Brasil", curso: "Diplôme, Lettres - Anglais et littératures", periodo: "Janv. 2019 - Déc. 2020", descricao: "📘 Maîtrise de l'anglais. Enseignement de l'anglais langue seconde (ESL), expression visuelle et communication.", competencias: "Langues · Illustrateur · ESL" },
+  { instituicao: "Basileu França", curso: "Certificat, Arts publics", periodo: "Janv. 2011 - Déc. 2017", descricao: "Activités : Théâtre, Chœur, Artisanat, Arts plastiques, Cirque, Danse, Peinture.", competencias: "Illustrateur" },
+];
+
 const formacoesEN = [
   { instituicao: "SENAI Fatesg College", curso: "Bachelor's degree in Software Engineering", periodo: "Jan 2022 - Dec 2025", descricao: "🎓 Undergraduate in Software Engineering\n\nTraining focused on robust, scalable technology solutions aligned with business needs. Solid foundation in systems engineering, software architecture, data, AI and management.\n\n💡 Development: Data Structures, Algorithms, Requirements Engineering, Testing, Software Quality, Software Design, HCI and System Maintenance\n\n🖥️ Architecture: Operating Systems, Networks, Cloud Computing, Distributed Systems, Software Governance and Information Security\n\n📊 Data & AI: Relational and NoSQL Databases, Data Mining, Big Data, ETL, Artificial Intelligence, Neural Networks and Algorithm Analysis\n\n📈 Management: Project Management, IT Governance, Economic Engineering, Ethics and IT Legislation, Sustainability and Green IT", competencias: "🎯 User Interface Design (UI) · 🧠 User Experience (UX) · 💻 Programming · 🌐 Front-end Development · 🔄 Full Stack Development · 🗄️ PostgreSQL · 📊 PL/SQL · ☕ Java · 🟨 JavaScript · 🔷 TypeScript · ⚛️ React.js · 🅰️ AngularJS · 🎨 Figma · 🖌️ Illustrator · 🖥️ CMD · 🛠️ Network Administration · 📡 Information Technology" },
   { instituicao: "Faculdade Sensu", curso: "Bachelor's degree, Public Security", periodo: "Jun 2024 - Jun 2025", descricao: "🎓 Public Security degree | Faculdade Sensu\n\nOngoing training in Public Security with a multidisciplinary approach to analysis, prevention and strategic management of security in the contemporary social context.\n\nMain areas of study:\n\n📊 Criminal Analysis and Applied Intelligence and Counterintelligence\n\n🔍 Criminology, Violence Prevention and Public Security Diagnosis\n\n⚖️ Human Rights, Specific Legislation and Penal Execution\n\n🧠 Psychology, Ethics, Philosophy in Relations and State Theory\n\n🛠️ Strategic Planning, Policing Models and Institutional Management\n\n💻 Digital Technologies Applied to Public Security\n\n👥 Care for Vulnerable Groups, Negotiation and First Aid\n\n💡 Continuously developing critical, ethical and technical skills for professional practice focused on protecting society.", competencias: "Criminal Analysis · Strategic Management in Public Security · Human Rights and Police Practices · Criminology · Mediation and Negotiation Techniques" },
@@ -69,7 +78,8 @@ const formacoesEN = [
 
 const FormacaoAcademica = ({ locale = 'pt-BR' }) => {
   const isEn = locale === 'en';
-  const formacoesList = isEn ? formacoesEN.map((f, i) => ({ ...f, logo: formacoes[i].logo })) : formacoes;
+  const isFr = locale === 'fr';
+  const formacoesList = isEn ? formacoesEN.map((f, i) => ({ ...f, logo: formacoes[i].logo })) : isFr ? formacoesFR.map((f, i) => ({ ...f, logo: formacoes[i].logo })) : formacoes;
   const [formacaoSelecionada, setFormacaoSelecionada] = useState(null);
 
   // Fechar modal com tecla ESC
@@ -185,7 +195,7 @@ const FormacaoAcademica = ({ locale = 'pt-BR' }) => {
                   borderLeft: '3px solid #64ffda',
                   paddingLeft: '1rem'
                 }}>
-                  {isEn ? 'About this program' : 'Sobre a Formação'}
+                  {isEn ? 'About this program' : isFr ? 'À propos de la formation' : 'Sobre a Formação'}
                 </h3>
                 <div style={{ 
                   whiteSpace: 'pre-line', 
@@ -211,7 +221,7 @@ const FormacaoAcademica = ({ locale = 'pt-BR' }) => {
                     borderLeft: '3px solid #64ffda',
                     paddingLeft: '1rem'
                   }}>
-                    {isEn ? 'Skills developed' : 'Competências Desenvolvidas'}
+                    {isEn ? 'Skills developed' : isFr ? 'Compétences développées' : 'Competências Desenvolvidas'}
                   </h3>
                   <div style={{ 
                     color: '#e0e0e0', 
