@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './TelaInicio.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import ReactCountryFlag from 'react-country-flag';
 import CV from '../Arquivos/Curriculo_Gabriel.pdf';
 import CVEnglish from '../Arquivos/Curriculo_Gabriel_Inglês.pdf';
 import europass from '../Arquivos/Europass.pdf';
@@ -138,6 +139,35 @@ const TelaInicio = () => {
           Cover Letter
         </motion.button>
       </div>
+      <motion.div
+        className="bandeiras-idiomas"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 2.8 }}
+        title="Idiomas: Português (BR), Francês, Alemão, Suíça (DE/FR), Inglês, Japonês, Italiano"
+      >
+        <span className="flag" title="Brasil - Português" aria-label="Brasil - Português">
+          <ReactCountryFlag countryCode="BR" svg style={{ width: '1.75rem', height: '1.75rem' }} />
+        </span>
+        <span className="flag" title="França - Francês" aria-label="França - Francês">
+          <ReactCountryFlag countryCode="FR" svg style={{ width: '1.75rem', height: '1.75rem' }} />
+        </span>
+        <span className="flag" title="Alemanha - Alemão" aria-label="Alemanha - Alemão">
+          <ReactCountryFlag countryCode="DE" svg style={{ width: '1.75rem', height: '1.75rem' }} />
+        </span>
+        <span className="flag" title="Suíça - Alemão e Francês" aria-label="Suíça - Alemão e Francês">
+          <ReactCountryFlag countryCode="CH" svg style={{ width: '1.75rem', height: '1.75rem' }} />
+        </span>
+        <span className="flag" title="Reino Unido - Inglês" aria-label="Reino Unido - Inglês">
+          <ReactCountryFlag countryCode="GB" svg style={{ width: '1.75rem', height: '1.75rem' }} />
+        </span>
+        <span className="flag" title="Japão - Japonês" aria-label="Japão - Japonês">
+          <ReactCountryFlag countryCode="JP" svg style={{ width: '1.75rem', height: '1.75rem' }} />
+        </span>
+        <span className="flag" title="Itália - Italiano" aria-label="Itália - Italiano">
+          <ReactCountryFlag countryCode="IT" svg style={{ width: '1.75rem', height: '1.75rem' }} />
+        </span>
+      </motion.div>
       <motion.div
         className="scroll-indicator"
         initial={{ y: -40, opacity: 0 }}
