@@ -22,14 +22,14 @@ import logoTiSolutions from '../Imagens/ti_solutions_logo.jpg';
 import logoSe7e from '../Imagens/se7e_sistemas_logo.jpg';
 
 
-// Função para calcular período entre datas
-const calcularPeriodo = (dataInicio, dataFim = new Date()) => {
-  const meses = [
-    'jan', 'fev', 'mar', 'abr', 'mai', 'jun',
-    'jul', 'ago', 'set', 'out', 'nov', 'dez'
-  ];
-  
-  // Criar data de início de forma segura (evita problemas de fuso horário)
+// Função para calcular período entre datas (locale: 'pt-BR' | 'en')
+const calcularPeriodo = (dataInicio, dataFim = new Date(), locale = 'pt-BR') => {
+  const mesesPT = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+  const mesesEN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const meses = locale === 'en' ? mesesEN : mesesPT;
+  const atual = locale === 'en' ? 'Current' : 'Atual';
+  const de = locale === 'en' ? ' ' : ' de ';
+
   let inicio;
   if (typeof dataInicio === 'string') {
     const [ano, mes, dia] = dataInicio.split('-').map(Number);
@@ -37,37 +37,40 @@ const calcularPeriodo = (dataInicio, dataFim = new Date()) => {
   } else {
     inicio = new Date(dataInicio);
   }
-  
+
   const fim = dataFim;
-  
-  const inicioStr = `${meses[inicio.getMonth()]} de ${inicio.getFullYear()}`;
-  const fimStr = "Atual";
-  
-  // Calcular diferença em meses
+  const inicioStr = `${meses[inicio.getMonth()]}${de}${inicio.getFullYear()}`;
+  const fimStr = atual;
+
   const anos = fim.getFullYear() - inicio.getFullYear();
   const mesesDiff = fim.getMonth() - inicio.getMonth();
   const diasDiff = fim.getDate() - inicio.getDate();
-  
   let totalMeses = anos * 12 + mesesDiff;
   if (diasDiff < 0) totalMeses -= 1;
-  
-  let periodoStr = "";
-  if (totalMeses < 1) {
-    periodoStr = "menos de 1 mês";
-  } else if (totalMeses === 1) {
-    periodoStr = "1 mês";
-  } else if (totalMeses < 12) {
-    periodoStr = `${totalMeses} meses`;
+
+  let periodoStr = '';
+  if (locale === 'en') {
+    if (totalMeses < 1) periodoStr = 'less than 1 month';
+    else if (totalMeses === 1) periodoStr = '1 month';
+    else if (totalMeses < 12) periodoStr = `${totalMeses} months`;
+    else {
+      const anosCalc = Math.floor(totalMeses / 12);
+      const mesesRestantes = totalMeses % 12;
+      if (mesesRestantes === 0) periodoStr = anosCalc === 1 ? '1 year' : `${anosCalc} years`;
+      else periodoStr = `${anosCalc} ${anosCalc === 1 ? 'year' : 'years'} ${mesesRestantes} ${mesesRestantes === 1 ? 'month' : 'months'}`;
+    }
   } else {
-    const anosCalc = Math.floor(totalMeses / 12);
-    const mesesRestantes = totalMeses % 12;
-    if (mesesRestantes === 0) {
-      periodoStr = anosCalc === 1 ? "1 ano" : `${anosCalc} anos`;
-    } else {
-      periodoStr = `${anosCalc} ${anosCalc === 1 ? 'ano' : 'anos'} ${mesesRestantes} ${mesesRestantes === 1 ? 'mês' : 'meses'}`;
+    if (totalMeses < 1) periodoStr = 'menos de 1 mês';
+    else if (totalMeses === 1) periodoStr = '1 mês';
+    else if (totalMeses < 12) periodoStr = `${totalMeses} meses`;
+    else {
+      const anosCalc = Math.floor(totalMeses / 12);
+      const mesesRestantes = totalMeses % 12;
+      if (mesesRestantes === 0) periodoStr = anosCalc === 1 ? '1 ano' : `${anosCalc} anos`;
+      else periodoStr = `${anosCalc} ${anosCalc === 1 ? 'ano' : 'anos'} ${mesesRestantes} ${mesesRestantes === 1 ? 'mês' : 'meses'}`;
     }
   }
-  
+
   return `${inicioStr} - ${fimStr} · ${periodoStr}`;
 };
 
@@ -75,6 +78,7 @@ const experienciasDetalhadas = [
   {
     titulo: "Analista de Suporte N3 Trainee - SE7E SISTEMAS Unipessoal Limitada",
     logo: logoSe7e,
+    dataInicio: '2025-08-01',
     periodo: calcularPeriodo('2025-08-01'),
     local: "Av. do Comércio, 25 - Sala 907 - Vila Maria Jose, Goiânia - GO, 74815-390",
     resumo: "Atendimento de chamados técnicos relacionados ao sistema Data7, realizando identificação, análise e resolução de incidentes. Correção de erros em bases de dados e manutenção preventiva de equipamentos.",
@@ -101,6 +105,7 @@ const experienciasDetalhadas = [
   {
     titulo: "Analista de Suporte Técnico N3 - OMNICHANEL - TI SOLUTIONS TECH INOVATIONS LTDA",
     logo: logoTiSolutions,
+    dataInicio: '2025-07-01',
     periodo: calcularPeriodo('2025-07-01'),
     local: "Travessa Kalil Karan, 110 - Alto da Rua Xv, Curitiba - PR, 80.045-285",
     resumo: "Prestação de suporte técnico especializado no sistema omnichannel, assegurando o funcionamento contínuo e a satisfação dos clientes corporativos. Atuação no módulo Agents AI com treinamentos personalizados.",
@@ -123,6 +128,7 @@ const experienciasDetalhadas = [
   {
     titulo: "Desenvolvedor Freelancer UpWork",
     logo: logoUpwork,
+    dataInicio: '2024-01-01',
     periodo: calcularPeriodo('2024-01-01'),
     resumo: "Desenvolvimento de sites institucionais, landing pages e sistemas web para clientes diversos, utilizando principalmente React.js, Angular, JavaScript, HTML5, CSS3 e Tailwind CSS.",
     detalhes: [
@@ -138,6 +144,7 @@ const experienciasDetalhadas = [
     titulo: "Técnico de Informática - CIEE - Centro de Integração Empresa-Escola",
     logo: logoCiee,
     periodo: "ago de 2023 - set de 2025 · 2 anos 1 mês",
+    periodoEn: "Aug 2023 - Sep 2025 · 2 years 1 month",
     local: "Goiânia, Goiás, Brasil",
     resumo: "Atuação em Suporte de TI, atendimento a usuários internos e externos, manutenção de sistemas, infraestrutura e integração de soluções.",
     detalhes: [
@@ -174,6 +181,7 @@ const experienciasDetalhadas = [
     titulo: "Desenvolvedor de software - Novo Mundo S.A.",
     logo: logoNovoMundo,
     periodo: "mar de 2022 - mar de 2023 · 1 ano 1 mês",
+    periodoEn: "Mar 2022 - Mar 2023 · 1 year 1 month",
     local: "Goiânia, Goiás, Brasil · Presencial",
     resumo: "Desenvolvedor Trainee. Atuação em desenvolvimento, manutenção e suporte de sistemas, além de participação em projetos web e mobile.",
     detalhes: [
@@ -192,7 +200,170 @@ const experienciasDetalhadas = [
   }
 ];
 
-const TelaMeio = () => {
+// Traduções para inglês (locale === 'en')
+const TRANSLATIONS_MEIO = {
+  sectionTitles: {
+    projetos: 'Projects',
+    sobreMim: 'About Me',
+    experiencias: 'Experience',
+    formacaoAcademica: 'Academic Background',
+  },
+  categories: {
+    backend: 'Backend',
+    bancoDeDados: 'Database',
+    frontend: 'Front-end',
+    ferramentas: 'Tools',
+    experiencias: 'Experience',
+  },
+  experienceSkills: [
+    { nome: 'FullStack', experiencia: '3 years 2 months' },
+    { nome: 'IT Support', experiencia: '5 years' },
+    { nome: 'Systems Analyst', experiencia: '7 months' },
+    { nome: 'ChatBots & AI', experiencia: '7 months' },
+  ],
+  modal: {
+    sobreExperiencia: 'About this role',
+    principaisAtividades: 'Key responsibilities',
+  },
+  aboutMe: [
+    "I'm Gabriel Henrique Sales, a Full Stack developer and IT Support professional, focused on creating modern, scalable, high-performance digital solutions.",
+    "On the front-end, I build responsive and accessible interfaces with CSS3, JavaScript, TypeScript, Tailwind CSS and Styled Components, applying Microfrontends and AI to improve experience, design and testing.",
+    "On the back-end, I work on creating and integrating REST APIs, data modeling and implementing architecture and security best practices.",
+    "With experience in Technical Support, Helpdesk and networks, I have a systemic view of infrastructure and mastery of tools such as Zendesk and Jira. I'm fluent in Portuguese, with advanced English and knowledge of Japanese and Italian, plus skills in UX/UI Design, Photoshop and Power BI.",
+  ],
+  projectDescriptions: [
+    'Site type: E-commerce | Beverage store',
+    'Site type: Photo album | Astrophotography site',
+    'Site type: Footwear store',
+    'Site type: Library',
+    'System type: People management',
+    'Knowledge base for IT Support',
+    'Recipe base',
+    'School management and communication platform',
+  ],
+};
+
+// Experiências em inglês (mesma ordem que experienciasDetalhadas)
+const experienciasDetalhadasEN = [
+  {
+    titulo: "N3 Support Analyst Trainee - SE7E SISTEMAS Unipessoal Limitada",
+    dataInicio: '2025-08-01',
+    local: "Av. do Comércio, 25 - Room 907 - Vila Maria Jose, Goiânia - GO, 74815-390",
+    resumo: "Handling technical tickets related to the Data7 system, performing identification, analysis and resolution of incidents. Database error correction and preventive maintenance of equipment.",
+    detalhes: [
+      "Handling technical tickets related to the Data7 system, performing identification, analysis and resolution of incidents reported by users.",
+      "Correcting errors in databases (PostgreSQL, Sybase and Microsoft SQL Server) to ensure stability, integrity and performance of applications.",
+      "Implementing system updates and improvements, ensuring operational continuity and efficiency of internal processes.",
+      "Preventive and corrective maintenance of equipment (computers, notebooks, printers and peripherals), ensuring the proper functioning of the technology park.",
+      "Managing relationships with suppliers, tracking quotes, purchases and delivery times for equipment and services.",
+      "Running post-implementation tests and validations, ensuring new features are integrated safely and without impact on operations.",
+      "Contributing to the internal knowledge base, documenting procedures and solutions to optimize productivity and support quality.",
+      "Remote support to users, software configuration and diagnosis.",
+      "Installation and configuration of Windows and Android operating systems.",
+      "  ↓  ",
+      "Technical skills:",
+      "- Databases: PostgreSQL, Sybase, Microsoft SQL Server (2025)",
+      "- Systems and tools: Data7, TeamViewer, AnyDesk",
+      "- Languages and technologies: SQL",
+      "- Technical management and support: KCS methodology, ITIL, ticket management and incident documentation",
+      "- Operating systems: Windows 11, Windows Server, Android and VMs",
+      "- Soft skills: effective communication, leadership, proactivity, problem-solving, teamwork and results focus",
+    ],
+  },
+  {
+    titulo: "N3 Technical Support Analyst - OMNICHANEL - TI SOLUTIONS TECH INOVATIONS LTDA",
+    dataInicio: '2025-07-01',
+    local: "Travessa Kalil Karan, 110 - Alto da Rua Xv, Curitiba - PR, 80.045-285",
+    resumo: "Providing specialized technical support for the omnichannel system, ensuring continuous operation and corporate client satisfaction. Working on the Agents AI module with customized training.",
+    detalhes: [
+      "Providing specialized technical support for the omnichannel system, ensuring continuous operation and corporate client satisfaction.",
+      "Direct support to clients and partners, solving technical demands related to platform integration and configuration.",
+      "Working on the Agents AI module, conducting customized training for support teams and resellers, focusing on integration between chatbots and ChatGPT.",
+      "Implementing and maintaining test and production environments, ensuring security and integrity of data in compliance with LGPD.",
+      "Participating in continuous improvement projects, including automation of support flows and standardization of technical team processes.",
+      "Responsible for training agents and users on new features, optimizing adoption of the company's digital solutions.",
+      "Collaborating with the product area on scalable solutions, based on technical feedback and incident analysis.",
+      "Maintaining confidentiality and integrity of business information, in accordance with confidentiality and intellectual property contractual clauses.",
+      "Cataloging daily chatbot issues and forwarding to support and development teams.",
+      "  ↓  ",
+      "Technologies and tools:",
+      "- Omnichannel • ChatGPT API • Agents AI • SQL Server • PostgreSQL",
+      "- Remote support and technical documentation tools",
+    ],
+  },
+  {
+    titulo: "Freelance Developer UpWork",
+    dataInicio: '2024-01-01',
+    resumo: "Development of institutional sites, landing pages and web systems for various clients, mainly using React.js, Angular, JavaScript, HTML5, CSS3 and Tailwind CSS.",
+    detalhes: [
+      "Creating responsive sites optimized for SEO.",
+      "Developing custom systems according to client requirements.",
+      "Integration with APIs and databases (in some cases).",
+      "Following the client from the first meeting to final delivery.",
+      "Maintaining and updating already delivered projects (through new proposals).",
+      "Delivering detailed site documentation.",
+    ],
+  },
+  {
+    titulo: "IT Technician - CIEE - Center for Enterprise-School Integration",
+    periodo: "Aug 2023 - Sep 2025 · 2 years 1 month",
+    local: "Goiânia, Goiás, Brazil",
+    resumo: "Working in IT Support, serving internal and external users, system maintenance, infrastructure and solution integration.",
+    detalhes: [
+      "Providing technical support to internal and external users, ensuring continuity of IT services.",
+      "Analyzing user needs regarding questions and use of internal systems.",
+      "Assisting in the analysis and execution of projects.",
+      "Installing and configuring software.",
+      "Assisting in data entry in the system.",
+      "Recording service requests and user assistance through the Help Desk system.",
+      "Assisting in user support.",
+      "Installing and configuring equipment (PCs, notebooks, printers, etc.).",
+      "Updating and maintaining the IT asset inventory through Lansweeper.",
+      "Managing the knowledge base using the KCS (Knowledge-Centered Service) methodology.",
+      "Supporting SonicWall firewall configuration and activation on the organization's internal network.",
+      "Carrying out technical visits for on-site support at different units.",
+      "Mapping and documenting network infrastructure for management and continuous improvement.",
+      "Recording payment requests and interactions with accounting through the FLUIG system.",
+      "Performing hardware upgrades and replacements on computer equipment.",
+      "Participating in the implementation and integration of new systems.",
+      "Administering support platforms such as Jira Software and Zendesk.",
+      "Integrating systems through REST API consumption.",
+      "  ↓  ",
+      "Technical skills:",
+      "- Systems and tools: Jira Software (admin), Zendesk (admin), ServiceNow, Lansweeper, FLUIG",
+      "- Languages and technologies: HTML5, CSS3, React, MySQL, REST APIs",
+      "- Knowledge and support management: KCS methodology, Help Desk, ticket management",
+      "- Networks and infrastructure: Network mapping, SonicWall configuration, hardware replacement",
+      "- Development and integration: Web applications for technical support and system integration",
+      "- Soft skills: Effective communication, problem-solving, proactivity, teamwork",
+      "- Best practices: Familiarity with ITIL and structured support methodologies",
+    ],
+  },
+  {
+    titulo: "Software Developer - Novo Mundo S.A.",
+    periodo: "Mar 2022 - Mar 2023 · 1 year 1 month",
+    local: "Goiânia, Goiás, Brazil · On-site",
+    resumo: "Trainee Developer. Working on development, maintenance and support of systems, plus participation in web and mobile projects.",
+    detalhes: [
+      "Managing technical support tickets, serving internal and external users efficiently and courteously.",
+      "Developing, testing and maintaining systems and software, ensuring quality and performance.",
+      "Programming with languages such as Java, JavaScript, Python, or others as per project, applying coding best practices.",
+      "Performing debugging and unit tests to ensure functionality and stability of programs.",
+      "Participating in requirements analysis and collaborating with teams for continuous improvement of systems.",
+      "Implementing improvements, optimizations and updates to existing software, aiming for better user experience and efficiency.",
+      "Using version control tools such as Git for code control and management.",
+      "Learning and applying agile methodologies (Scrum, Kanban) in development and delivery of solutions.",
+      "Working on web development using frameworks such as Vue.js.",
+      "Developing mobile applications with Flutter.",
+      "Working with containerization and orchestration using Docker.",
+    ],
+  },
+];
+
+const TelaMeio = ({ locale = 'pt-BR' }) => {
+  const isEn = locale === 'en';
+  const t = TRANSLATIONS_MEIO;
+
   const projetos = [
     {
       nome: "Ecommerce MyMonster",
@@ -412,29 +583,31 @@ const TelaMeio = () => {
     <div className="tela-meio">
       {/* <h2 className="titulo-habilidades">Habilidades e Ferramentas</h2> */}
       <div className="container-habilidades">
-        {habilidades.map((categoria, index) => (
-          <div
-            key={index}
-            className="categoria"
-          >
-            <h3 className="titulo-categoria">{categoria.categoria}</h3>
-            <div className="grid-habilidades">
-              {categoria.items.map((item, itemIndex) => (
-                <div
-                  key={itemIndex}
-                  className="habilidade-item"
-                  data-experiencia={item.experiencia}
-                >
-                  <div className="icone">{item.icone}</div>
-                  <span className="nome-habilidade">{item.nome}</span>
-                </div>
-              ))}
+        {habilidades.map((categoria, index) => {
+          const categoryKey = ['backend', 'bancoDeDados', 'frontend', 'ferramentas', 'experiencias'][index];
+          const categoryLabel = isEn ? (t.categories[categoryKey] || categoria.categoria) : categoria.categoria;
+          return (
+            <div key={index} className="categoria">
+              <h3 className="titulo-categoria">{categoryLabel}</h3>
+              <div className="grid-habilidades">
+                {categoria.items.map((item, itemIndex) => {
+                  const expSkill = categoryKey === 'experiencias' && t.experienceSkills[itemIndex];
+                  const nome = (isEn && expSkill) ? expSkill.nome : item.nome;
+                  const exp = (isEn && expSkill) ? expSkill.experiencia : item.experiencia;
+                  return (
+                    <div key={itemIndex} className="habilidade-item" data-experiencia={exp}>
+                      <div className="icone">{item.icone}</div>
+                      <span className="nome-habilidade">{nome}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      <h2 className="titulo-projetos">Projetos</h2>
+      <h2 className="titulo-projetos">{isEn ? t.sectionTitles.projetos : 'Projetos'}</h2>
       <div className="container-projetos">
         {projetos.map((projeto, index) => (
           <a
@@ -448,7 +621,7 @@ const TelaMeio = () => {
               <img src={projeto.imagem} alt={projeto.nome} className="imagem-projeto" />
               <div className="overlay">
                 <h3 className="nome-projeto">{projeto.nome}</h3>
-                <p className="descricao-projeto">{projeto.descricao}</p>
+                <p className="descricao-projeto">{isEn ? t.projectDescriptions[index] : projeto.descricao}</p>
                 <div className="tecnologias-container">
                   {projeto.tecnologias.map((tech, techIndex) => (
                     <div key={techIndex} className="tech-card">
@@ -464,31 +637,31 @@ const TelaMeio = () => {
       </div>
 
       {/* Seção Sobre Mim */}
-      <h2 className="titulo-projetos">Sobre Mim</h2>
+      <h2 className="titulo-projetos">{isEn ? t.sectionTitles.sobreMim : 'Sobre Mim'}</h2>
       <div className="container-sobre-mim">
         <div className="sobre-mim-foto">
           <img src={require('../Imagens/foto.png')} alt="Gabriel Henriques Sales" className="foto-sobre-mim" />
         </div>
         <div className="sobre-mim-texto">
-          <p>
-            Sou Gabriel Henrique Sales, desenvolvedor Full Stack e profissional de Suporte de TI, focado em criar soluções digitais modernas, escaláveis e de alta performance.
-          </p>
-          <p>
-            No front-end, desenvolvo interfaces responsivas e acessíveis com CSS3, JavaScript, TypeScript, Tailwind CSS e Styled Components, aplicando Microfrontends e IA para aprimorar experiência, design e testes.
-          </p>
-          <p>
-            No back-end, atuo na criação e integração de APIs REST, modelagem de dados e implementação de boas práticas de arquitetura e segurança.
-          </p>
-          <p>
-            Com experiência em Suporte Técnico, Helpdesk e redes, possuo visão sistêmica da infraestrutura e domínio de ferramentas como Zendesk e Jira. Sou fluente em português, com inglês avançado e conhecimentos em japonês e italiano, além de habilidades em UX/UI Design, Photoshop e Power BI.
-          </p>
+          {isEn ? t.aboutMe.map((para, i) => <p key={i}>{para}</p>) : (
+            <>
+              <p>Sou Gabriel Henrique Sales, desenvolvedor Full Stack e profissional de Suporte de TI, focado em criar soluções digitais modernas, escaláveis e de alta performance.</p>
+              <p>No front-end, desenvolvo interfaces responsivas e acessíveis com CSS3, JavaScript, TypeScript, Tailwind CSS e Styled Components, aplicando Microfrontends e IA para aprimorar experiência, design e testes.</p>
+              <p>No back-end, atuo na criação e integração de APIs REST, modelagem de dados e implementação de boas práticas de arquitetura e segurança.</p>
+              <p>Com experiência em Suporte Técnico, Helpdesk e redes, possuo visão sistêmica da infraestrutura e domínio de ferramentas como Zendesk e Jira. Sou fluente em português, com inglês avançado e conhecimentos em japonês e italiano, além de habilidades em UX/UI Design, Photoshop e Power BI.</p>
+            </>
+          )}
         </div>
       </div>
 
       {/* Seção Experiências */}
-      <h2 className="titulo-projetos">Experiências</h2>
+      <h2 className="titulo-projetos">{isEn ? t.sectionTitles.experiencias : 'Experiências'}</h2>
       <div className="container-experiencias">
-        {experienciasDetalhadas.map((exp, idx) => (
+        {(isEn ? experienciasDetalhadasEN.map((e, i) => ({
+          ...e,
+          logo: experienciasDetalhadas[i].logo,
+          periodo: e.dataInicio ? calcularPeriodo(e.dataInicio, new Date(), 'en') : e.periodo,
+        })) : experienciasDetalhadas).map((exp, idx) => (
           <div
             key={idx}
             className="experiencia-item experiencia-clickable"
@@ -581,7 +754,7 @@ const TelaMeio = () => {
                   borderLeft: '3px solid #64ffda',
                   paddingLeft: '1rem'
                 }}>
-                  Sobre a Experiência
+                  {isEn ? t.modal.sobreExperiencia : 'Sobre a Experiência'}
                 </h3>
                 <div style={{ 
                   color: '#fff', 
@@ -605,7 +778,7 @@ const TelaMeio = () => {
                   borderLeft: '3px solid #64ffda',
                   paddingLeft: '1rem'
                 }}>
-                  Principais Atividades
+                  {isEn ? t.modal.principaisAtividades : 'Principais Atividades'}
                 </h3>
                 <ul>
                   {experienciaSelecionada.detalhes.map((det, i) => (
@@ -622,8 +795,8 @@ const TelaMeio = () => {
       {/* Adicione aqui o componente de certificações, se necessário */}
 
       {/* Seção Formação Acadêmica */}
-      <h2 className="titulo-projetos">Formação Acadêmica</h2>
-      <FormacaoAcademica />
+      <h2 className="titulo-projetos">{isEn ? t.sectionTitles.formacaoAcademica : 'Formação Acadêmica'}</h2>
+      <FormacaoAcademica locale={locale} />
     </div>
   );
 };

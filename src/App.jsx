@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TelaInicio from './Componentes/TelaInicio/TelaInicio.js';
 import TelaMeio from './Componentes/TelaMeio/TelaMeio.js';
 import Particles from './Componentes/Efeitos/Particles.js';
 import './App.css';
 
 const App = () => {
+  const [locale, setLocale] = useState('pt-BR');
+
   return (
     <div className="App">
       <div className="particles-container">
@@ -22,8 +24,8 @@ const App = () => {
           disableRotation={true}
         />
       </div>
-      <TelaInicio />
-      <TelaMeio />
+      <TelaInicio locale={locale} onLocaleChange={setLocale} />
+      <TelaMeio locale={locale} />
     </div>
   );
 };

@@ -555,6 +555,10 @@
   left: 100%;
 }
 
+.bandeiras-idiomas .flag-container--clickable {
+  cursor: pointer;
+}
+
 .bandeiras-idiomas .flag {
   display: inline-flex;
   align-items: center;

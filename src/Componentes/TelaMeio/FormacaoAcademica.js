@@ -58,7 +58,18 @@ const formacoes = [
   }
 ];
 
-const FormacaoAcademica = () => {
+const formacoesEN = [
+  { instituicao: "SENAI Fatesg College", curso: "Bachelor's degree in Software Engineering", periodo: "Jan 2022 - Dec 2025", descricao: "🎓 Undergraduate in Software Engineering\n\nTraining focused on robust, scalable technology solutions aligned with business needs. Solid foundation in systems engineering, software architecture, data, AI and management.\n\n💡 Development: Data Structures, Algorithms, Requirements Engineering, Testing, Software Quality, Software Design, HCI and System Maintenance\n\n🖥️ Architecture: Operating Systems, Networks, Cloud Computing, Distributed Systems, Software Governance and Information Security\n\n📊 Data & AI: Relational and NoSQL Databases, Data Mining, Big Data, ETL, Artificial Intelligence, Neural Networks and Algorithm Analysis\n\n📈 Management: Project Management, IT Governance, Economic Engineering, Ethics and IT Legislation, Sustainability and Green IT", competencias: "🎯 User Interface Design (UI) · 🧠 User Experience (UX) · 💻 Programming · 🌐 Front-end Development · 🔄 Full Stack Development · 🗄️ PostgreSQL · 📊 PL/SQL · ☕ Java · 🟨 JavaScript · 🔷 TypeScript · ⚛️ React.js · 🅰️ AngularJS · 🎨 Figma · 🖌️ Illustrator · 🖥️ CMD · 🛠️ Network Administration · 📡 Information Technology" },
+  { instituicao: "Faculdade Sensu", curso: "Bachelor's degree, Public Security", periodo: "Jun 2024 - Jun 2025", descricao: "🎓 Public Security degree | Faculdade Sensu\n\nOngoing training in Public Security with a multidisciplinary approach to analysis, prevention and strategic management of security in the contemporary social context.\n\nMain areas of study:\n\n📊 Criminal Analysis and Applied Intelligence and Counterintelligence\n\n🔍 Criminology, Violence Prevention and Public Security Diagnosis\n\n⚖️ Human Rights, Specific Legislation and Penal Execution\n\n🧠 Psychology, Ethics, Philosophy in Relations and State Theory\n\n🛠️ Strategic Planning, Policing Models and Institutional Management\n\n💻 Digital Technologies Applied to Public Security\n\n👥 Care for Vulnerable Groups, Negotiation and First Aid\n\n💡 Continuously developing critical, ethical and technical skills for professional practice focused on protecting society.", competencias: "Criminal Analysis · Strategic Management in Public Security · Human Rights and Police Practices · Criminology · Mediation and Negotiation Techniques" },
+  { instituicao: "KAIKAN - ANBG - Associação Nipo Brasileira de Goiás", curso: "Japanese Language Course", periodo: "Jan 2021 - Dec 2024", descricao: "🇯🇵 Japanese Language Course | KAIKAN - ANBG\n\nJapanese language training at the Brazilian-Japanese Association of Goiás, developing communicative and cultural skills for effective interaction in Japanese contexts.\n\n📚 Content: Japanese grammar, writing systems (Hiragana, Katakana, Kanji), conversation, listening, reading and writing\n\n🎌 Culture: Studies on traditions, customs and values of Japanese culture, facilitating intercultural understanding\n\n💬 Communication: Developing skills for oral and written communication in different formal and informal contexts", competencias: "Languages · Japanese · Hiragana · Katakana · Kanji · Intercultural Communication · Japanese Culture · Japanese Cuisine · Event Organization · Customer Service" },
+  { instituicao: "Goiás State Military Police College - Hugo De Carvalho Ramos Unit", curso: "High School Diploma, Complete Secondary Education", periodo: "Jan 2019 - Dec 2021", descricao: "🎓 High School – Military Police College Hugo de Carvalho Ramos (Goiânia, GO)\n\nDuring high school, I had a solid and distinctive education based on discipline, academic rigor and civic values. I developed important skills such as:\n\n📘 Academic Excellence & Rigor\n- Deepened knowledge in Mathematics, Physics, Chemistry, Biology, Portuguese, History, Geography and English/Spanish.\n\n🛡️ Discipline & Civic Values\n- The military model promoted values such as hierarchy, respect, responsibility and teamwork.\n- I practiced punctuality, personal organization and commitment to collective norms — aspects valued in professional environments.\n\n🏫 Structure & Technological Resources\n- I had access to IT and Science labs, library, auditorium, sports courts and climate-controlled spaces.\n\n🤝 Sports & Socialization\n- Group activities and school events promoted integration and interpersonal skills.", competencias: "Languages · Illustrator · Military training" },
+  { instituicao: "Senac Brasil", curso: "Diploma, Letters - English Language and Literatures", periodo: "Jan 2019 - Dec 2020", descricao: "📘 English Language Proficiency\n\nI deepened grammatical, phonetic and linguistic knowledge applied to oral and written communication. I studied literary works in English, broadening my critical and cultural perspective.\n\n📚 ESL Teaching: I developed methodologies for teaching English as a second language, with practices for different proficiency levels, focusing on fluency and intercultural understanding.\n\n🎨 Visual Expression: I explored illustration techniques for educational and creative use, using editing and visual creation software to support teaching.\n\n🤝 Communication: Group work and integrative projects promoted the development of collaborative and communication skills.", competencias: "Languages · Illustrator · ESL (English as a second language)" },
+  { instituicao: "Basileu França", curso: "Certificate, Public Arts", periodo: "Jan 2011 - Dec 2017", descricao: "Activities and groups: e.g. Theater, Choir, Crafts, Plastic Arts, Realistic Drawing, Performing Arts, Circus, Musical Theater, Dance and Painting.", competencias: "Illustrator" },
+];
+
+const FormacaoAcademica = ({ locale = 'pt-BR' }) => {
+  const isEn = locale === 'en';
+  const formacoesList = isEn ? formacoesEN.map((f, i) => ({ ...f, logo: formacoes[i].logo })) : formacoes;
   const [formacaoSelecionada, setFormacaoSelecionada] = useState(null);
 
   // Fechar modal com tecla ESC
@@ -81,7 +92,7 @@ const FormacaoAcademica = () => {
   return (
     <div className="formacao-academica">
       <div className="container-experiencias">
-        {formacoes.map((form, idx) => (
+        {formacoesList.map((form, idx) => (
           <div
             className="experiencia-item experiencia-clickable"
             key={idx}
@@ -174,7 +185,7 @@ const FormacaoAcademica = () => {
                   borderLeft: '3px solid #64ffda',
                   paddingLeft: '1rem'
                 }}>
-                  Sobre a Formação
+                  {isEn ? 'About this program' : 'Sobre a Formação'}
                 </h3>
                 <div style={{ 
                   whiteSpace: 'pre-line', 
@@ -200,7 +211,7 @@ const FormacaoAcademica = () => {
                     borderLeft: '3px solid #64ffda',
                     paddingLeft: '1rem'
                   }}>
-                    Competências Desenvolvidas
+                    {isEn ? 'Skills developed' : 'Competências Desenvolvidas'}
                   </h3>
                   <div style={{ 
                     color: '#e0e0e0', 

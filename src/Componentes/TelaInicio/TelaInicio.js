@@ -29,10 +29,25 @@ const TypeWriter = ({ text, delay = 100, className }) => {
 
 };
 
-//Link download curriculo
+const TRANSLATIONS = {
+  'pt-BR': {
+    cargo: 'Engenheiro de Software | Analista de Suporte👨🏻‍💻',
+    cvPortugues: 'CV Português',
+    cvIngles: 'CV inglês',
+    europass: 'Europass',
+    coverLetter: 'Cover Letter',
+  },
+  en: {
+    cargo: 'Software Engineer | IT Support Analyst👨🏻‍💻',
+    cvPortugues: 'Portuguese CV',
+    cvIngles: 'English CV',
+    europass: 'Europass',
+    coverLetter: 'Cover Letter',
+  },
+};
 
-
-const TelaInicio = () => {
+const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
+  const t = TRANSLATIONS[locale] || TRANSLATIONS['pt-BR'];
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = CV;
@@ -82,7 +97,7 @@ const TelaInicio = () => {
           <span className="emoji">👋</span>
         </h1>
         <h2 className="cargo">
-          <TypeWriter text="Engenheiro de Software | Analista de Suporte👨🏻‍💻" className="typing-text" delay={50} />
+          <TypeWriter key={locale} text={t.cargo} className="typing-text" delay={50} />
         </h2>
         <div className="redes-sociais">
           <a 
@@ -109,7 +124,7 @@ const TelaInicio = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 1.5 }}
         >
-          CV Português
+          {t.cvPortugues}
         </motion.button>
         <motion.button
           className="botao-curriculo"
@@ -118,7 +133,7 @@ const TelaInicio = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 1.8 }}
         >
-          CV inglês
+          {t.cvIngles}
         </motion.button>
         <motion.button
           className="botao-curriculo"
@@ -127,7 +142,7 @@ const TelaInicio = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 2.0 }}
         >
-          Europass
+          {t.europass}
         </motion.button>
         <motion.button
           className="botao-curriculo"
@@ -136,7 +151,7 @@ const TelaInicio = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 2.5 }}
         >
-          Cover Letter
+          {t.coverLetter}
         </motion.button>
       </div>
       <motion.div
@@ -146,13 +161,29 @@ const TelaInicio = () => {
         transition={{ duration: 0.6, ease: 'easeOut', delay: 2.8 }}
         title="Idiomas: Português (BR), Inglês, Francês, Alemão, Suíça (DE/FR), Italiano, Japonês"
       >
-        <div className="flag-container">
-          <span className="flag" title="Brasil - Português" aria-label="Brasil - Português">
+        <div
+          className="flag-container flag-container--clickable"
+          role="button"
+          tabIndex={0}
+          onClick={() => onLocaleChange?.('pt-BR')}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('pt-BR'); }}
+          title="Brasil - Português"
+          aria-label="Alternar para Português (Brasil)"
+        >
+          <span className="flag">
             <ReactCountryFlag countryCode="BR" svg style={{ width: '1.75rem', height: '1.75rem' }} />
           </span>
         </div>
-        <div className="flag-container">
-          <span className="flag" title="Reino Unido - Inglês" aria-label="Reino Unido - Inglês">
+        <div
+          className="flag-container flag-container--clickable"
+          role="button"
+          tabIndex={0}
+          onClick={() => onLocaleChange?.('en')}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('en'); }}
+          title="Reino Unido - Inglês"
+          aria-label="Switch to English"
+        >
+          <span className="flag">
             <ReactCountryFlag countryCode="GB" svg style={{ width: '1.75rem', height: '1.75rem' }} />
           </span>
         </div>
