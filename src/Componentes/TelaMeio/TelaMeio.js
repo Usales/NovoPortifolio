@@ -32,8 +32,6 @@ const calcularPeriodo = (dataInicio, dataFim = new Date(), locale = 'pt-BR') => 
   const mesesJA = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
   const mesesMap = { en: mesesEN, fr: mesesFR, de: mesesDE, it: mesesIT, ja: mesesJA };
   const meses = mesesMap[locale] || mesesPT;
-  const atualMap = { en: 'Current', fr: 'Actuel', de: 'Aktuell', it: 'Attuale', ja: '現在' };
-  const atual = atualMap[locale] || 'Atual';
   const de = (locale && locale !== 'pt-BR') ? ' ' : ' de ';
 
   let inicio;
@@ -44,9 +42,9 @@ const calcularPeriodo = (dataInicio, dataFim = new Date(), locale = 'pt-BR') => 
     inicio = new Date(dataInicio);
   }
 
-  const fim = dataFim;
+  const fim = dataFim instanceof Date ? dataFim : new Date(dataFim);
   const inicioStr = `${meses[inicio.getMonth()]}${de}${inicio.getFullYear()}`;
-  const fimStr = atual;
+  const fimStr = `${meses[fim.getMonth()]}${de}${fim.getFullYear()}`;
 
   const anos = fim.getFullYear() - inicio.getFullYear();
   const mesesDiff = fim.getMonth() - inicio.getMonth();

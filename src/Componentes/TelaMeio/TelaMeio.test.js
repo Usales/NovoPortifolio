@@ -5,7 +5,7 @@ import TelaMeio, { calcularPeriodo } from './TelaMeio';
 describe('calcularPeriodo', () => {
   it('formata período com data em string (YYYY-MM-DD)', () => {
     const resultado = calcularPeriodo('2024-01-15', new Date(2024, 2, 15)); // 2 meses
-    expect(resultado).toMatch(/jan de 2024 - Atual/);
+    expect(resultado).toMatch(/jan de 2024 - mar de 2024/);
     expect(resultado).toContain('2 meses');
   });
 
@@ -27,7 +27,7 @@ describe('calcularPeriodo', () => {
     const inicio = new Date(2023, 5, 1);
     const fim = new Date(2024, 5, 1);
     const resultado = calcularPeriodo(inicio, fim);
-    expect(resultado).toMatch(/jun de 2023 - Atual/);
+    expect(resultado).toMatch(/jun de 2023 - jun de 2024/);
     expect(resultado).toContain('1 ano');
   });
 
