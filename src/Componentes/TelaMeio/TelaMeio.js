@@ -271,7 +271,7 @@ const TRANSLATIONS_MEIO = {
     principaisAtividades: 'Key responsibilities',
   },
   aboutMe: [
-    "I'm Gabriel Henrique Sales, a Full Stack developer and IT Support professional, focused on creating modern, scalable, high-performance digital solutions.",
+    "I'm Gabriel Henriques Sales, a Full Stack developer and IT Support professional, focused on creating modern, scalable, high-performance digital solutions.",
     "On the front-end, I build responsive and accessible interfaces with CSS3, JavaScript, TypeScript, Tailwind CSS and Styled Components, applying Microfrontends and AI to improve experience, design and testing.",
     "On the back-end, I work on creating and integrating REST APIs, data modeling and implementing architecture and security best practices.",
     "With experience in Technical Support, Helpdesk and networks, I have a systemic view of infrastructure and mastery of tools such as Zendesk and Jira. I'm fluent in Portuguese, with advanced English and knowledge of Japanese and Italian, plus skills in UX/UI Design, Photoshop and Power BI.",
@@ -315,7 +315,7 @@ const TRANSLATIONS_MEIO_FR = {
     principaisAtividades: 'Activités principales',
   },
   aboutMe: [
-    "Je suis Gabriel Henrique Sales, développeur Full Stack et professionnel du support TI, axé sur la création de solutions numériques modernes, évolutives et performantes.",
+    "Je suis Gabriel Henriques Sales, développeur Full Stack et professionnel du support TI, axé sur la création de solutions numériques modernes, évolutives et performantes.",
     "En front-end, je développe des interfaces responsives et accessibles avec CSS3, JavaScript, TypeScript, Tailwind CSS et Styled Components, en appliquant les Microfrontends et l'IA pour améliorer l'expérience, le design et les tests.",
     "En back-end, je travaille sur la création et l'intégration d'API REST, la modélisation de données et la mise en œuvre des bonnes pratiques d'architecture et de sécurité.",
     "Avec une expérience en support technique, helpdesk et réseaux, j'ai une vision systémique de l'infrastructure et une maîtrise d'outils comme Zendesk et Jira. Je parle couramment le portugais, avec un anglais avancé et des notions de japonais et d'italien, ainsi que des compétences en design UX/UI, Photoshop et Power BI.",
@@ -344,7 +344,7 @@ const TRANSLATIONS_MEIO_DE = {
   ],
   modal: { sobreExperiencia: 'Über diese Rolle', principaisAtividades: 'Hauptaufgaben' },
   aboutMe: [
-    'Ich bin Gabriel Henrique Sales, Full-Stack-Entwickler und IT-Support-Mitarbeiter mit Fokus auf moderne, skalierbare digitale Lösungen.',
+    'Ich bin Gabriel Henriques Sales, Full-Stack-Entwickler und IT-Support-Mitarbeiter mit Fokus auf moderne, skalierbare digitale Lösungen.',
     'Im Frontend entwickle ich responsive Oberflächen mit CSS3, JavaScript, TypeScript, Tailwind CSS und Styled Components, mit Microfrontends und KI.',
     'Im Backend arbeite ich an REST-APIs, Datenmodellierung und Best Practices für Architektur und Sicherheit.',
     'Mit Erfahrung in technischem Support, Helpdesk und Netzwerken. Fließend Portugiesisch, fortgeschrittenes Englisch, Grundkenntnisse in Japanisch und Italienisch, UX/UI, Photoshop und Power BI.',
@@ -373,7 +373,7 @@ const TRANSLATIONS_MEIO_IT = {
   ],
   modal: { sobreExperiencia: 'Su questo ruolo', principaisAtividades: 'Attività principali' },
   aboutMe: [
-    'Sono Gabriel Henrique Sales, sviluppatore Full Stack e professionista del supporto IT, focalizzato su soluzioni digitali moderne e scalabili.',
+    'Sono Gabriel Henriques Sales, sviluppatore Full Stack e professionista del supporto IT, focalizzato su soluzioni digitali moderne e scalabili.',
     'In front-end sviluppo interfacce responsive con CSS3, JavaScript, TypeScript, Tailwind CSS e Styled Components, con Microfrontends e IA.',
     'In back-end lavoro su API REST, modellazione dati e best practice di architettura e sicurezza.',
     'Esperienza in supporto tecnico, helpdesk e reti. Fluente in portoghese, inglese avanzato, basi di giapponese e italiano, UX/UI, Photoshop e Power BI.',
@@ -402,7 +402,7 @@ const TRANSLATIONS_MEIO_JA = {
   ],
   modal: { sobreExperiencia: 'この役職について', principaisAtividades: '主な業務' },
   aboutMe: [
-    'ガブリエル・エンリケ・サレスです。フルスタック開発者兼ITサポート担当。モダンでスケーラブルなデジタルソリューションに注力しています。',
+    'ガブリエル・エンリケス・サレスです。フルスタック開発者兼ITサポート担当。モダンでスケーラブルなデジタルソリューションに注力しています。',
     'フロントエンドではCSS3、JavaScript、TypeScript、Tailwind CSS、Styled Componentsを用いたレスポンシブなインターフェースを開発。マイクロフロントエンドとAIを活用しています。',
     'バックエンドではREST APIの作成・統合、データモデリング、アーキテクチャとセキュリティのベストプラクティスを実装しています。',
     'テクニカルサポート、ヘルプデスク、ネットワークの経験あり。ポルトガル語ネイティブ、英語上級、日本語・イタリア語の基礎。UX/UIデザイン、Photoshop、Power BIのスキルあり。',
@@ -880,12 +880,12 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
       <h2 className="titulo-projetos">{t ? t.sectionTitles.sobreMim : 'Sobre Mim'}</h2>
       <div className="container-sobre-mim">
         <div className="sobre-mim-foto">
-          <img src={require('../Imagens/foto.png')} alt="Gabriel Henrique Sales" className="foto-sobre-mim" />
+          <img src={require('../Imagens/foto.png')} alt="Gabriel Henriques Sales" className="foto-sobre-mim" />
         </div>
         <div className="sobre-mim-texto">
           {t ? t.aboutMe.map((para, i) => <p key={i}>{para}</p>) : (
             <>
-              <p>Sou Gabriel Henrique Sales, desenvolvedor Full Stack e profissional de Suporte de TI, focado em criar soluções digitais modernas, escaláveis e de alta performance.</p>
+              <p>Sou Gabriel Henriques Sales, desenvolvedor Full Stack e profissional de Suporte de TI, focado em criar soluções digitais modernas, escaláveis e de alta performance.</p>
               <p>No front-end, desenvolvo interfaces responsivas e acessíveis com CSS3, JavaScript, TypeScript, Tailwind CSS e Styled Components, aplicando Microfrontends e IA para aprimorar experiência, design e testes.</p>
               <p>No back-end, atuo na criação e integração de APIs REST, modelagem de dados e implementação de boas práticas de arquitetura e segurança.</p>
               <p>Com experiência em Suporte Técnico, Helpdesk e redes, possuo visão sistêmica da infraestrutura e domínio de ferramentas como Zendesk e Jira. Sou fluente em português, com inglês avançado e conhecimentos em japonês e italiano, além de habilidades em UX/UI Design, Photoshop e Power BI.</p>

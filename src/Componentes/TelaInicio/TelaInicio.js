@@ -135,7 +135,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
         transition={{ duration: 1.2, ease: 'easeOut', delay: 0 }}
       >
         <h1 className="nome">
-          <TypeWriter text="Gabriel Henrique Sales" className="typing-text" delay={100} />
+          <TypeWriter text="Gabriel Henriques Sales" className="typing-text" delay={100} />
           <span className="emoji">👋</span>
         </h1>
         <h2 className="cargo">

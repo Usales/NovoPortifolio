@@ -1,4 +1,4 @@
-# Portfólio Gabriel Henrique Sales
+# Portfólio Gabriel Henriques Sales
 
 Bem-vindo ao meu portfólio! Este projeto foi desenvolvido em ReactJS para apresentar minhas habilidades, ferramentas, projetos e experiências como desenvolvedor Full Stack e profissional de Suporte de TI.
 
@@ -93,7 +93,7 @@ Você também pode publicar facilmente no Vercel, Netlify ou GitHub Pages.
 - **Design**: Figma, Photoshop, Canva, Power BI
 
 ## 👨‍💻 Autor
-**Gabriel Henrique Sales**
+**Gabriel Henriques Sales**
 - Desenvolvedor Full Stack e profissional de Suporte de TI
 - Focado em criar soluções digitais modernas, escaláveis e de alta performance
 - Experiência com Microfrontends e IA para aprimorar experiência do usuário
