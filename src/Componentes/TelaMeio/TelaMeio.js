@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './TelaMeio.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaJava, FaDatabase, FaGitAlt, FaLinux, FaLaptopCode, FaHeadset, FaCogs, FaCode, FaChartPie, FaJira } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux, SiZendesk, SiMysql, SiOpenai, SiTeamviewer, SiAnydesk, SiJest, SiVuedotjs } from 'react-icons/si';
+import { SiTypescript, SiPostgresql, SiAngular, SiTailwindcss, SiMongodb, SiGithub, SiVite, SiStyledcomponents, SiNodedotjs, SiExpress, SiWebpack, SiPostman, SiFigma, SiCanva, SiAdobephotoshop, SiJetbrains, SiSpringboot, SiAxios, SiSwagger, SiSupabase, SiUbuntu, SiKalilinux, SiZendesk, SiMysql, SiOpenai, SiTeamviewer, SiAnydesk, SiJest, SiVuedotjs, SiReactrouter } from 'react-icons/si';
 import { AiFillWindows } from 'react-icons/ai';
 import { VscVscode } from 'react-icons/vsc';
 import { DiMsqlServer } from 'react-icons/di';
@@ -14,6 +14,7 @@ import projeto5 from '../Imagens/projeto5.png';
 import projeto6 from '../Imagens/projeto6.png';
 import projeto7 from '../Imagens/projeto7.png';
 import projeto8 from '../Imagens/projeto8.png';
+import projeto9DonSalerno from '../Imagens/projeto9-don-salerno.png';
 import FormacaoAcademica from './FormacaoAcademica';
 import logoCiee from '../Imagens/logo_ciee.jpg';
 import logoUpwork from '../Imagens/logo_upwork.png';
@@ -284,6 +285,7 @@ const TRANSLATIONS_MEIO = {
     'Knowledge base for IT Support',
     'Recipe base',
     'School management and communication platform',
+    'Site type: Pizzeria and esfiharia | menu, cart and contact',
   ],
 };
 
@@ -327,6 +329,7 @@ const TRANSLATIONS_MEIO_FR = {
     'Base de connaissances pour le support TI',
     'Base de recettes',
     'Plateforme de gestion et communication scolaire',
+    'Site type : Pizzeria et esfiharia | carte, panier et contact',
   ],
 };
 
@@ -355,6 +358,7 @@ const TRANSLATIONS_MEIO_DE = {
     'Wissensdatenbank für IT-Support',
     'Rezeptdatenbank',
     'Plattform für Schulverwaltung und -kommunikation',
+    'Website: Pizzeria und Esfiharia | Speisekarte, Warenkorb und Kontakt',
   ],
 };
 
@@ -383,6 +387,7 @@ const TRANSLATIONS_MEIO_IT = {
     'Base di conoscenza per supporto IT',
     'Base di ricette',
     'Piattaforma di gestione e comunicazione scolastica',
+    'Sito: Pizzeria ed esfiharia | menù, carrello e contatto',
   ],
 };
 
@@ -411,6 +416,7 @@ const TRANSLATIONS_MEIO_JA = {
     'ITサポート用ナレッジベース',
     'レシピベース',
     '学校管理・連絡プラットフォーム',
+    'サイト種別: ピッツェリア・エスフィハリア | メニュー、カート、連絡',
   ],
 };
 
@@ -691,7 +697,23 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
         { nome: "Spring Boot", icone: <SiSpringboot /> },
         { nome: "PostgreSQL", icone: <SiPostgresql /> }
       ]
-    }];
+    },
+    {
+      nome: "Don Salerno",
+      descricao: "Site tipo: Pizzaria e Esfiharia | cardápio, carrinho e contato",
+      imagem: projeto9DonSalerno,
+      link: "https://don-salerno.netlify.app/",
+      tecnologias: [
+        { nome: "HTML5", icone: <FaHtml5 /> },
+        { nome: "CSS3", icone: <FaCss3Alt /> },
+        { nome: "JavaScript", icone: <FaJs /> },
+        { nome: "TypeScript", icone: <SiTypescript /> },
+        { nome: "React", icone: <FaReact /> },
+        { nome: "Vite", icone: <SiVite /> },
+        { nome: "React Router", icone: <SiReactrouter /> }
+      ]
+    }
+  ];
 
   const habilidades = [
     {
