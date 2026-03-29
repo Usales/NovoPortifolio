@@ -1,4 +1,4 @@
-# Portfólio Gabriel Henriques Sales
+# Portfólio Gabriel Henrique Sales
 
 Bem-vindo ao meu portfólio! Este projeto foi desenvolvido em ReactJS para apresentar minhas habilidades, ferramentas, projetos e experiências como desenvolvedor Full Stack e profissional de Suporte de TI.
 

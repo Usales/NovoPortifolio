@@ -880,7 +880,7 @@ const TelaMeio = ({ locale = 'pt-BR' }) => {
       <h2 className="titulo-projetos">{t ? t.sectionTitles.sobreMim : 'Sobre Mim'}</h2>
       <div className="container-sobre-mim">
         <div className="sobre-mim-foto">
-          <img src={require('../Imagens/foto.png')} alt="Gabriel Henriques Sales" className="foto-sobre-mim" />
+          <img src={require('../Imagens/foto.png')} alt="Gabriel Henrique Sales" className="foto-sobre-mim" />
         </div>
         <div className="sobre-mim-texto">
           {t ? t.aboutMe.map((para, i) => <p key={i}>{para}</p>) : (

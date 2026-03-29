@@ -9,24 +9,30 @@ import coverletter from '../Arquivos/Carta_Apresentacao_Gabriel_Sales.pdf';
 import { motion } from 'framer-motion';
 
 
-//Digita o titulo
+// Digita o título; reinicia corretamente quando `text` muda (ex.: troca de idioma).
+// Usa Array.from para iterar por code points Unicode (melhor com emojis no cargo).
 const TypeWriter = ({ text, delay = 100, className }) => {
   const [currentText, setCurrentText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setCurrentText(prevText => prevText + text[currentIndex]);
-        setCurrentIndex(prevIndex => prevIndex + 1);
-      }, delay);
-
-      return () => clearTimeout(timeout);
+    if (text == null || text === '') {
+      setCurrentText('');
+      return;
     }
-  }, [currentIndex, delay, text]);
+    const chars = Array.from(text);
+    let i = 0;
+    setCurrentText('');
+    const id = window.setInterval(() => {
+      i += 1;
+      setCurrentText(chars.slice(0, i).join(''));
+      if (i >= chars.length) {
+        window.clearInterval(id);
+      }
+    }, delay);
+    return () => window.clearInterval(id);
+  }, [text, delay]);
 
   return <span className={className}>{currentText}</span>;
-
 };
 
 const TRANSLATIONS = {
@@ -76,6 +82,14 @@ const TRANSLATIONS = {
 
 const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
   const t = TRANSLATIONS[locale] || TRANSLATIONS['pt-BR'];
+
+  const handleFlagKeyDown = (nextLocale) => (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      onLocaleChange?.(nextLocale);
+    }
+  };
+
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = CV;
@@ -94,7 +108,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
     document.body.removeChild(link);
   };
 
-  const handleDownloadcoverletter = () => {
+  const handleDownloadCoverLetter = () => {
     const link = document.createElement('a');
     link.href = coverletter;
     link.download = 'coverletter.pdf';
@@ -121,23 +135,25 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
         transition={{ duration: 1.2, ease: 'easeOut', delay: 0 }}
       >
         <h1 className="nome">
-          <TypeWriter text="Gabriel Henriques Sales" className="typing-text" delay={100} />
+          <TypeWriter text="Gabriel Henrique Sales" className="typing-text" delay={100} />
           <span className="emoji">👋</span>
         </h1>
         <h2 className="cargo">
-          <TypeWriter key={locale} text={t.cargo} className="typing-text" delay={50} />
+          <TypeWriter text={t.cargo} className="typing-text" delay={50} />
         </h2>
         <div className="redes-sociais">
-          <a 
-            href="https://github.com/Usales" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://github.com/Usales"
+            target="_blank"
+            rel="noopener noreferrer"
             className="social-link"
           >
             <FaGithub />
           </a>
-          <a 
-            href="https://www.linkedin.com/in/gabriel-henriques-sales-43953b218/" 
-            rel="noopener noreferrer" 
+          <a
+            href="https://www.linkedin.com/in/gabriel-henriques-sales-43953b218/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="social-link"
           >
             <FaLinkedin />
@@ -174,7 +190,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
         </motion.button>
         <motion.button
           className="botao-curriculo"
-          onClick={handleDownloadcoverletter}
+          onClick={handleDownloadCoverLetter}
           initial={{ y: -60, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 2.5 }}
@@ -194,7 +210,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
           role="button"
           tabIndex={0}
           onClick={() => onLocaleChange?.('pt-BR')}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('pt-BR'); }}
+          onKeyDown={handleFlagKeyDown('pt-BR')}
           title="Brasil - Português"
           aria-label="Alternar para Português (Brasil)"
         >
@@ -207,7 +223,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
           role="button"
           tabIndex={0}
           onClick={() => onLocaleChange?.('en')}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('en'); }}
+          onKeyDown={handleFlagKeyDown('en')}
           title="Reino Unido - Inglês"
           aria-label="Switch to English"
         >
@@ -220,7 +236,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
           role="button"
           tabIndex={0}
           onClick={() => onLocaleChange?.('fr')}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('fr'); }}
+          onKeyDown={handleFlagKeyDown('fr')}
           title="França - Francês"
           aria-label="Passer en français"
         >
@@ -233,7 +249,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
           role="button"
           tabIndex={0}
           onClick={() => onLocaleChange?.('de')}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('de'); }}
+          onKeyDown={handleFlagKeyDown('de')}
           title="Alemanha - Alemão"
           aria-label="Auf Deutsch wechseln"
         >
@@ -246,7 +262,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
           role="button"
           tabIndex={0}
           onClick={() => onLocaleChange?.('it')}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('it'); }}
+          onKeyDown={handleFlagKeyDown('it')}
           title="Itália - Italiano"
           aria-label="Passa all'italiano"
         >
@@ -259,7 +275,7 @@ const TelaInicio = ({ locale = 'pt-BR', onLocaleChange }) => {
           role="button"
           tabIndex={0}
           onClick={() => onLocaleChange?.('ja')}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onLocaleChange?.('ja'); }}
+          onKeyDown={handleFlagKeyDown('ja')}
           title="Japão - Japonês"
           aria-label="日本語に切り替え"
         >
